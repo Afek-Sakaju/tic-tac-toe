@@ -1,0 +1,12 @@
+h1 {
+    @include main-title-aligned;
+    @include main-title-designed;
+}
+
+.playAgainText {
+    @include text-pop-up-designed;
+}
+
+.playerTurn {
+    @include text-player-turn-designed;
+}
