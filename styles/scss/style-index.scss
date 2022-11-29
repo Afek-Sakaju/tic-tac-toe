@@ -1,22 +1,9 @@
-@import "../../scss-tools/mixings.scss";
-@import "../../scss-tools/variables.scss";
-@import "base";
-
-h1 {
-  background-color: rgb(236, 14, 14);
-}
-
-img.questionLogo {
-  background-color: aqua;
-  height: 20px;
-  width: 20px;
-}
-
-div {
-  background-color: aqua;
-}
+@import 'variables';
+@import 'mixings';
+@import 'logos';
+@import 'conatiners';
+@import 'texts';
 
 body {
-  font-family: 100% sans-serif;
-  background-color: aqua;
+    @include main-body-designed;
 }

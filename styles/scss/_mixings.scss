@@ -1,0 +1,94 @@
+@mixin main-body-designed {
+    font-family: mainFont;
+    color: $text-color;
+    background-color: $background-color;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../fonts/Tomorrow-Medium.ttf);
+}
+
+@mixin main-title-aligned {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    height: 80px;
+    width: 70%;
+}
+
+@mixin main-title-designed {
+    font-size: 70px;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.084);
+    text-shadow: 0 1px 1.5px white;
+}
+
+@mixin container-main-title-aligned {
+    display: flex;
+    justify-content: center;
+    max-height: 200px;
+    width: 100%;
+}
+
+@mixin container-board-aligned {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 500px;
+    width: 550px;
+    padding: 5px;
+}
+
+@mixin container-board-designed {
+    border: 5px solid rgba(255, 255, 255, 0.05);
+    border-radius: $main-radius;
+}
+
+@mixin container-turns-designed-aligned {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+@mixin container-pop-up-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    height: 9em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+@mixin text-pop-up-designed {
+    font-size: 2.2em;
+}
+
+@mixin text-player-turn-designed {
+    color: $text-color;
+    font-size: large;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    margin: 0 10px 3px;
+    &:first-child {
+        margin: 0 10px 10px;
+    }
+}
+
+@mixin logo-centered-designed {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px dotted rgba(255, 255, 255, 0.815);
+    border-radius: $main-radius;
+    padding: 20px;
+    margin: 16px;
+    font-size: 30px;
+    height: 90px;
+    width: 100px;
+}

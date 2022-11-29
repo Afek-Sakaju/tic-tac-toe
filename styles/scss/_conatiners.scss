@@ -1,0 +1,21 @@
+.mainTitleContainer {
+    @include container-main-title-aligned;
+}
+
+.gameBoard {
+    @include container-board-aligned;
+    @include container-board-designed;
+}
+
+.boardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.turnsDisplayContainer {
+    @include container-turns-designed-aligned;
+}
+
+.playAgainContainer {
+    @include container-pop-up-middle;
+}
