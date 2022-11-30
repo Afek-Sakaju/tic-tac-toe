@@ -31,3 +31,9 @@ function changeButtonsToCurrentTurn() {
         e.classList.add(classToAdd);
     });
 }
+
+function lockButtonFromAction(id) {
+    const element = document.getElementById(id);
+    element.classList.add('locked');
+    element.removeAttribute('onclick');
+}
