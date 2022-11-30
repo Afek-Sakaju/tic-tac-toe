@@ -1,11 +1,11 @@
 .actionButton {
     @include logo-centered-designed;
     &.playing:not(.locked) {
-        opacity: 0.4;
+        opacity: 0.38;
     }
     &.playing:not(.locked):hover {
-        opacity: 1;
         cursor: pointer;
+        opacity: 0.82;
     }
 }
 
@@ -25,7 +25,7 @@
 }
 
 .locked {
-    opacity: 1 !important;
+    opacity: 1;
 }
 
 .startButton {
