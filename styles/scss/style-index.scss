@@ -1,8 +1,8 @@
 @import 'variables';
 @import 'mixings';
-@import 'logos';
 @import 'conatiners';
 @import 'texts';
+@import 'buttons';
 
 body {
     @include main-body-designed;

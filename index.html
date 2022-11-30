@@ -13,62 +13,33 @@
         <title>Tic-Tac-Toe</title>
     </head>
     <body>
-        <div class="mainTitleContainer"><h1>Tic-Tac-Toe</h1></div>
-        <div class="turnsDisplayContainer">
-            <p class="playerTurn">player X turn</p>
-            <p class="playerTurn">player O turn</p>
+        <div class="mainTitleContainer" id="mainTitleContainer">
+            <h1>Tic-Tac-Toe</h1>
+        </div>
+        <div class="turnsDisplayContainer" id="turnsContainer">
+            <p class="playerTurn myTurn" id="playerOTurn">player O turn</p>
+            <p class="playerTurn myTurn" id="playerXTurn">player X turn</p>
         </div>
         <div class="boardContainer">
             <div class="gameBoard">
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
-                <img
-                    src="./assets/question-mark.png"
-                    alt="emptyChoice"
-                    class="logo"
-                />
+                <div class="actionButton defaultLogo" id="actionButton1"></div>
+                <div class="actionButton defaultLogo" id="actionButton2"></div>
+                <div class="actionButton defaultLogo" id="actionButton3"></div>
+                <div class="actionButton defaultLogo" id="actionButton4"></div>
+                <div class="actionButton defaultLogo" id="actionButton5"></div>
+                <div class="actionButton defaultLogo" id="actionButton6"></div>
+                <div class="actionButton defaultLogo" id="actionButton7"></div>
+                <div class="actionButton defaultLogo" id="actionButton8"></div>
+                <div class="actionButton defaultLogo" id="actionButton9"></div>
             </div>
         </div>
-        <div class="playAgainContainer">
-            <p class="playAgainText">Play-again</p>
-        </div>
+        <p class="startButton" id="startButton" onclick="startGame()">
+            Start-Playing
+        </p>
     </body>
+    <script src="./scripts/consts.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/buttons-actions.js"></script>
+    <script src="./scripts/actions-utils.js"></script>
+    <script src="./scripts/game-logic.js"></script>
 </html>

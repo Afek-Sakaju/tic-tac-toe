@@ -1,0 +1,39 @@
+.actionButton {
+    @include logo-centered-designed;
+    &.playing {
+        opacity: 0.4;
+    }
+    &.playing:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.defaultLogo {
+    background-image: url('../../assets/thinking.png');
+    background-size: 105px;
+}
+
+.buttonO {
+    background-image: url('../../assets/O.png');
+    background-size: 135px;
+}
+
+.buttonX {
+    background-image: url('../../assets/X.png');
+    background-size: 81px;
+}
+
+.startButton {
+    @include button-pop-up-middle;
+    @include button-pop-up-designed;
+    &.playing {
+        visibility: hidden;
+    }
+
+    font-size: 2em;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}

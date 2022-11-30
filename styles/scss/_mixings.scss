@@ -54,19 +54,6 @@
     flex-direction: column;
 }
 
-@mixin container-pop-up-middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15em;
-    height: 9em;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
-}
-
 @mixin text-pop-up-designed {
     font-size: 2.2em;
 }
@@ -83,7 +70,8 @@
 }
 
 @mixin logo-centered-designed {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-repeat: no-repeat;
+    background-position: center;
     border: 2px dotted rgba(255, 255, 255, 0.815);
     border-radius: $main-radius;
     padding: 20px;
@@ -91,4 +79,23 @@
     font-size: 30px;
     height: 90px;
     width: 100px;
+}
+
+@mixin button-pop-up-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9em;
+    height: 3em;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin button-pop-up-designed {
+    background-color: rgba(255, 255, 255, 0.924);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    border-radius: $main-radius;
 }

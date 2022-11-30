@@ -9,4 +9,7 @@ h1 {
 
 .playerTurn {
     @include text-player-turn-designed;
+    &:not(.myTurn){
+        opacity: 0.7;
+    }
 }
