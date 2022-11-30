@@ -1,9 +1,9 @@
 .actionButton {
     @include logo-centered-designed;
-    &.playing {
+    &.playing:not(.locked) {
         opacity: 0.4;
     }
-    &.playing:hover {
+    &.playing:not(.locked):hover {
         opacity: 1;
         cursor: pointer;
     }
@@ -22,6 +22,10 @@
 .buttonX {
     background-image: url('../../assets/X.png');
     background-size: 81px;
+}
+
+.locked {
+    opacity: 1 !important;
 }
 
 .startButton {
