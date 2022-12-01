@@ -7,9 +7,7 @@ const ELEMENTS_IDS = {
     actionButton: (place) => `actionButton${place}`,
 };
 
-const playing = 'playing';
-
-const gameMatrix = [
+let gameMatrix = [
     [null, null, null],
     [null, null, null],
     [null, null, null],
