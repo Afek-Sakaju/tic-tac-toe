@@ -1,14 +1,17 @@
 function startGame() {
     displayCurrentTurn();
-    hideStartButton();
-    activateGameButtons();
     changeButtonsToCurrentTurn();
+    resetGame();
 }
 
 function chooseButton(place) {
     lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
     updateGameCoundition(place);
-    changeTurn();
-    changeButtonsToCurrentTurn();
-    displayCurrentTurn();
+    if (isFinishedGame === true) {
+        finishGame();
+    } else {
+        changeTurn();
+        changeButtonsToCurrentTurn();
+        displayCurrentTurn();
+    }
 }

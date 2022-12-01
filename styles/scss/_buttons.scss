@@ -15,13 +15,23 @@
 }
 
 .buttonO {
-    background-image: url('../../assets/O.png');
+    &.locked:not(.gameOver) {
+        background-image: url('../../assets/O.png');
+    }
+    &:hover:not(.gameOver) {
+        background-image: url('../../assets/O.png');
+    }
     background-size: 135px;
 }
 
 .buttonX {
-    background-image: url('../../assets/X.png');
     background-size: 81px;
+    &.locked:not(.gameOver) {
+        background-image: url('../../assets/X.png');
+    }
+    &:hover:not(.gameOver) {
+        background-image: url('../../assets/X.png');
+    }
 }
 
 .locked {
