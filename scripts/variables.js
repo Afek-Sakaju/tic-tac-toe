@@ -13,6 +13,6 @@ let gameMatrix = [
     [null, null, null],
 ];
 
-let turn = 0;
+let turn = 1;
 let winner = null;
 let isFinishedGame = false;
