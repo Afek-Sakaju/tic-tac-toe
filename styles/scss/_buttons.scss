@@ -44,10 +44,13 @@
     &.playing {
         visibility: hidden;
     }
+}
 
-    font-size: 2em;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
+.restartButton {
+    @include button-small-aligned-left;
+    @include button-small-designed;
+}
+
+.winnerButton {
+    @include winnerButton;
 }

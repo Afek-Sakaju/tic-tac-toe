@@ -19,7 +19,7 @@ function changeButtonsToCurrentTurn() {
 
     buttonsElements.forEach((element) => {
         if (!element.classList.contains('locked') || isFinishedGame) {
-            removeClasses(element, ['defaultLogo', classToRemove, 'locked']);
+            removeClasses(element, ['defaultLogo', classToRemove, 'locked','winnerButton']);
 
             addClasses(element, classToAdd);
         }
@@ -46,6 +46,5 @@ function finishGame(hidePopupButton = false) {
     lockEmptyButtons();
     if (!hidePopupButton) showPlayAgainButton();
     resetGameMatrix();
-    // show winning buttons
-    // declare winner
 }
+
