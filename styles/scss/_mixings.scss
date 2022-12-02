@@ -52,6 +52,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
+    margin-left: 15px;
 }
 
 @mixin text-pop-up-designed {
@@ -60,7 +61,7 @@
 
 @mixin text-player-turn-designed {
     color: $text-color;
-    font-size: large;
+    font-size: 2em;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
     text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
     margin: 0 10px 10px;
@@ -106,8 +107,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 147px;
-    height: 2em;
+    width: 157px;
+    height: 2.3em;
     font-size: large;
     margin: 0 13px 55px;
 }
