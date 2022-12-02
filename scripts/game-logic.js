@@ -21,9 +21,14 @@ function updatePlayerChoiceInMatrix(place) {
 
 function isGameOver() {
     if (isWinnerByRow() || isWinnerByColumn() || isWinnerBySlant()) {
+        buttonSound('win');
         declareWinner();
         return true;
+    } else if (turn < 10) {
+        buttonSound('action');
+        return false;
     }
 
-    return turn < 10 ? false : true;
+    
+    return true;
 }
