@@ -39,3 +39,13 @@ function resetButton(element) {
 
     addClasses(element, 'playing');
 }
+
+function highlightWinningButtons(places) {
+    places.forEach((place) => {
+        const element = document.getElementById(
+            ELEMENTS_IDS.actionButton(place)
+        );
+
+        element.classList.add('winnerButton');
+    });
+}

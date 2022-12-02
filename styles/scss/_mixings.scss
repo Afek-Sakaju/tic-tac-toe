@@ -16,10 +16,10 @@
     margin: 5px;
     height: 80px;
     width: 70%;
+    font-size: 70px;
 }
 
 @mixin main-title-designed {
-    font-size: 70px;
     font-weight: bolder;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.084);
     text-shadow: 0 1px 1.5px white;
@@ -50,8 +50,8 @@
 
 @mixin container-turns-designed-aligned {
     display: flex;
-    justify-content: left;
     flex-direction: column;
+    position: absolute;
 }
 
 @mixin text-pop-up-designed {
@@ -63,10 +63,7 @@
     font-size: large;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
     text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    margin: 0 10px 3px;
-    &:first-child {
-        margin: 0 10px 10px;
-    }
+    margin: 0 10px 10px;
 }
 
 @mixin logo-centered-designed {
@@ -89,13 +86,43 @@
     height: 3em;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 82%;
     transform: translate(-50%, -50%);
 }
 
 @mixin button-pop-up-designed {
-    background-color: rgba(255, 255, 255, 0.924);
+    background-color: $buttons-background;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
     text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
     border-radius: $main-radius;
+    font-size: 2em;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+@mixin button-small-aligned-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 147px;
+    height: 2em;
+    font-size: large;
+    margin: 0 13px 55px;
+}
+
+@mixin button-small-designed {
+    background-color: $buttons-background;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    border-radius: $main-radius;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+@mixin winnerButton {
+    animation: rotation infinite 1.4s ease-in-out;
 }

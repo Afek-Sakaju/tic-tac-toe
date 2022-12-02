@@ -14,5 +14,4 @@ let gameMatrix = [
 ];
 
 let turn = 1;
-let winner = null;
 let isFinishedGame = false;
