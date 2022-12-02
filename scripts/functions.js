@@ -52,7 +52,3 @@ function finishGame(hidePopupButton = false) {
     if (!hidePopupButton) showPlayAgainButton();
     resetGameMatrix();
 }
-
-function buttonSound(type) {
-    new Audio(`../assets/sound-${type}.mp3`).play();
-}

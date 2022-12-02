@@ -29,6 +29,6 @@ function isGameOver() {
         return false;
     }
 
-    
+    buttonSound('fullBoard');
     return true;
 }
