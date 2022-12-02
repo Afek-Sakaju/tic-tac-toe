@@ -1,6 +1,11 @@
-function hideStartButton() {
+function hidePopupButtons() {
     const startGameButton = document.getElementById(ELEMENTS_IDS.startButton);
-    addClasses(startGameButton, ['playing']);
+    const winnerContainer = document.getElementById(
+        ELEMENTS_IDS.winnerContainer
+    );
+
+    addClasses(winnerContainer, 'playing');
+    addClasses(startGameButton, 'playing');
 }
 
 function resetGameButtons() {
@@ -48,4 +53,16 @@ function highlightWinningButtons(places) {
 
         element.classList.add('winnerButton');
     });
+}
+
+function declareWinner() {
+    const winnerContainer = document.getElementById(
+        ELEMENTS_IDS.winnerContainer
+    );
+    const winnerText = document.getElementById(ELEMENTS_IDS.winnerText);
+    const sign = turn % 2 ? 'X' : 'O';
+
+    winnerText.innerText = `Player ${sign} is the Winner!`;
+
+    removeClasses(winnerContainer, 'playing');
 }

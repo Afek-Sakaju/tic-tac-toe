@@ -5,6 +5,8 @@ const ELEMENTS_IDS = {
     playerXTurn: 'playerXTurn',
     playerOTurn: 'playerOTurn',
     actionButton: (place) => `actionButton${place}`,
+    winnerContainer: 'winnerContainer',
+    winnerText: 'winnerText',
 };
 
 let gameMatrix = [
