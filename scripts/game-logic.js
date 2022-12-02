@@ -20,11 +20,10 @@ function updatePlayerChoiceInMatrix(place) {
 }
 
 function isGameOver() {
-    if (isWinnerByRow()) return true;
-
-    if (isWinnerByColumn()) return true;
-
-    if (isWinnerBySlant()) return true;
+    if (isWinnerByRow() || isWinnerByColumn() || isWinnerBySlant()) {
+        declareWinner();
+        return true;
+    }
 
     return turn < 10 ? false : true;
 }

@@ -16,5 +16,6 @@ h1 {
 
 .winnerText {
     @include main-title-designed;
+    animation: anim-flipX 1.5s infinite alternate-reverse;
     font-size: 2.7em;
 }

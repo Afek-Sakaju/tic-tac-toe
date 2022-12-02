@@ -12,3 +12,18 @@
         transform: rotate(35deg);
     }
 }
+
+@keyframes anim-flipX {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    50% {
+        opacity: 1;
+        transform: rotateX(720deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(720deg);
+    }
+}
