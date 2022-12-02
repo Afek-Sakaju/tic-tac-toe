@@ -3,6 +3,7 @@
 // todo highlight winning row
 
 function startGame() {
+    buttonSound('start');
     resetGame();
     changeButtonsToCurrentTurn();
     displayCurrentTurn();
