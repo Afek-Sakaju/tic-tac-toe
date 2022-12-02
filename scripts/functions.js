@@ -42,12 +42,10 @@ function lockButtonFromAction(id) {
     if (isFinishedGame) addClasses(element, 'gameOver');
 }
 
-function finishGame() {
+function finishGame(hidePopupButton = false) {
     lockEmptyButtons();
-    showPlayAgainButton();
+    if (!hidePopupButton) showPlayAgainButton();
     resetGameMatrix();
     // show winning buttons
     // declare winner
-    /* show play again pop up by
-          changing start playing text */
 }
