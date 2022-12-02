@@ -1,16 +1,15 @@
 function startGame() {
-    displayCurrentTurn();
-    changeButtonsToCurrentTurn();
     resetGame();
+    changeButtonsToCurrentTurn();
+    displayCurrentTurn();
 }
 
 function chooseButton(place) {
     lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
-    updateGameCoundition(place);
+    updatePlayerChoiceInMatrix(place);
     if (isFinishedGame === true) {
         finishGame();
     } else {
-        changeTurn();
         changeButtonsToCurrentTurn();
         displayCurrentTurn();
     }

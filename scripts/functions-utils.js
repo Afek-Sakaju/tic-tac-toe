@@ -1,17 +1,13 @@
 function hideStartButton() {
     const startGameButton = document.getElementById(ELEMENTS_IDS.startButton);
-    modifyClasses(startGameButton, { classesToAdd: ['playing'] });
+    addClasses(startGameButton, ['playing']);
 }
 
-function activateGameButtons() {
+function resetGameButtons() {
     const buttonsElements = document.querySelectorAll('.actionButton');
 
     buttonsElements.forEach((element) => {
-        if (isFinishedGame) {
-            clearLockedGameButtons(element);
-        }
-
-        resetGameButtons(element);
+        resetButton(element);
     });
 }
 
@@ -27,5 +23,19 @@ function showPlayAgainButton() {
     const startGameButton = document.getElementById(ELEMENTS_IDS.startButton);
 
     startGameButton.innerText = 'Play-Again';
-    modifyClasses(startGameButton, { classesToRemove: ['playing'] });
+
+    removeClasses(startGameButton, 'playing');
+}
+
+function resetButton(element) {
+    removeClasses(element, ['locked', 'gameOver', 'buttonX']);
+
+    addClasses(element, 'buttonO');
+
+    addAttributes(element, [
+        { onclick: `chooseButton(${element.id[12]})` },
+        { name: 'empty' },
+    ]);
+
+    addClasses(element, 'playing');
 }

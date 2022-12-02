@@ -1,51 +1,52 @@
 function displayCurrentTurn() {
-    if (isFinishedGame) turn = 0;
-
     const playerOTurn = document.getElementById(ELEMENTS_IDS.playerOTurn);
     const playerXTurn = document.getElementById(ELEMENTS_IDS.playerXTurn);
 
-    if (!turn) {
-        modifyClasses(playerOTurn, { classesToAdd: 'myTurn' });
-        modifyClasses(playerXTurn, { classesToRemove: 'myTurn' });
+    if (turn % 2) {
+        addClasses(playerOTurn, 'myTurn');
+        removeClasses(playerXTurn, 'myTurn');
     } else {
-        modifyClasses(playerXTurn, { classesToAdd: 'myTurn' });
-        modifyClasses(playerOTurn, { classesToRemove: 'myTurn' });
+        addClasses(playerXTurn, 'myTurn');
+        removeClasses(playerOTurn, 'myTurn');
     }
 }
 
 function changeButtonsToCurrentTurn() {
-    const classToAdd = !turn ? 'buttonO' : 'buttonX';
-    const classToRemove = !turn ? 'buttonX' : 'buttonO';
+    const classToAdd = turn % 2 ? 'buttonO' : 'buttonX';
+    const classToRemove = turn % 2 ? 'buttonX' : 'buttonO';
 
     const buttonsElements = document.querySelectorAll('.actionButton');
 
     buttonsElements.forEach((element) => {
-        if (!element.classList.contains('locked')) {
-            modifyClasses(element, {
-                classesToRemove: ['defaultLogo', classToRemove],
-                classesToAdd: [classToAdd],
-            });
+        if (!element.classList.contains('locked') || isFinishedGame) {
+            removeClasses(element, ['defaultLogo', classToRemove, 'locked']);
+
+            addClasses(element, classToAdd);
         }
     });
 }
 
 function resetGame() {
     hideStartButton();
-    activateGameButtons();
+    resetGameButtons();
+    isFinishedGame = false;
+    turn = 1;
 }
 
 function lockButtonFromAction(id) {
     const element = document.getElementById(id);
 
-    modifyClasses(element, { classesToAdd: ['locked'] });
-    modifyAttributes(element, { attributesToRemove: ['onclick', 'name'] });
-    if (isFinishedGame) modifyClasses(element, { classesToAdd: ['gameOver'] });
+    addClasses(element, 'locked');
+    removeAttributes(element, ['onclick', 'name']);
+
+    if (isFinishedGame) addClasses(element, 'gameOver');
 }
 
 function finishGame() {
     lockEmptyButtons();
     showPlayAgainButton();
-    resetGameMatrix(); // show winning buttons
+    resetGameMatrix();
+    // show winning buttons
     // declare winner
     /* show play again pop up by
           changing start playing text */

@@ -1,9 +1,5 @@
-function changeTurn() {
-    turn = !turn ? 1 : 0;
-}
-
-function updateGameCoundition(place) {
-    const sign = !turn ? 0 : 1;
+function updatePlayerChoiceInMatrix(place) {
+    const sign = turn % 2 ? 0 : 1;
     const i = (place - 1) % 3;
     let j;
 
@@ -19,10 +15,11 @@ function updateGameCoundition(place) {
     }
     gameMatrix[j][i] = sign;
 
-    isFinishedGame = checkGameCoundition();
+    turn++;
+    isFinishedGame = isGameOver();
 }
 
-function checkGameCoundition() {
+function isGameOver() {
     for (let i = 0; i < gameMatrix.length; i++) {
         if (
             gameMatrix[i][0] !== null &&
@@ -57,5 +54,5 @@ function checkGameCoundition() {
     )
         return true;
 
-    return false;
+    return turn < 10 ? false : true;
 }
