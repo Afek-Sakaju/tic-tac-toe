@@ -87,7 +87,3 @@ function isWinnerBySlant() {
         return true;
     } else return false;
 }
-
-function buttonSound(type, file = 'mp3') {
-    new Audio(`../assets/sound-${type}.${file}`).play();
-}
