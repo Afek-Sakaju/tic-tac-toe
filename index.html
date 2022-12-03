@@ -20,9 +20,20 @@
             <p class="winnerText" id="winnerText">Player ? is the Winner!</p>
         </div>
         <div class="turnsDisplayContainer" id="turnsContainer">
-            <p class="restartButton" id="restartButton" onclick="restartGame()">
-                Restart
-            </p>
+            <div class="restartAndMuteContainer">
+                <p
+                    class="restartButton"
+                    id="restartButton"
+                    onclick="restartGame()"
+                >
+                    Restart
+                </p>
+                <div
+                    class="soundButton"
+                    id="soundButton"
+                    onclick="toggleSound()"
+                ></div>
+            </div>
             <p class="playerTurn myTurn" id="playerOTurn">player O turn</p>
             <p class="playerTurn myTurn" id="playerXTurn">player X turn</p>
         </div>

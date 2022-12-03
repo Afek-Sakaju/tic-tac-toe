@@ -1,7 +1,3 @@
-// todo design bigger page
-// todo more gap between h1 and gameBoard
-// todo highlight winning row
-
 function startGame() {
     buttonSound('start');
     resetGame();
@@ -26,4 +22,14 @@ function restartGame() {
         finishGame(true);
         startGame();
     }
+}
+
+function toggleSound() {
+    const soundButton = document.getElementById(ELEMENTS_IDS.soundButton);
+
+    /* if (isMute) {
+        isMute = false;
+        removeAttributes(soundButton, 'src');
+        addAttributes(soundButton, { src: './assets/toggle-sound-off.png' });
+    }*/
 }
