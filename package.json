@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "start": "lite-server",
         "scss-watch-folder": "sass --watch styles/scss:styles/css"
     },
     "repository": {
@@ -17,6 +18,7 @@
     },
     "homepage": "https://github.com/afekTheMiniLearner/Tic-tac-toe#readme",
     "devDependencies": {
+        "lite-server": "^2.6.1",
         "prettier": "^2.8.0",
         "sass": "^1.56.1"
     }
