@@ -17,3 +17,4 @@ let gameMatrix = [
 
 let turn = 1;
 let isFinishedGame = false;
+let isMute = false;
