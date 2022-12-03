@@ -52,3 +52,5 @@ function finishGame(hidePopupButton = false) {
     if (!hidePopupButton) showPlayAgainButton();
     resetGameMatrix();
 }
+
+

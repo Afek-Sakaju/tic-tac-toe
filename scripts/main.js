@@ -27,9 +27,15 @@ function restartGame() {
 function toggleSound() {
     const soundButton = document.getElementById(ELEMENTS_IDS.soundButton);
 
-    /* if (isMute) {
-        isMute = false;
+    if (!isMute) {
+        isMute = true;
+        buttonSound('toggleOff');
         removeAttributes(soundButton, 'src');
         addAttributes(soundButton, { src: './assets/toggle-sound-off.png' });
-    }*/
+    } else {
+        isMute = false;
+        buttonSound('toggleOn');
+        removeAttributes(soundButton, 'src');
+        addAttributes(soundButton, { src: './assets/toggle-sound-on.png' });
+    }
 }
