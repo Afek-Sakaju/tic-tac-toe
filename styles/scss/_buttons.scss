@@ -54,3 +54,14 @@
 .winnerButton {
     @include winnerButton;
 }
+
+.soundButton {
+    position: absolute;
+    margin-left: 15px;
+    height: 55px;
+    width: 50px;
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}

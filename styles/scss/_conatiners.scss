@@ -5,7 +5,7 @@
 .boardContainer {
     display: flex;
     justify-content: center;
-    margin-top: 45px
+    margin-top: 45px;
 }
 
 .gameBoard {
@@ -26,4 +26,9 @@
     &.playing {
         visibility: hidden;
     }
+}
+
+.restartAndMuteContainer {
+    display: flex;
+    flex-direction: row;
 }

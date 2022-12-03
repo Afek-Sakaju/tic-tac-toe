@@ -7,6 +7,7 @@ const ELEMENTS_IDS = {
     actionButton: (place) => `actionButton${place}`,
     winnerContainer: 'winnerContainer',
     winnerText: 'winnerText',
+    soundButton: 'soundButton',
 };
 
 let gameMatrix = [
