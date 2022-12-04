@@ -1,85 +1,15 @@
-@mixin main-body-designed {
-    font-family: mainFont;
-    color: $text-color;
-    background-color: $background-color;
-}
-
 @font-face {
     font-family: mainFont;
     src: url(../../assets/fonts/Tomorrow-Medium.ttf);
 }
 
-@mixin main-title-aligned {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    height: 80px;
-    width: 70%;
-    font-size: 70px;
-}
-
-@mixin main-title-designed {
+@mixin big-title-designed {
     font-weight: bolder;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.084);
     text-shadow: 0 1px 1.5px white;
 }
 
-@mixin container-main-title-aligned {
-    display: flex;
-    justify-content: center;
-    max-height: 200px;
-    width: 100%;
-}
-
-@mixin container-board-aligned {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 500px;
-    width: 550px;
-    padding: 5px;
-}
-
-@mixin container-board-designed {
-    border: 5px solid rgba(255, 255, 255, 0.05);
-    border-radius: $main-radius;
-}
-
-@mixin container-turns-designed-aligned {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-left: 15px;
-}
-
-@mixin text-pop-up-designed {
-    font-size: 2.2em;
-}
-
-@mixin text-player-turn-designed {
-    color: $text-color;
-    font-size: 2em;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    margin: 0 10px 10px;
-}
-
-@mixin logo-centered-designed {
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 2px dotted rgba(255, 255, 255, 0.815);
-    border-radius: $main-radius;
-    padding: 20px;
-    margin: 16px;
-    font-size: 30px;
-    height: 90px;
-    width: 100px;
-}
-
-@mixin button-pop-up-middle {
+@mixin button-pop-up {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,41 +19,4 @@
     left: 50%;
     top: 82%;
     transform: translate(-50%, -50%);
-}
-
-@mixin button-pop-up-designed {
-    background-color: $buttons-background;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    border-radius: $main-radius;
-    font-size: 2em;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
-}
-
-@mixin button-small-aligned-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 157px;
-    height: 2.3em;
-    font-size: large;
-    margin: 0 13px 55px;
-}
-
-@mixin button-small-designed {
-    background-color: $buttons-background;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    border-radius: $main-radius;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
-}
-
-@mixin winnerButton {
-    animation: rotation infinite 1.4s ease-in-out;
 }

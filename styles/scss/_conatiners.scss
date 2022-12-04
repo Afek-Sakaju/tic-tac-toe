@@ -1,5 +1,8 @@
 .mainTitleContainer {
-    @include container-main-title-aligned;
+    display: flex;
+    justify-content: center;
+    max-height: 200px;
+    width: 100%;
 }
 
 .boardContainer {
@@ -9,16 +12,27 @@
 }
 
 .gameBoard {
-    @include container-board-aligned;
-    @include container-board-designed;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 500px;
+    width: 550px;
+    padding: 5px;
+    border: 5px solid rgba(255, 255, 255, 0.05);
+    border-radius: $main-radius;
 }
 
 .turnsDisplayContainer {
-    @include container-turns-designed-aligned;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 15px;
 }
 
 .winnerContainer {
-    @include button-pop-up-middle;
+    @include button-pop-up;
     width: 500px;
     height: 200px;
     top: 18%;
