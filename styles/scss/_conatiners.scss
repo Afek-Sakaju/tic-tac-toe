@@ -1,22 +1,18 @@
 .mainTitleContainer {
-    display: flex;
-    justify-content: center;
+    @include center-items-flex-display;
     max-height: 200px;
     width: 100%;
 }
 
 .boardContainer {
-    display: flex;
-    justify-content: center;
+    @include center-items-flex-display;
     margin-top: 45px;
 }
 
 .gameBoard {
+    @include center-items-flex-display;
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
     height: 500px;
     width: 550px;
     padding: 5px;

@@ -18,16 +18,16 @@
 }
 
 .defaultLogo {
-    background-image: url('../../assets/pictures/thinking.png');
+    background-image: $Thinking-image-url;
     background-size: 105px;
 }
 
 .buttonO {
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/pictures/O.png');
+        background-image: $O-image-url;
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/pictures/O.png');
+        background-image: $O-image-url;
     }
     background-size: 135px;
 }
@@ -35,10 +35,10 @@
 .buttonX {
     background-size: 81px;
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/pictures/X.png');
+        background-image: $X-image-url;
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/pictures/X.png');
+        background-image: $X-image-url;
     }
 }
 
@@ -48,36 +48,20 @@
 
 .startButton {
     @include button-pop-up;
-    background-color: $buttons-background;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    border-radius: $main-radius;
+    @include button-main-design;
     font-size: 2em;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
     &.playing {
         visibility: hidden;
     }
 }
 
 .restartButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-items-flex-display;
+    @include button-main-design;
     width: 157px;
     height: 2.3em;
     font-size: large;
     margin: 0 13px 55px;
-    background-color: $buttons-background;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-    border-radius: $main-radius;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
 }
 
 .winnerButton {
@@ -88,8 +72,4 @@
     margin-left: 15px;
     height: 55px;
     width: 50px;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
 }
