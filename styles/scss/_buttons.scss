@@ -10,16 +10,16 @@
 }
 
 .defaultLogo {
-    background-image: url('../../assets/thinking.png');
+    background-image: url('../../assets/pictures/thinking.png');
     background-size: 105px;
 }
 
 .buttonO {
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/O.png');
+        background-image: url('../../assets/pictures/O.png');
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/O.png');
+        background-image: url('../../assets/pictures/O.png');
     }
     background-size: 135px;
 }
@@ -27,10 +27,10 @@
 .buttonX {
     background-size: 81px;
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/X.png');
+        background-image: url('../../assets/pictures/X.png');
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/X.png');
+        background-image: url('../../assets/pictures/X.png');
     }
 }
 

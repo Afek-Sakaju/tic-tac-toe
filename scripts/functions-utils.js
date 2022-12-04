@@ -69,6 +69,6 @@ function declareWinner() {
 
 function buttonSound(type, file = 'mp3') {
     if (!isMute || type === 'toggleOff') {
-        new Audio(`../sounds/sound-${type}.${file}`).play();
+        new Audio(`../assets/sounds/sound-${type}.${file}`).play();
     }
 }

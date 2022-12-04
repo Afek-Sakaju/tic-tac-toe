@@ -31,11 +31,15 @@ function toggleSound() {
         isMute = true;
         buttonSound('toggleOff');
         removeAttributes(soundButton, 'src');
-        addAttributes(soundButton, { src: './assets/toggle-sound-off.png' });
+        addAttributes(soundButton, {
+            src: './assets/pictures/toggle-sound-off.png',
+        });
     } else {
         isMute = false;
         buttonSound('toggleOn');
         removeAttributes(soundButton, 'src');
-        addAttributes(soundButton, { src: './assets/toggle-sound-on.png' });
+        addAttributes(soundButton, {
+            src: './assets/pictures/toggle-sound-on.png',
+        });
     }
 }
