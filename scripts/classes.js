@@ -7,11 +7,10 @@
 class Button {
     constructor(id) {
         this._id = id;
-        this._element = document.getElementById(this.id);
     }
 
     get element() {
-        return this._element;
+        return document.getElementById(this._id);
     }
 
     addClass(classes) {
@@ -50,26 +49,37 @@ class Button {
 }
 
 class ActionButton extends Button {
-    static get all() {
-        return document.querySelectorAll('.actionButton');
+    constructor() {
+        super();
+        this._emptyButtons = document.querySelectorAll('[name="empty"]');
+        this._allButtons = document.querySelectorAll('.actionButton');
+    }
+
+    static get emptyButtons() {
+        return this._emptyButtons;
+    }
+
+    static get allButtons() {
+        return this._allButtons;
     }
 
     static toggleAll() {
         const classes = {};
-
         classes.add = turn % 2 ? 'buttonO' : 'buttonX';
         classes.remove = turn % 2 ? 'buttonX' : 'buttonO';
 
         ActionButton.all.forEach((button) => {
             if (!button.classList.contains('locked') || isFinishedGame) {
-                removeClasses(button, [
+                const b1 = new Button(button.id);
+
+                b1.removeClass([
                     'defaultLogo',
                     'locked',
                     'winnerButton',
                     classes.remove,
                 ]);
 
-                addClasses(button, classes.add);
+                b1.addClass(classes.add);
             }
         });
     }
@@ -80,30 +90,20 @@ class ActionButton extends Button {
         });
     }
 
-    static lock(id) {
-        const button = new Button(id);
-
-        if (isFinishedGame) button.addClass('gameOver');
-        button.addClass('locked');
-        button.removeAttribute(['onclick', 'name']);
-    }
-
     static lockEmptyButtons() {
-        const emptyButtons = document.querySelectorAll('[name="empty"]');
-
-        emptyButtons.forEach((button) => {
+        ActionButton.emptyButtons.forEach((button) => {
             ActionButton.lock(button.id);
         });
     }
 
-    constructor() {
-        super();
+    lock() {
+        if (isFinishedGame) this.addClass('gameOver');
+        this.addClass('locked');
+        this.removeAttribute(['onclick', 'name']);
     }
 }
 
-class PopupButton extends Button{
-    
-}
+class PopupButton extends Button {}
 
 class Game {
     constructor(matrix) {
@@ -123,3 +123,7 @@ class Game {
         return this.playing;
     }
 }
+
+const res = new Button('actionButton1');
+
+console.log(res.element);
