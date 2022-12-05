@@ -9,6 +9,7 @@ function hidePopupButtons() {
 }
 
 function resetGameButtons() {
+    //in class
     const buttonsElements = document.querySelectorAll('.actionButton');
 
     buttonsElements.forEach((element) => {
@@ -19,6 +20,7 @@ function resetGameButtons() {
 function lockEmptyButtons() {
     const emptyButtons = document.querySelectorAll('[name="empty"]');
 
+    //in class
     emptyButtons.forEach((element) => {
         lockButtonFromAction(element.id);
     });

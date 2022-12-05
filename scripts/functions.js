@@ -14,7 +14,7 @@ function displayCurrentTurn() {
 function changeButtonsToCurrentTurn() {
     const classToAdd = turn % 2 ? 'buttonO' : 'buttonX';
     const classToRemove = turn % 2 ? 'buttonX' : 'buttonO';
-
+    //in class
     const buttonsElements = document.querySelectorAll('.actionButton');
 
     buttonsElements.forEach((element) => {
@@ -39,6 +39,7 @@ function resetGame() {
 }
 
 function lockButtonFromAction(id) {
+    //in class
     const element = document.getElementById(id);
 
     addClasses(element, 'locked');
@@ -52,5 +53,3 @@ function finishGame(hidePopupButton = false) {
     if (!hidePopupButton) showPlayAgainButton();
     resetGameMatrix();
 }
-
-
