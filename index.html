@@ -9,23 +9,18 @@
         <title>Tic-Tac-Toe</title>
     </head>
     <body>
-        <div class="mainTitleContainer" id="mainTitleContainer">
+        <div id="mainTitleContainer">
             <h1>Tic-Tac-Toe</h1>
         </div>
-        <div class="winnerContainer playing" id="winnerContainer">
-            <p class="winnerText" id="winnerText">Player ? is the Winner!</p>
+        <div class="playing" id="winnerContainer">
+            <p id="winnerText">Player ? is the Winner!</p>
         </div>
-        <div class="turnsDisplayContainer" id="turnsContainer">
+        <div id="turnsContainer">
             <div class="restartAndMuteContainer">
-                <span
-                    class="restartButton"
-                    id="restartButton"
-                    onclick="restartGame()"
-                >
+                <span id="restartButton" onclick="restartGame()">
                     Restart
                 </span>
                 <img
-                    class="soundButton"
                     id="soundButton"
                     src="./assets/pictures/toggle-sound-on.png"
                     alt="site's logo"
@@ -48,9 +43,7 @@
                 <div class="actionButton defaultLogo" id="actionButton9"></div>
             </div>
         </div>
-        <p class="startButton" id="startButton" onclick="startGame()">
-            Start-Playing
-        </p>
+        <p id="startButton" onclick="startGame()">Start-Playing</p>
     </body>
     <script src="./scripts/variables.js"></script>
     <script src="./scripts/main.js"></script>

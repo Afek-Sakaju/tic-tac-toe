@@ -1,4 +1,4 @@
-.mainTitleContainer {
+#mainTitleContainer {
     @include center-items-flex-display;
     max-height: 200px;
     width: 100%;
@@ -20,14 +20,14 @@
     border-radius: $main-radius;
 }
 
-.turnsDisplayContainer {
+#turnsContainer {
     display: flex;
     flex-direction: column;
     position: absolute;
     margin-left: 15px;
 }
 
-.winnerContainer {
+#winnerContainer {
     @include button-pop-up;
     width: 500px;
     height: 200px;

@@ -46,7 +46,7 @@
     opacity: 1;
 }
 
-.startButton {
+#startButton {
     @include button-pop-up;
     @include button-main-design;
     font-size: 2em;
@@ -55,7 +55,7 @@
     }
 }
 
-.restartButton {
+#restartButton {
     @include center-items-flex-display;
     @include button-main-design;
     width: 157px;
@@ -68,7 +68,8 @@
     animation: rotation infinite 1.4s ease-in-out;
 }
 
-.soundButton {
+#soundButton {
+    @include button-hover-affect;
     margin-left: 15px;
     height: 55px;
     width: 50px;
