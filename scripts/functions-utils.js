@@ -4,8 +4,8 @@ function hidePopupButtons() {
         ELEMENTS_IDS.winnerContainer
     );
 
-    addClasses(winnerContainer, 'playing');
-    addClasses(startGameButton, 'playing');
+    addClasses(winnerContainer, 'off');
+    addClasses(startGameButton, 'off');
 }
 
 function resetGameButtons() {

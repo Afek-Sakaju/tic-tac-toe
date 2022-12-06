@@ -17,7 +17,7 @@ h1 {
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
     text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
     margin: 0 10px 10px;
-    &:not(.myTurn) {
+    &.off {
         opacity: 0.7;
     }
 }

@@ -1,10 +1,4 @@
-/*const game1 = new Game([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-]);*/
-
-class Button {
+class GameElement {
     constructor(id) {
         this._id = id;
     }
@@ -46,10 +40,18 @@ class Button {
             this.element.removeAttribute(attribute);
         }
     }
+
+    turnOn() {
+        this.removeClassClass('off');
+    }
+
+    turnOff() {
+        this.addClass('off');
+    }
 }
 
-class ActionButton extends Button {
-    constructor() {
+class ActionButton extends GameElement {
+    constructor(place) {
         super();
         this._emptyButtons = document.querySelectorAll('[name="empty"]');
         this._allButtons = document.querySelectorAll('.actionButton');
@@ -70,7 +72,7 @@ class ActionButton extends Button {
 
         ActionButton.all.forEach((button) => {
             if (!button.classList.contains('locked') || isFinishedGame) {
-                const b1 = new Button(button.id);
+                const b1 = new GameElement(button.id);
 
                 b1.removeClass([
                     'defaultLogo',
@@ -103,7 +105,7 @@ class ActionButton extends Button {
     }
 }
 
-class PopupButton extends Button {}
+class PopupButton extends GameElement {}
 
 class Game {
     constructor(matrix) {
@@ -124,6 +126,3 @@ class Game {
     }
 }
 
-const res = new Button('actionButton1');
-
-console.log(res.element);

@@ -3,11 +3,11 @@ function displayCurrentTurn() {
     const playerXTurn = document.getElementById(ELEMENTS_IDS.playerXTurn);
 
     if (turn % 2) {
-        addClasses(playerOTurn, 'myTurn');
-        removeClasses(playerXTurn, 'myTurn');
+        addClasses(playerXTurn, 'off');
+        removeClasses(playerOTurn, 'off');
     } else {
-        addClasses(playerXTurn, 'myTurn');
-        removeClasses(playerOTurn, 'myTurn');
+        addClasses(playerOTurn, 'off');
+        removeClasses(playerXTurn, 'off');
     }
 }
 
