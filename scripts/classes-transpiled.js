@@ -10,19 +10,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/*const game1 = new Game([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-]);*/
-var Button = function () {
-    function Button(id) {
-        _classCallCheck(this, Button);
+var GameElement = function () {
+    function GameElement(id) {
+        _classCallCheck(this, GameElement);
 
         this._id = id;
     }
 
-    _createClass(Button, [{
+    _createClass(GameElement, [{
         key: 'addClass',
         value: function addClass(classes) {
             if (!(classes instanceof Array)) classes = [classes];
@@ -167,45 +162,38 @@ var Button = function () {
             }
         }
     }, {
+        key: 'turnOn',
+        value: function turnOn() {
+            this.removeClassClass('off');
+        }
+    }, {
+        key: 'turnOff',
+        value: function turnOff() {
+            this.addClass('off');
+        }
+    }, {
         key: 'element',
         get: function get() {
             return document.getElementById(this._id);
         }
     }]);
 
-    return Button;
+    return GameElement;
 }();
 
-var ActionButton = function (_Button) {
-    _inherits(ActionButton, _Button);
+var ActionButton = function (_GameElement) {
+    _inherits(ActionButton, _GameElement);
 
-    function ActionButton() {
-        _classCallCheck(this, ActionButton);
-
-        var _this = _possibleConstructorReturn(this, (ActionButton.__proto__ || Object.getPrototypeOf(ActionButton)).call(this));
-
-        _this._emptyButtons = document.querySelectorAll('[name="empty"]');
-        _this._allButtons = document.querySelectorAll('.actionButton');
-        return _this;
-    }
-
-    _createClass(ActionButton, [{
-        key: 'lock',
-        value: function lock() {
-            if (isFinishedGame) this.addClass('gameOver');
-            this.addClass('locked');
-            this.removeAttribute(['onclick', 'name']);
-        }
-    }], [{
+    _createClass(ActionButton, null, [{
         key: 'toggleAll',
         value: function toggleAll() {
             var classes = {};
             classes.add = turn % 2 ? 'buttonO' : 'buttonX';
             classes.remove = turn % 2 ? 'buttonX' : 'buttonO';
 
-            ActionButton.all.forEach(function (button) {
+            ActionButton.allButtons.forEach(function (button) {
                 if (!button.classList.contains('locked') || isFinishedGame) {
-                    var b1 = new Button(button.id);
+                    var b1 = new GameElement(button.id);
 
                     b1.removeClass(['defaultLogo', 'locked', 'winnerButton', classes.remove]);
 
@@ -216,7 +204,7 @@ var ActionButton = function (_Button) {
     }, {
         key: 'resetAll',
         value: function resetAll() {
-            ActionButton.all.forEach(function (element) {
+            ActionButton.allButtons.forEach(function (element) {
                 resetButton(element);
             });
         }
@@ -228,31 +216,74 @@ var ActionButton = function (_Button) {
             });
         }
     }, {
+        key: 'lockAllButtons',
+        value: function lockAllButtons() {
+            ActionButton.allButtons.forEach(function (button) {
+                ActionButton.lock(button.id);
+            });
+        }
+    }, {
         key: 'emptyButtons',
         get: function get() {
-            return this._emptyButtons;
+            return document.querySelectorAll('[name="empty"]');
         }
     }, {
         key: 'allButtons',
         get: function get() {
-            return this._allButtons;
+            return mainGame.matrix.flat();
+        }
+    }]);
+
+    function ActionButton() {
+        _classCallCheck(this, ActionButton);
+
+        return _possibleConstructorReturn(this, (ActionButton.__proto__ || Object.getPrototypeOf(ActionButton)).call(this));
+    }
+
+    _createClass(ActionButton, [{
+        key: 'lock',
+        value: function lock() {
+            if (isFinishedGame) this.addClass('gameOver');
+            this.addClass('locked');
+            this.removeAttribute(['onclick', 'name']);
         }
     }]);
 
     return ActionButton;
-}(Button);
+}(GameElement);
 
-var PopupButton = function (_Button2) {
-    _inherits(PopupButton, _Button2);
+var SoundButton = function (_GameElement2) {
+    _inherits(SoundButton, _GameElement2);
 
-    function PopupButton() {
-        _classCallCheck(this, PopupButton);
+    function SoundButton() {
+        _classCallCheck(this, SoundButton);
 
-        return _possibleConstructorReturn(this, (PopupButton.__proto__ || Object.getPrototypeOf(PopupButton)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (SoundButton.__proto__ || Object.getPrototypeOf(SoundButton)).call(this));
     }
 
-    return PopupButton;
-}(Button);
+    _createClass(SoundButton, [{
+        key: 'toggleSound',
+        value: function toggleSound() {
+            if (!isMute) {
+                isMute = true;
+                buttonSound('toggleOff');
+                this.removeAttribute('src');
+                this.addAttribute({
+                    src: './assets/pictures/toggle-sound-off.png'
+                });
+            } else {
+                isMute = false;
+                buttonSound('toggleOn');
+                this.removeAttribute('src');
+                this.addAttribute({
+                    src: './assets/pictures/toggle-sound-on.png'
+                });
+            }
+        }
+    }]);
+
+    return SoundButton;
+}(GameElement);
 
 var Game = function () {
     function Game(matrix) {
@@ -268,6 +299,11 @@ var Game = function () {
             return this.playing;
         }
     }, {
+        key: 'matrix',
+        get: function get() {
+            return this._matrix;
+        }
+    }, {
         key: 'playing',
         set: function set(isPlaying) {
             this._playing = isPlaying;
@@ -279,7 +315,3 @@ var Game = function () {
 
     return Game;
 }();
-
-var res = new Button('actionButton1');
-
-console.log(res.element);

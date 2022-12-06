@@ -1,22 +1,3 @@
-function hidePopupButtons() {
-    const startGameButton = document.getElementById(ELEMENTS_IDS.startButton);
-    const winnerContainer = document.getElementById(
-        ELEMENTS_IDS.winnerContainer
-    );
-
-    addClasses(winnerContainer, 'off');
-    addClasses(startGameButton, 'off');
-}
-
-function resetGameButtons() {
-    //in class
-    const buttonsElements = document.querySelectorAll('.actionButton');
-
-    buttonsElements.forEach((element) => {
-        resetButton(element);
-    });
-}
-
 function lockEmptyButtons() {
     const emptyButtons = document.querySelectorAll('[name="empty"]');
 

@@ -12,7 +12,7 @@
         <div id="mainTitleContainer">
             <h1>Tic-Tac-Toe</h1>
         </div>
-        <div class="playing" id="winnerContainer">
+        <div class="off" id="winnerContainer">
             <p id="winnerText">Player ? is the Winner!</p>
         </div>
         <div id="turnsContainer">
@@ -24,7 +24,7 @@
                     id="soundButton"
                     src="./assets/pictures/toggle-sound-on.png"
                     alt="site's logo"
-                    onclick="toggleSound()"
+                    onclick="soundClick()"
                 />
             </div>
             <p class="playerTurn" id="playerOTurn">player O turn</p>
@@ -45,12 +45,11 @@
         </div>
         <p id="startButton" onclick="startGame()">Start-Playing</p>
     </body>
-    <script src="./scripts/classes.js"></script>
+    <script src="./scripts/classes-transpiled.js"></script>
     <script src="./scripts/variables.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/functions.js"></script>
     <script src="./scripts/functions-utils.js"></script>
-    <script src="./scripts/accessories.js"></script>
     <script src="./scripts/game-logic.js"></script>
     <script src="./scripts/game-logic-utils.js"></script>
 </html>

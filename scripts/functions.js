@@ -1,16 +1,3 @@
-function displayCurrentTurn() {
-    const playerOTurn = document.getElementById(ELEMENTS_IDS.playerOTurn);
-    const playerXTurn = document.getElementById(ELEMENTS_IDS.playerXTurn);
-
-    if (turn % 2) {
-        addClasses(playerXTurn, 'off');
-        removeClasses(playerOTurn, 'off');
-    } else {
-        addClasses(playerOTurn, 'off');
-        removeClasses(playerXTurn, 'off');
-    }
-}
-
 function changeButtonsToCurrentTurn() {
     const classToAdd = turn % 2 ? 'buttonO' : 'buttonX';
     const classToRemove = turn % 2 ? 'buttonX' : 'buttonO';
@@ -32,8 +19,15 @@ function changeButtonsToCurrentTurn() {
 }
 
 function resetGame() {
-    hidePopupButtons();
-    resetGameButtons();
+    {
+        startGameButton.turnOff();
+        winnerContainer.turnOff();
+        //hide popup buttons
+    }
+    {
+        ActionButton.resetAll();
+        //resetGameButtons
+    }
     isFinishedGame = false;
     turn = 1;
 }
