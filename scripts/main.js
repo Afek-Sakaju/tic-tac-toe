@@ -1,10 +1,15 @@
-/ *function startGame() {
+
+
+function startGame(){
+    
+}
+
+/* function startGame() {
     buttonSound('start');
     resetGame();
     changeButtonsToCurrentTurn();
     displayCurrentTurn();
 } */
-
 
 /* function chooseButton(place) {
     gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
