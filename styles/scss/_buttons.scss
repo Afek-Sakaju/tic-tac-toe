@@ -1,5 +1,13 @@
 .actionButton {
-    @include logo-centered-designed;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px dotted rgba(255, 255, 255, 0.815);
+    border-radius: $main-radius;
+    padding: 20px;
+    margin: 16px;
+    font-size: 30px;
+    height: 90px;
+    width: 100px;
     &.playing:not(.locked) {
         opacity: 0.38;
     }
@@ -10,16 +18,16 @@
 }
 
 .defaultLogo {
-    background-image: url('../../assets/thinking.png');
+    background-image: $Thinking-image-url;
     background-size: 105px;
 }
 
 .buttonO {
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/O.png');
+        background-image: $O-image-url;
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/O.png');
+        background-image: $O-image-url;
     }
     background-size: 135px;
 }
@@ -27,10 +35,10 @@
 .buttonX {
     background-size: 81px;
     &.locked:not(.gameOver) {
-        background-image: url('../../assets/X.png');
+        background-image: $X-image-url;
     }
     &:hover:not(.gameOver) {
-        background-image: url('../../assets/X.png');
+        background-image: $X-image-url;
     }
 }
 
@@ -38,29 +46,31 @@
     opacity: 1;
 }
 
-.startButton {
-    @include button-pop-up-middle;
-    @include button-pop-up-designed;
-    &.playing {
+#startButton {
+    @include button-pop-up;
+    @include button-main-design;
+    font-size: 2em;
+    &.off {
         visibility: hidden;
     }
 }
 
-.restartButton {
-    @include button-small-aligned-left;
-    @include button-small-designed;
+#restartButton {
+    @include center-items-flex-display;
+    @include button-main-design;
+    width: 157px;
+    height: 2.3em;
+    font-size: large;
+    margin: 0 13px 55px;
 }
 
 .winnerButton {
-    @include winnerButton;
+    animation: rotation infinite 1.4s ease-in-out;
 }
 
-.soundButton {
+#soundButton {
+    @include button-hover-affect;
     margin-left: 15px;
     height: 55px;
     width: 50px;
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
 }
