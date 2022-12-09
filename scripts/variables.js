@@ -1,15 +1,3 @@
-const ELEMENTS_IDS = {
-    mainTitleContainer: 'mainTitleContainer',
-    startButton: 'startButton',
-    turnsContainer: 'turnsContainer',
-    playerXTurn: 'playerXTurn',
-    playerOTurn: 'playerOTurn',
-    actionButton: (place) => `actionButton${place}`,
-    winnerContainer: 'winnerContainer',
-    winnerText: 'winnerText',
-    soundButton: 'soundButton',
-};
-
 const AB1 = new ActionButton('actionButton1');
 const AB2 = new ActionButton('actionButton2');
 const AB3 = new ActionButton('actionButton3');
@@ -43,12 +31,3 @@ let gameMatrix = [
 let turn = 1;
 let isFinishedGame = false;
 let isMute = false;
-
-
-const startGameButton = document.getElementById(ELEMENTS_IDS.startButton);
-const winnerContainer = document.getElementById(
-    ELEMENTS_IDS.winnerContainer
-);
-
-addClasses(winnerContainer, 'playing');
-addClasses(startGameButton, 'playing');
