@@ -56,7 +56,7 @@ class ActionButton extends GameElement {
     }
 
     static get allButtons() {
-        return mainGame.matrix.flat();
+        return gameMatrix.flat();
     }
 
     static toggleAll() {
@@ -98,9 +98,9 @@ class ActionButton extends GameElement {
         });
     }
 
-    constructor() {
-        super();
-        this._sign;
+    constructor(id) {
+        super(id);
+        this._sign = null;
     }
 
     lock() {

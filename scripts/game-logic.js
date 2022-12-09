@@ -13,7 +13,7 @@ function updatePlayerChoiceInMatrix(place) {
         default:
             j = 2;
     }
-    gameMatrix[j][i] = sign;
+    gameMatrix[j][i].sign = sign;
 
     turn++;
     isFinishedGame = isGameOver();

@@ -1,17 +1,26 @@
 function resetGameMatrix() {
-    gameMatrix = [
+    AB1.sign = null;
+    AB2.sign = null;
+    AB3.sign = null;
+    AB4.sign = null;
+    AB5.sign = null;
+    AB6.sign = null;
+    AB7.sign = null;
+    AB8.sign = null;
+    AB9.sign = null;
+    /* gameMatrix = [
         [null, null, null],
         [null, null, null],
         [null, null, null],
-    ];
+    ]; */
 }
 
 function winningRowCalc() {
     for (let i = 0; i < gameMatrix.length; i++) {
         if (
-            gameMatrix[i][0] !== null &&
-            gameMatrix[i][0] === gameMatrix[i][1] &&
-            gameMatrix[i][1] === gameMatrix[i][2]
+            gameMatrix[i][0].sign !== null &&
+            gameMatrix[i][0].sign === gameMatrix[i][1].sign &&
+            gameMatrix[i][1].sign === gameMatrix[i][2].sign
         ) {
             return i;
         }
@@ -34,9 +43,9 @@ function isWinnerByRow() {
 function winningColumnCalc() {
     for (let j = 0; j < gameMatrix.length; j++) {
         if (
-            gameMatrix[0][j] !== null &&
-            gameMatrix[0][j] === gameMatrix[1][j] &&
-            gameMatrix[1][j] === gameMatrix[2][j]
+            gameMatrix[0][j].sign !== null &&
+            gameMatrix[0][j].sign === gameMatrix[1][j].sign &&
+            gameMatrix[1][j].sign === gameMatrix[2][j].sign
         ) {
             return j;
         }
@@ -55,16 +64,16 @@ function isWinnerByColumn() {
 
 function winningSlantCalc() {
     if (
-        gameMatrix[0][0] !== null &&
-        gameMatrix[0][0] === gameMatrix[1][1] &&
-        gameMatrix[1][1] === gameMatrix[2][2]
+        gameMatrix[0][0].sign !== null &&
+        gameMatrix[0][0].sign === gameMatrix[1][1].sign &&
+        gameMatrix[1][1].sign === gameMatrix[2][2].sign
     )
         return 0;
 
     if (
-        gameMatrix[0][2] !== null &&
-        gameMatrix[0][2] === gameMatrix[1][1] &&
-        gameMatrix[1][1] === gameMatrix[2][0]
+        gameMatrix[0][2].sign !== null &&
+        gameMatrix[0][2].sign === gameMatrix[1][1].sign &&
+        gameMatrix[1][1].sign === gameMatrix[2][0].sign
     )
         return 1;
 
