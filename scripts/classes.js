@@ -19,7 +19,7 @@ class GameElement {
         }
     }
 
-    removeClass(classes) {
+    deleteClass(classes) {
         if (!(classes instanceof Array)) classes = [classes];
 
         for (const class1 of classes) {
@@ -46,7 +46,7 @@ class GameElement {
     }
 
     turnOn() {
-        this.removeClass('off');
+        this.deleteClass('off');
     }
 
     turnOff() {
@@ -72,7 +72,7 @@ class ActionButton extends GameElement {
             const isLocked = button.element.classList.contains('locked');
 
             if (!isLocked || isFinishedGame) {
-                button.removeClass([
+                button.deleteClass([
                     'defaultLogo',
                     'locked',
                     'winnerButton',
@@ -88,6 +88,7 @@ class ActionButton extends GameElement {
         ActionButton.allButtons.forEach((button) => {
             button.sign = null;
             button.turnOn();
+            button.deleteClass('locked');
             button.addAttribute({
                 onclick: `chooseButton(${button.id.charAt(12)})`,
             });
@@ -98,7 +99,6 @@ class ActionButton extends GameElement {
 
     static lockEmptyButtons() {
         ActionButton.emptyButtons.forEach((button) => {
-            button.turnOn();
             button.lock();
         });
     }
@@ -106,6 +106,14 @@ class ActionButton extends GameElement {
     constructor(id) {
         super(id);
         this._sign = null;
+    }
+
+    set sign(sign) {
+        this._sign = sign;
+    }
+
+    get sign() {
+        return this._sign;
     }
 
     lock() {
@@ -116,14 +124,6 @@ class ActionButton extends GameElement {
 
     highlight() {
         this.addClass('winnerButton');
-    }
-
-    set sign(sign) {
-        this._sign = sign;
-    }
-
-    get sign() {
-        return this._sign;
     }
 }
 
@@ -142,7 +142,7 @@ class SoundButton extends GameElement {
     }
 
     play(sound) {
-        if (this.isMute) return;
+        if (this.isMute && sound !== 'toggleOff') return;
         new Audio(`./assets/sounds/sound-${sound}.mp3`).play();
     }
 

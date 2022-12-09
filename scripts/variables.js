@@ -8,20 +8,6 @@ const AB7 = new ActionButton('actionButton7');
 const AB8 = new ActionButton('actionButton8');
 const AB9 = new ActionButton('actionButton9');
 
-const placeToIndex = {
-    // change to smaller function
-    // that calculates place easily
-    1: { i: 0, j: 0 },
-    2: { i: 0, j: 1 },
-    3: { i: 0, j: 2 },
-    4: { i: 1, j: 0 },
-    5: { i: 1, j: 1 },
-    6: { i: 1, j: 2 },
-    7: { i: 2, j: 0 },
-    8: { i: 2, j: 1 },
-    9: { i: 2, j: 2 },
-};
-
 const gameMatrix = [
     [AB1, AB2, AB3],
     [AB4, AB5, AB6],
