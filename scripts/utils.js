@@ -14,11 +14,25 @@ function placeToJ(place) {
 }
 
 function showCurrentTurn() {
-    if (turn % 2) {
+    if (currentSign() === 'O') {
         playerOTurn.turnOn();
         playerXTurn.turnOff();
     } else {
         playerOTurn.turnOff();
         playerXTurn.turnOn();
     }
+}
+
+function currentSign() {
+    return turn % 2 ? 'O' : 'X';
+}
+
+function showPopups(isDraw = false) {
+    if (!isDraw) {
+        winnerText.element.innerText = `Player ${currentSign()} is the Winner!`;
+        winnerPopup.turnOn();
+    }
+
+    startGameButton.element.innerText = 'Play-Again';
+    startGameButton.turnOn();
 }

@@ -5,7 +5,7 @@
     border-radius: $main-radius;
     padding: 20px;
     margin: 16px;
-    font-size: 30px; 
+    font-size: 30px;
     height: 90px;
     width: 100px;
     &:not(.locked) {
@@ -23,10 +23,10 @@
 }
 
 .buttonO {
-    &.locked:not(.gameOver) {
+    &.locked:not(.off) {
         background-image: $O-image-url;
     }
-    &:hover:not(.gameOver) {
+    &:hover:not(.off) {
         background-image: $O-image-url;
     }
     background-size: 135px;
@@ -34,10 +34,10 @@
 
 .buttonX {
     background-size: 81px;
-    &.locked:not(.gameOver) {
+    &.locked:not(.off) {
         background-image: $X-image-url;
     }
-    &:hover:not(.gameOver) {
+    &:hover:not(.off) {
         background-image: $X-image-url;
     }
 }

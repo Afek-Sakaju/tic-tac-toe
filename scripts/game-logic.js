@@ -1,16 +1,15 @@
 function isGameOver() {
     if (isWinnerByRow() || isWinnerByColumn() || isWinnerBySlant()) {
         soundButton.play('win');
-        winnerPopup.turnOn();
-        startGameButton.element.innerText = 'Play-Again';
-        startGameButton.turnOn();
+        showPopups();
         return true;
-    } else if (turn < 10) {
+    } else if (turn < 9) {
         soundButton.play('action');
         return false;
     }
 
     soundButton.play('fullBoard');
+    showPopups(true);
     return true;
 }
 

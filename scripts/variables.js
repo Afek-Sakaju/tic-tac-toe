@@ -31,6 +31,7 @@ const gameMatrix = [
 const soundButton = new SoundButton('soundButton');
 const startGameButton = new GameElement('startButton');
 const winnerPopup = new GameElement('winnerContainer');
+const winnerText = new GameElement('winnerText');
 const playerOTurn = new GameElement('playerOTurn');
 const playerXTurn = new GameElement('playerXTurn');
 
