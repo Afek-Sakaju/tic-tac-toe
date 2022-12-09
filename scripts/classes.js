@@ -118,6 +118,10 @@ class ActionButton extends GameElement {
         this.deleteAttribute(['onclick', 'name']);
     }
 
+    highlight() {
+        this.addClass('winnerButton');
+    }
+
     set sign(sign) {
         this._sign = sign;
     }

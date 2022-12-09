@@ -14,16 +14,23 @@ function startGame() {
 } */
 
 function chooseButton(place) {
-    gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
-    //improve this
+    gameMatrix[placeToI(place)][placeToJ(place)].lock();
+    gameMatrix[placeToI(place)][placeToJ(place)].sign = turn % 2 ? 0 : 1;
 
-    
+    turn++;
+
+    //updatePlayerChoiceInMatrix(place);
+    if (isGameOver()) {
+        isFinishedGame = true;
+    } else {
+        ActionButton.toggleAll();
+        showCurrentTurn();
+    }
 }
 
 /* function chooseButton(place) {
     gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
     //lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
-
     updatePlayerChoiceInMatrix(place);
     
     if (isFinishedGame === true) {
