@@ -1,6 +1,5 @@
 function updatePlayerChoiceInMatrix(place) {
-    const sign = turn % 2 ? 0 : 1;
-    const i = (place - 1) % 3;
+    /*const i = (place - 1) % 3;
     let j;
 
     switch (true) {
@@ -13,22 +12,25 @@ function updatePlayerChoiceInMatrix(place) {
         default:
             j = 2;
     }
-    gameMatrix[j][i].sign = sign;
+    gameMatrix[j][i].sign = turn % 2 ? 0 : 1;*/
+
+    gameMatrix[placeToIndex[place].i][placeToIndex[place].j] = turn % 2 ? 0 : 1;
 
     turn++;
+
     isFinishedGame = isGameOver();
 }
 
 function isGameOver() {
     if (isWinnerByRow() || isWinnerByColumn() || isWinnerBySlant()) {
-        buttonSound('win');
+        soundButton.play('win');
         declareWinner();
         return true;
     } else if (turn < 10) {
-        buttonSound('action');
+        soundButton.play('action');
         return false;
     }
 
-    buttonSound('fullBoard');
+    soundButton.play('fullBoard');
     return true;
 }
