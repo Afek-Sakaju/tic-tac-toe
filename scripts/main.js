@@ -6,8 +6,11 @@ function startGame() {
 }
 
 function chooseButton(place) {
-    lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
+    gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
+    //lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
+
     updatePlayerChoiceInMatrix(place);
+    
     if (isFinishedGame === true) {
         finishGame();
     } else {
