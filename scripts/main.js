@@ -1,7 +1,9 @@
-
-
-function startGame(){
-    
+function startGame() {
+    soundButton.play('start');
+    ActionButton.resetAll();
+    winnerPopup.turnOff();
+    startGameButton.turnOff();
+    showCurrentTurn();
 }
 
 /* function startGame() {
@@ -10,6 +12,13 @@ function startGame(){
     changeButtonsToCurrentTurn();
     displayCurrentTurn();
 } */
+
+function chooseButton(place) {
+    gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
+    //improve this
+
+    
+}
 
 /* function chooseButton(place) {
     gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();

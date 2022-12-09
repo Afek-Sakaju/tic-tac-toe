@@ -3,6 +3,10 @@ class GameElement {
         this._id = id;
     }
 
+    get id() {
+        return this._id;
+    }
+
     get element() {
         return document.getElementById(this._id);
     }
@@ -33,7 +37,7 @@ class GameElement {
         }
     }
 
-    removeAttribute(attributes) {
+    deleteAttribute(attributes) {
         if (!(attributes instanceof Array)) attributes = [attributes];
 
         for (const attribute of attributes) {
@@ -42,7 +46,7 @@ class GameElement {
     }
 
     turnOn() {
-        this.removeClassClass('off');
+        this.removeClass('off');
     }
 
     turnOff() {
@@ -65,36 +69,41 @@ class ActionButton extends GameElement {
         classes.remove = turn % 2 ? 'buttonX' : 'buttonO';
 
         ActionButton.allButtons.forEach((button) => {
-            if (!button.classList.contains('locked') || isFinishedGame) {
-                const b1 = new GameElement(button.id);
+            const isLocked = button.element.classList.contains('locked');
 
-                b1.removeClass([
+            if (!isLocked || isFinishedGame) {
+                button.removeClass([
                     'defaultLogo',
                     'locked',
                     'winnerButton',
                     classes.remove,
                 ]);
 
-                b1.addClass(classes.add);
+                button.addClass(classes.add);
             }
         });
     }
 
     static resetAll() {
-        ActionButton.allButtons.forEach((element) => {
-            resetButton(element);
+        ActionButton.allButtons.forEach((button) => {
+            button.sign = null;
+            button.addAttribute({
+                onclick: `chooseButton(${button.id.charAt(12)})`,
+            });
         });
+
+        ActionButton.toggleAll();
     }
 
     static lockEmptyButtons() {
         ActionButton.emptyButtons.forEach((button) => {
-            ActionButton.lock(button.id);
+            button.lock();
         });
     }
 
     static lockAllButtons() {
         ActionButton.allButtons.forEach((button) => {
-            ActionButton.lock(button.id);
+            button.lock();
         });
     }
 
@@ -106,7 +115,7 @@ class ActionButton extends GameElement {
     lock() {
         if (isFinishedGame) this.addClass('gameOver');
         this.addClass('locked');
-        this.removeAttribute(['onclick', 'name']);
+        this.deleteAttribute(['onclick', 'name']);
     }
 
     set sign(sign) {
@@ -115,5 +124,42 @@ class ActionButton extends GameElement {
 
     get sign() {
         return this._sign;
+    }
+}
+
+class SoundButton extends GameElement {
+    constructor(id) {
+        super(id);
+        this._isMute = false;
+    }
+
+    get isMute() {
+        return this._isMute;
+    }
+
+    set isMute(bool) {
+        this._isMute = bool;
+    }
+
+    play(sound) {
+        new Audio(`./assets/sounds/sound-${sound}.mp3`).play();
+    }
+
+    toggleSound() {
+        if (!this.isMute) {
+            this.isMute = true;
+            this.play('toggleOff');
+            super.deleteAttribute('src');
+            super.addAttribute({
+                src: './assets/pictures/toggle-sound-off.png',
+            });
+        } else {
+            this.isMute = false;
+            this.play('toggleOn');
+            super.deleteAttribute('src');
+            super.addAttribute({
+                src: './assets/pictures/toggle-sound-on.png',
+            });
+        }
     }
 }

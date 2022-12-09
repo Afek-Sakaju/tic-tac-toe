@@ -5,13 +5,13 @@
     border-radius: $main-radius;
     padding: 20px;
     margin: 16px;
-    font-size: 30px;
+    font-size: 30px; 
     height: 90px;
     width: 100px;
-    &.playing:not(.locked) {
+    &:not(.locked) {
         opacity: 0.38;
     }
-    &.playing:not(.locked):hover {
+    &:not(.locked):not(.defaultLogo):hover {
         cursor: pointer;
         opacity: 0.82;
     }

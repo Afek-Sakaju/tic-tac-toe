@@ -28,7 +28,11 @@ const gameMatrix = [
     [AB7, AB8, AB9],
 ];
 
-const soundButton = new SoundButton()
+const soundButton = new SoundButton('soundButton');
+const startGameButton = new GameElement('startButton');
+const winnerPopup = new GameElement('winnerContainer');
+const playerOTurn = new GameElement('playerOTurn');
+const playerXTurn = new GameElement('playerXTurn');
 
 let turn = 1;
 let isFinishedGame = false;

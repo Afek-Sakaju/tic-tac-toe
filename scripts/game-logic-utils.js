@@ -1,13 +1,5 @@
 function resetGameMatrix() {
-    AB1.sign = null;
-    AB2.sign = null;
-    AB3.sign = null;
-    AB4.sign = null;
-    AB5.sign = null;
-    AB6.sign = null;
-    AB7.sign = null;
-    AB8.sign = null;
-    AB9.sign = null;
+    ActionButton.resetAll();
     /* gameMatrix = [
         [null, null, null],
         [null, null, null],
