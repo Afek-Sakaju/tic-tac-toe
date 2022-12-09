@@ -10,6 +10,8 @@ const ELEMENTS_IDS = {
     soundButton: 'soundButton',
 };
 
+const ab1 = new ActionButton();
+
 let gameMatrix = [
     [null, null, null],
     [null, null, null],
