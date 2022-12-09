@@ -22,12 +22,13 @@ const placeToIndex = {
     9: { i: 2, j: 2 },
 };
 
-let gameMatrix = [
+const gameMatrix = [
     [AB1, AB2, AB3],
     [AB4, AB5, AB6],
     [AB7, AB8, AB9],
 ];
 
+const soundButton = new SoundButton()
+
 let turn = 1;
 let isFinishedGame = false;
-let isMute = false;
