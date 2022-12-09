@@ -1,45 +1,26 @@
 function startGame() {
+    turn = 1;
     soundButton.play('start');
     ActionButton.resetAll();
     winnerPopup.turnOff();
     startGameButton.turnOff();
     showCurrentTurn();
+    isFinishedGame = false;
 }
-
-/* function startGame() {
-    buttonSound('start');
-    resetGame();
-    changeButtonsToCurrentTurn();
-    displayCurrentTurn();
-} */
 
 function chooseButton(place) {
     gameMatrix[placeToI(place)][placeToJ(place)].lock();
-    gameMatrix[placeToI(place)][placeToJ(place)].sign = turn % 2 ? 0 : 1;
+    gameMatrix[placeToI(place)][placeToJ(place)].sign = currentSign();
 
-    turn++;
-
-    //updatePlayerChoiceInMatrix(place);
     if (isGameOver()) {
         isFinishedGame = true;
+        ActionButton.lockEmptyButtons();
     } else {
+        turn++;
         ActionButton.toggleAll();
         showCurrentTurn();
     }
 }
-
-/* function chooseButton(place) {
-    gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
-    //lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
-    updatePlayerChoiceInMatrix(place);
-    
-    if (isFinishedGame === true) {
-        finishGame();
-    } else {
-        changeButtonsToCurrentTurn();
-        displayCurrentTurn();
-    }
-} */
 
 /* function restartGame() {
     // restart only allowed after user start playing

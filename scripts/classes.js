@@ -56,7 +56,7 @@ class GameElement {
 
 class ActionButton extends GameElement {
     static get emptyButtons() {
-        return document.querySelectorAll('[name="empty"]');
+        return gameMatrix.flat().filter((e) => e.sign === null);
     }
 
     static get allButtons() {
@@ -87,6 +87,7 @@ class ActionButton extends GameElement {
     static resetAll() {
         ActionButton.allButtons.forEach((button) => {
             button.sign = null;
+            button.turnOn();
             button.addAttribute({
                 onclick: `chooseButton(${button.id.charAt(12)})`,
             });
@@ -97,12 +98,7 @@ class ActionButton extends GameElement {
 
     static lockEmptyButtons() {
         ActionButton.emptyButtons.forEach((button) => {
-            button.lock();
-        });
-    }
-
-    static lockAllButtons() {
-        ActionButton.allButtons.forEach((button) => {
+            button.turnOn();
             button.lock();
         });
     }
@@ -113,9 +109,9 @@ class ActionButton extends GameElement {
     }
 
     lock() {
-        if (isFinishedGame) this.addClass('gameOver');
+        if (isFinishedGame) this.turnOff();
         this.addClass('locked');
-        this.deleteAttribute(['onclick', 'name']);
+        this.deleteAttribute(['onclick']);
     }
 
     highlight() {
@@ -146,6 +142,7 @@ class SoundButton extends GameElement {
     }
 
     play(sound) {
+        if (this.isMute) return;
         new Audio(`./assets/sounds/sound-${sound}.mp3`).play();
     }
 
@@ -153,15 +150,15 @@ class SoundButton extends GameElement {
         if (!this.isMute) {
             this.isMute = true;
             this.play('toggleOff');
-            super.deleteAttribute('src');
-            super.addAttribute({
+            this.deleteAttribute('src');
+            this.addAttribute({
                 src: './assets/pictures/toggle-sound-off.png',
             });
         } else {
             this.isMute = false;
             this.play('toggleOn');
-            super.deleteAttribute('src');
-            super.addAttribute({
+            this.deleteAttribute('src');
+            this.addAttribute({
                 src: './assets/pictures/toggle-sound-on.png',
             });
         }
