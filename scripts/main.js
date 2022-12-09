@@ -8,6 +8,13 @@ function startGame() {
     isFinishedGame = false;
 }
 
+function restartGame() {
+    // restart allowed after only after started game
+    if (turn > 1) {
+        startGame();
+    }
+}
+
 function chooseButton(place) {
     gameMatrix[placeToI(place)][placeToJ(place)].lock();
     gameMatrix[placeToI(place)][placeToJ(place)].sign = currentSign();
@@ -21,27 +28,3 @@ function chooseButton(place) {
         showCurrentTurn();
     }
 }
-
-/* function restartGame() {
-    // restart only allowed after user start playing
-    if (turn !== 1) {
-        finishGame(true);
-        startGame();
-    }
-}*/
-
-/* function toggleSound() {
-    const soundButton = document.getElementById(ELEMENTS_IDS.soundButton);
-
-    if (!isMute) {
-        isMute = true;
-        buttonSound('toggleOff');
-        removeAttributes(soundButton, 'src');
-        addAttributes(soundButton, { src: './assets/toggle-sound-off.png' });
-    } else {
-        isMute = false;
-        buttonSound('toggleOn');
-        removeAttributes(soundButton, 'src');
-        addAttributes(soundButton, { src: './assets/toggle-sound-on.png' });
-    }
-} */
