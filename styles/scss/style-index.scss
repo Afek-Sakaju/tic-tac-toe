@@ -6,5 +6,7 @@
 @import 'keyframes';
 
 body {
-    @include main-body-designed;
+    font-family: mainFont;
+    color: $main-text-color;
+    background-color: rgb(0, 0, 6);
 }

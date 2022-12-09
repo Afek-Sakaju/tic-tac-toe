@@ -6,38 +6,29 @@
             type="text/css"
             href="styles/css/style-index.css"
         />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Audiowide"
-        />
         <title>Tic-Tac-Toe</title>
     </head>
     <body>
-        <div class="mainTitleContainer" id="mainTitleContainer">
+        <div id="mainTitleContainer">
             <h1>Tic-Tac-Toe</h1>
         </div>
-        <div class="winnerContainer playing" id="winnerContainer">
-            <p class="winnerText" id="winnerText">Player ? is the Winner!</p>
+        <div class="off" id="winnerContainer">
+            <p id="winnerText">Player ? is the Winner!</p>
         </div>
-        <div class="turnsDisplayContainer" id="turnsContainer">
+        <div id="turnsContainer">
             <div class="restartAndMuteContainer">
-                <span
-                    class="restartButton"
-                    id="restartButton"
-                    onclick="restartGame()"
-                >
+                <span id="restartButton" onclick="restartGame()">
                     Restart
                 </span>
                 <img
-                    class="soundButton"
                     id="soundButton"
-                    src="./assets/toggle-sound-on.png"
+                    src="./assets/pictures/toggle-sound-on.png"
                     alt="site's logo"
-                    onclick="toggleSound()"
+                    onclick="soundClick()"
                 />
             </div>
-            <p class="playerTurn myTurn" id="playerOTurn">player O turn</p>
-            <p class="playerTurn myTurn" id="playerXTurn">player X turn</p>
+            <p class="playerTurn" id="playerOTurn">player O turn</p>
+            <p class="playerTurn" id="playerXTurn">player X turn</p>
         </div>
         <div class="boardContainer">
             <div class="gameBoard">
@@ -52,16 +43,14 @@
                 <div class="actionButton defaultLogo" id="actionButton9"></div>
             </div>
         </div>
-        <p class="startButton" id="startButton" onclick="startGame()">
-            Start-Playing
-        </p>
+        <p id="startButton" onclick="startGame()">Start-Playing</p>
     </body>
     <script src="./scripts/classes.js"></script>
+    <script src="./scripts/accessories.js"></script>
     <script src="./scripts/variables.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/functions.js"></script>
     <script src="./scripts/functions-utils.js"></script>
-    <script src="./scripts/accessories.js"></script>
     <script src="./scripts/game-logic.js"></script>
     <script src="./scripts/game-logic-utils.js"></script>
 </html>

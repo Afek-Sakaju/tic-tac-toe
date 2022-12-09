@@ -1,21 +1,29 @@
 h1 {
-    @include main-title-aligned;
-    @include main-title-designed;
+    @include center-items-flex-display;
+    margin: 5px;
+    height: 80px;
+    width: 70%;
+    font-size: 70px;
+    @include big-title-designed;
 }
 
 .playAgainText {
-    @include text-pop-up-designed;
+    font-size: 2.2em;
 }
 
 .playerTurn {
-    @include text-player-turn-designed;
-    &:not(.myTurn) {
+    color: $main-text-color;
+    font-size: 2em;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    margin: 0 10px 10px;
+    &.off {
         opacity: 0.7;
     }
 }
 
-.winnerText {
-    @include main-title-designed;
+#winnerText {
+    @include big-title-designed;
     animation: anim-flipX 1.5s infinite alternate-reverse;
     font-size: 2.7em;
 }
