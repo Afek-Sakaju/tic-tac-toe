@@ -117,27 +117,3 @@ class ActionButton extends GameElement {
         return this._sign;
     }
 }
-
-class SoundButton extends GameElement {
-    constructor() {
-        super();
-    }
-
-    toggleSound() {
-        if (!isMute) {
-            isMute = true;
-            buttonSound('toggleOff');
-            this.removeAttribute('src');
-            this.addAttribute({
-                src: './assets/pictures/toggle-sound-off.png',
-            });
-        } else {
-            isMute = false;
-            buttonSound('toggleOn');
-            this.removeAttribute('src');
-            this.addAttribute({
-                src: './assets/pictures/toggle-sound-on.png',
-            });
-        }
-    }
-}

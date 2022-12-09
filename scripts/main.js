@@ -1,11 +1,12 @@
-function startGame() {
+/ *function startGame() {
     buttonSound('start');
     resetGame();
     changeButtonsToCurrentTurn();
     displayCurrentTurn();
-}
+} */
 
-function chooseButton(place) {
+
+/* function chooseButton(place) {
     gameMatrix[placeToIndex[place].i][placeToIndex[place].j].lock();
     //lockButtonFromAction(ELEMENTS_IDS.actionButton(place));
 
@@ -17,17 +18,17 @@ function chooseButton(place) {
         changeButtonsToCurrentTurn();
         displayCurrentTurn();
     }
-}
+} */
 
-function restartGame() {
+/* function restartGame() {
     // restart only allowed after user start playing
     if (turn !== 1) {
         finishGame(true);
         startGame();
     }
-}
+}*/
 
-function toggleSound() {
+/* function toggleSound() {
     const soundButton = document.getElementById(ELEMENTS_IDS.soundButton);
 
     if (!isMute) {
@@ -41,4 +42,4 @@ function toggleSound() {
         removeAttributes(soundButton, 'src');
         addAttributes(soundButton, { src: './assets/toggle-sound-on.png' });
     }
-}
+} */
