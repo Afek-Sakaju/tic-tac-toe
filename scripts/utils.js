@@ -14,7 +14,7 @@ function placeToJ(place) {
 }
 
 function showCurrentTurn() {
-    if (currentSign() === 'O') {
+    if (currentTurn === 'O') {
         playerOTurn.turnOn();
         playerXTurn.turnOff();
     } else {
@@ -23,13 +23,13 @@ function showCurrentTurn() {
     }
 }
 
-function currentSign() {
-    return turn % 2 ? 'O' : 'X';
+function swapTurn() {
+    currentTurn = currentTurn === 'O' ? 'X' : 'O';
 }
 
 function showPopups(isDraw = false) {
     if (!isDraw) {
-        winnerText.element.innerText = `Player ${currentSign()} is the Winner!`;
+        winnerText.element.innerText = `Player ${currentTurn} is the Winner!`;
         winnerPopup.turnOn();
     }
 

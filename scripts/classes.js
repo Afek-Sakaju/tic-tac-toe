@@ -65,8 +65,8 @@ class ActionButton extends GameElement {
 
     static toggleAll() {
         const classes = {};
-        classes.add = turn % 2 ? 'buttonO' : 'buttonX';
-        classes.remove = turn % 2 ? 'buttonX' : 'buttonO';
+        classes.add = currentTurn === 'O' ? 'buttonO' : 'buttonX';
+        classes.remove = currentTurn === 'O' ? 'buttonX' : 'buttonO';
 
         ActionButton.allButtons.forEach((button) => {
             const isLocked = button.element.classList.contains('locked');

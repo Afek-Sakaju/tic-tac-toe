@@ -1,4 +1,3 @@
-// this after change
 function isGameOver() {
     const metrixWinnerItems =
         getMatrixWinnersByRow() ||
@@ -10,7 +9,7 @@ function isGameOver() {
         metrixWinnerItems.forEach((item) => item.highlight());
         showPopups();
         return true;
-    } else if (turn < 9) {
+    } else if (!gameMatrix.flat().some((e) => e.sign)) {
         soundButton.play('action');
         return false;
     }
