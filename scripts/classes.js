@@ -91,7 +91,8 @@ class ActionButton extends GameElement {
             allButtons[i].turnOn();
             allButtons[i].deleteClass('locked');
 
-            if (!gameMatrix.flat().some((e) => e.sign)) {
+            const isClickable = allButtons[i].element.hasAttribute('onClick');
+            if (!isClickable) {
                 allButtons[i].addAttribute({
                     onclick: `chooseButton(${i})`,
                 });

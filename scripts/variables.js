@@ -22,4 +22,4 @@ const playerOTurn = new GameElement('playerOTurn');
 const playerXTurn = new GameElement('playerXTurn');
 
 let currentTurn = 'O';
-let isFinishedGame = false;
+let isFinishedGame = true;
