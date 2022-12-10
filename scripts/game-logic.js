@@ -1,6 +1,12 @@
+// this after change
 function isGameOver() {
-    if (isWinnerByRow() || isWinnerByColumn() || isWinnerBySlant()) {
+    const metrixWinnerItems =
+        getMatrixItemsWinnerByRow() || isWinnerByColumn() || isWinnerBySlant();
+
+    if (metrixWinnerItems) {
         soundButton.play('win');
+        // this after change
+        metrixWinnerItems.forEach((item) => item.highlight());
         showPopups();
         return true;
     } else if (turn < 9) {
@@ -13,17 +19,15 @@ function isGameOver() {
     return true;
 }
 
-function isWinnerByRow() {
+// this after change
+function getMatrixItemsWinnerByRow() {
     for (let i = 0; i < gameMatrix.length; i++) {
         if (
             gameMatrix[i][0].sign !== null &&
             gameMatrix[i][0].sign === gameMatrix[i][1].sign &&
             gameMatrix[i][1].sign === gameMatrix[i][2].sign
         ) {
-            gameMatrix[i][0].highlight();
-            gameMatrix[i][1].highlight();
-            gameMatrix[i][2].highlight();
-            return true;
+            return [gameMatrix[i][0], gameMatrix[i][1], gameMatrix[i][2]];
         }
     }
     return false;
