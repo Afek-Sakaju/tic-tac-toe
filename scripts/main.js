@@ -8,6 +8,8 @@ function startGame() {
     isFinishedGame = false;
 }
 
+//todo change gamelogic from counting turns to compare matrix
+
 function restartGame() {
     // restart allowed after only after started game
     if (turn > 1) {
@@ -15,7 +17,7 @@ function restartGame() {
     }
 }
 
-function chooseButton(place) {
+function chooseButton(event, position) {
     gameMatrix[placeToI(place)][placeToJ(place)].lock();
     gameMatrix[placeToI(place)][placeToJ(place)].sign = currentSign();
 

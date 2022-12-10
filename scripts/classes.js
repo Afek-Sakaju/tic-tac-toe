@@ -89,9 +89,9 @@ class ActionButton extends GameElement {
             button.sign = null;
             button.turnOn();
             button.deleteClass('locked');
-            button.addAttribute({
+            /*button.addAttribute({
                 onclick: `chooseButton(${button.id.charAt(12)})`,
-            });
+            });*/
         });
 
         ActionButton.toggleAll();
