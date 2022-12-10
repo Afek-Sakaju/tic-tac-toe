@@ -1,11 +1,12 @@
 // this after change
 function isGameOver() {
     const metrixWinnerItems =
-        getMatrixItemsWinnerByRow() || isWinnerByColumn() || isWinnerBySlant();
+        getMatrixWinnersByRow() ||
+        getMatrixWinnersByColumn() ||
+        getMatrixWinnersBySlant();
 
     if (metrixWinnerItems) {
         soundButton.play('win');
-        // this after change
         metrixWinnerItems.forEach((item) => item.highlight());
         showPopups();
         return true;
@@ -19,8 +20,7 @@ function isGameOver() {
     return true;
 }
 
-// this after change
-function getMatrixItemsWinnerByRow() {
+function getMatrixWinnersByRow() {
     for (let i = 0; i < gameMatrix.length; i++) {
         if (
             gameMatrix[i][0].sign !== null &&
@@ -33,32 +33,26 @@ function getMatrixItemsWinnerByRow() {
     return false;
 }
 
-function isWinnerByColumn() {
+function getMatrixWinnersByColumn() {
     for (let j = 0; j < gameMatrix.length; j++) {
         if (
             gameMatrix[0][j].sign !== null &&
             gameMatrix[0][j].sign === gameMatrix[1][j].sign &&
             gameMatrix[1][j].sign === gameMatrix[2][j].sign
         ) {
-            gameMatrix[0][j].highlight();
-            gameMatrix[1][j].highlight();
-            gameMatrix[2][j].highlight();
-            return true;
+            return [gameMatrix[0][j], gameMatrix[1][j], gameMatrix[2][j]];
         }
     }
     return false;
 }
 
-function isWinnerBySlant() {
+function getMatrixWinnersBySlant() {
     if (
         gameMatrix[0][0].sign !== null &&
         gameMatrix[0][0].sign === gameMatrix[1][1].sign &&
         gameMatrix[1][1].sign === gameMatrix[2][2].sign
     ) {
-        gameMatrix[0][0].highlight();
-        gameMatrix[1][1].highlight();
-        gameMatrix[2][2].highlight();
-        return true;
+        return [gameMatrix[0][0], gameMatrix[1][1], gameMatrix[2][2]];
     }
 
     if (
@@ -66,10 +60,7 @@ function isWinnerBySlant() {
         gameMatrix[0][2].sign === gameMatrix[1][1].sign &&
         gameMatrix[1][1].sign === gameMatrix[2][0].sign
     ) {
-        gameMatrix[0][2].highlight();
-        gameMatrix[1][1].highlight();
-        gameMatrix[2][0].highlight();
-        return true;
+        return [gameMatrix[0][2], gameMatrix[1][1], gameMatrix[2][0]];
     }
 
     return false;
