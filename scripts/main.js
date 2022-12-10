@@ -17,6 +17,12 @@ function restartGame() {
 }
 
 function chooseButton(position) {
+    const defaultLogoExists = gameMatrix
+        .flat()
+        .some((button) => button.element.classList.contains('defaultLogo'));
+
+    if (defaultLogoExists) return;
+
     gameMatrix.flat()[position].lock();
     gameMatrix.flat()[position].sign = currentTurn;
 
