@@ -8,6 +8,10 @@
 
 ### **Running the project :**
 
+**Requirements**
+
+-   _NodeJS_ version 18.1+
+
 **Command lines**
 
 -   **The command to run the project**
