@@ -23,7 +23,7 @@
 
 ### **Small peek to the game:**
 
-![Example-GIF](./readme-resources/game-peel.gif)
+![Example-GIF](./readme-resources/game-peek.gif)
 
 ---
 
