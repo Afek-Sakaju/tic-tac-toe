@@ -85,14 +85,18 @@ class ActionButton extends GameElement {
     }
 
     static resetAll() {
-        ActionButton.allButtons.forEach((button) => {
-            button.sign = null;
-            button.turnOn();
-            button.deleteClass('locked');
-            /*button.addAttribute({
-                onclick: `chooseButton(${button.id.charAt(12)})`,
-            });*/
-        });
+        const allButtons = ActionButton.allButtons;
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].sign = null;
+            allButtons[i].turnOn();
+            allButtons[i].deleteClass('locked');
+
+            if (!gameMatrix.flat().some((e) => e.sign)) {
+                allButtons[i].addAttribute({
+                    onclick: `chooseButton(${i})`,
+                });
+            }
+        }
 
         ActionButton.toggleAll();
     }
