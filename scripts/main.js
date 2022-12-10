@@ -1,5 +1,5 @@
 function startGame() {
-    turn = 1;
+    currentTurn = 'O';
     soundButton.play('start');
     ActionButton.resetAll();
     winnerPopup.turnOff();
@@ -11,21 +11,22 @@ function startGame() {
 //todo change gamelogic from counting turns to compare matrix
 
 function restartGame() {
+    const matrixNotEmpty = gameMatrix.flat().some((e) => e.sign !== null);
     // restart allowed after only after started game
-    if (turn > 1) {
+    if (matrixNotEmpty) {
         startGame();
     }
 }
 
-function chooseButton(event, position) {
-    gameMatrix[placeToI(place)][placeToJ(place)].lock();
-    gameMatrix[placeToI(place)][placeToJ(place)].sign = currentSign();
+function chooseButton(position) {
+    gameMatrix.flat()[position].lock();
+    gameMatrix.flat()[position].sign = currentTurn;
 
     if (isGameOver()) {
         isFinishedGame = true;
         ActionButton.lockEmptyButtons();
     } else {
-        turn++;
+        swapTurn();
         ActionButton.toggleAll();
         showCurrentTurn();
     }

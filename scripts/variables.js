@@ -21,5 +21,5 @@ const winnerText = new GameElement('winnerText');
 const playerOTurn = new GameElement('playerOTurn');
 const playerXTurn = new GameElement('playerXTurn');
 
-let turn = 1;
+let currentTurn = 'O';
 let isFinishedGame = false;
