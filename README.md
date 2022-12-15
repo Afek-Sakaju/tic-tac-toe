@@ -18,7 +18,7 @@
 
 -   **The command to run the project**
     -   `npm run start`<br /> (runs the project with _lite-server_, styled with the _css_ compiled files)
-    -   For developing the _sass_ style its necessary to install _sass_ with the following command:
+    -   For developing the _sass_ style its necessary to install _sass_ with the following command:<br />
         `npm install` <br />
         Than to compile the scss files into css you should run this script :<br />
         `"sass-compile": "sass styles/scss:styles/css"`
