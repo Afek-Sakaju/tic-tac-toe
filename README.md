@@ -4,6 +4,8 @@
 
 ### This is a web game project, that created with high strictness under the guidance of best practices and standards, a lot of work that summarize my knowladge about css + html + sass + scripts<br />
 
+#### Try it out: [Live-Demo](https://afektheminilearner.github.io/Tic-tac-toe/)
+
 ---
 
 ### **Running the project :**
