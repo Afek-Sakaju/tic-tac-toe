@@ -35,7 +35,7 @@
 
 -   [x] **Scripting** : the use of _js_ script files inside the client pages allowed me to interact with the page when the user click on a button or element.
 -   [x] **Hovering, animations and sound effects** : using effects while the user hover\clicks on some components & using _keyframes_ animations or sound effects inside the page makes the page more responsive and allow the user to feel better game experience, it improves all of the interaction with the game.
--   [x] **Dark-design** : **the dark theme** allows the game to be more **pleasant and comfort to the eye**, the game looks simple and it makes all of the neccessary elements of the game such as: the game board, the turns display, & other titles and popups **look more highlighted**.
+-   [x] **Dark-design** : this design allows the game to be more **pleasant and comfort to the eye**, the game looks simple and it makes all of the neccessary elements of the game such as: the game board, the turns display, & other titles and popups **look more highlighted**.
 -   [x] **Designing with precision on small aspects** : using features like shadows, borders, fonts, different opacity levels, proper sounds & pictures picking for this game, allowed me to improve the experience while playing it much more.
 -   [x] **high strictness** under the guidance of best practices and standards, a lot of work that summarize my knowladge about.
 
