@@ -1,7 +1,15 @@
 {
     "name": "tic-tac-toe",
+    "description": "This is a web-based tic-tac-toe game app for players to enjoy",
+    "author": "afek-sakaju",
+    "homepage": "https://github.com/afekTheMiniLearner/Tic-tac-toe#readme",
+    "keywords": [
+        "game",
+        "tic-tac-toe",
+        "noughts and crosses"
+    ],
     "version": "1.0.0",
-    "description": "",
+    "private": true,
     "main": "index.js",
     "scripts": {
         "start": "lite-server",
@@ -12,12 +20,10 @@
         "type": "git",
         "url": "git+https://github.com/afekTheMiniLearner/Tic-tac-toe.git"
     },
-    "author": "",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/afekTheMiniLearner/Tic-tac-toe/issues"
     },
-    "homepage": "https://github.com/afekTheMiniLearner/Tic-tac-toe#readme",
     "devDependencies": {
         "gh-pages": "^3.2.0",
         "lite-server": "^2.6.1",
