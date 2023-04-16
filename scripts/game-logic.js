@@ -1,14 +1,14 @@
 function isGameOver() {
-    const metrixWinnerItems =
+    const matrixWinnerItems =
         getMatrixWinnersByRow() ||
         getMatrixWinnersByColumn() ||
         getMatrixWinnersBySlant();
 
     const matrixNotFull = gameMatrix.flat().some((button) => !button.sign);
 
-    if (metrixWinnerItems) {
+    if (matrixWinnerItems) {
         soundButton.play('win');
-        metrixWinnerItems.forEach((item) => item.highlight());
+        matrixWinnerItems.forEach((item) => item.highlight());
         showPopups();
         return true;
     } else if (matrixNotFull) {
