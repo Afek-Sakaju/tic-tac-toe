@@ -8,12 +8,7 @@ h1 {
     user-select: none;
 }
 
-.playAgainText {
-    font-size: 2.2em;
-    user-select: none;
-}
-
-.playerTurn {
+.player-turn {
     color: $main-text-color;
     font-size: 2em;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
@@ -25,9 +20,9 @@ h1 {
     }
 }
 
-#winnerText {
+#winner-text {
     @include big-title-designed;
-    animation: anim-flipX 1.5s infinite alternate-reverse;
+    animation: flip 1.5s infinite alternate-reverse;
     font-size: 2.7em;
     user-select: none;
 }

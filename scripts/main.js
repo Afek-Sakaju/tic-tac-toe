@@ -19,7 +19,7 @@ function restartGame() {
 function chooseButton(position) {
     const defaultLogoExists = gameMatrix
         .flat()
-        .some((button) => button.element.classList.contains('defaultLogo'));
+        .some((button) => button.element.classList.contains('default-logo'));
 
     if (defaultLogoExists) return;
 

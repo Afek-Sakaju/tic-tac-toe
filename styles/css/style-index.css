@@ -2,7 +2,7 @@
   font-family: mainFont;
   src: url(../../assets/fonts/Tomorrow-Medium.ttf);
 }
-#mainTitleContainer {
+#main-title-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,14 +10,14 @@
   width: 100%;
 }
 
-.boardContainer {
+.board-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 45px;
 }
 
-.gameBoard {
+.game-board {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,14 +30,14 @@
   border-radius: 20px;
 }
 
-#turnsContainer {
+#turns-container {
   display: flex;
   flex-direction: column;
   position: absolute;
   margin-left: 15px;
 }
 
-#winnerContainer {
+#winner-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,11 +52,11 @@
   top: 18%;
   left: 85.5%;
 }
-#winnerContainer.off {
+#winner-container.off {
   visibility: hidden;
 }
 
-.restartAndMuteContainer {
+.left-side-buttons-container {
   display: flex;
   flex-direction: row;
 }
@@ -75,12 +75,7 @@ h1 {
   user-select: none;
 }
 
-.playAgainText {
-  font-size: 2.2em;
-  user-select: none;
-}
-
-.playerTurn {
+.player-turn {
   color: rgb(94, 86, 238);
   font-size: 2em;
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
@@ -88,20 +83,20 @@ h1 {
   margin: 0 10px 10px;
   user-select: none;
 }
-.playerTurn.off {
+.player-turn.off {
   opacity: 0.7;
 }
 
-#winnerText {
+#winner-text {
   font-weight: bolder;
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.084);
   text-shadow: 0 1px 1.5px white;
-  animation: anim-flipX 1.5s infinite alternate-reverse;
+  animation: flip 1.5s infinite alternate-reverse;
   font-size: 2.7em;
   user-select: none;
 }
 
-.actionButton {
+.action-button {
   background-repeat: no-repeat;
   background-position: center;
   border: 2px dotted rgba(255, 255, 255, 0.815);
@@ -112,36 +107,36 @@ h1 {
   height: 90px;
   width: 100px;
 }
-.actionButton:not(.locked) {
+.action-button:not(.locked) {
   opacity: 0.38;
 }
-.actionButton:not(.locked):not(.defaultLogo):hover {
+.action-button:not(.locked):not(.default-logo):hover {
   cursor: pointer;
   opacity: 0.82;
 }
 
-.defaultLogo {
+.default-logo {
   background-image: url("../../assets/pictures/thinking.png");
   background-size: 105px;
 }
 
-.buttonO {
+.button-o {
   background-size: 135px;
 }
-.buttonO.locked:not(.off) {
+.button-o.locked:not(.off) {
   background-image: url("../../assets/pictures/O.png");
 }
-.buttonO:hover:not(.off) {
+.button-o:hover:not(.off) {
   background-image: url("../../assets/pictures/O.png");
 }
 
-.buttonX {
+.button-x {
   background-size: 81px;
 }
-.buttonX.locked:not(.off) {
+.button-x.locked:not(.off) {
   background-image: url("../../assets/pictures/X.png");
 }
-.buttonX:hover:not(.off) {
+.button-x:hover:not(.off) {
   background-image: url("../../assets/pictures/X.png");
 }
 
@@ -149,7 +144,7 @@ h1 {
   opacity: 1;
 }
 
-#startButton {
+#start-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,15 +161,15 @@ h1 {
   font-size: 2em;
   user-select: none;
 }
-#startButton:hover {
+#start-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-#startButton.off {
+#start-button.off {
   visibility: hidden;
 }
 
-#restartButton {
+#restart-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,21 +183,21 @@ h1 {
   margin: 0 13px 55px;
   user-select: none;
 }
-#restartButton:hover {
+#restart-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.winnerButton {
+.winner-button {
   animation: rotation infinite 1.4s ease-in-out;
 }
 
-#soundButton {
+#sound-button {
   margin-left: 15px;
   height: 55px;
   width: 50px;
 }
-#soundButton:hover {
+#sound-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -221,7 +216,7 @@ h1 {
     transform: rotate(35deg);
   }
 }
-@keyframes anim-flipX {
+@keyframes flip {
   0% {
     opacity: 0;
     transform: rotateX(90deg);
