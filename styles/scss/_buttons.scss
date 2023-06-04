@@ -50,6 +50,7 @@
     @include button-pop-up;
     @include button-main-design;
     font-size: 2em;
+    user-select: none;
     &.off {
         visibility: hidden;
     }
@@ -62,6 +63,7 @@
     height: 2.3em;
     font-size: large;
     margin: 0 13px 55px;
+    user-select: none;
 }
 
 .winnerButton {
