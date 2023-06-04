@@ -65,17 +65,17 @@ class ActionButton extends GameElement {
 
     static toggleAll() {
         const classes = {};
-        classes.add = currentTurn === 'O' ? 'buttonO' : 'buttonX';
-        classes.remove = currentTurn === 'O' ? 'buttonX' : 'buttonO';
+        classes.add = currentTurn === 'O' ? 'button-o' : 'button-x';
+        classes.remove = currentTurn === 'O' ? 'button-x' : 'button-o';
 
         ActionButton.allButtons.forEach((button) => {
             const isLocked = button.element.classList.contains('locked');
 
             if (!isLocked || isFinishedGame) {
                 button.deleteClass([
-                    'defaultLogo',
+                    'default-logo',
                     'locked',
-                    'winnerButton',
+                    'winner-button',
                     classes.remove,
                 ]);
 
@@ -128,7 +128,7 @@ class ActionButton extends GameElement {
     }
 
     highlight() {
-        this.addClass('winnerButton');
+        this.addClass('winner-button');
     }
 }
 

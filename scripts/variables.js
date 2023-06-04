@@ -14,10 +14,10 @@ const gameMatrix = [
     [AB7, AB8, AB9],
 ];
 
-const soundButton = new SoundButton('soundButton');
-const startGameButton = new GameElement('startButton');
-const winnerPopup = new GameElement('winnerContainer');
-const winnerText = new GameElement('winnerText');
+const soundButton = new SoundButton('sound-button');
+const startGameButton = new GameElement('start-button');
+const winnerPopup = new GameElement('winner-container');
+const winnerText = new GameElement('winner-text');
 const playerOTurn = new GameElement('playerOTurn');
 const playerXTurn = new GameElement('playerXTurn');
 

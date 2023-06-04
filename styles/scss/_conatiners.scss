@@ -1,15 +1,15 @@
-#mainTitleContainer {
+#main-title-container {
     @include center-items-flex-display;
     max-height: 200px;
     width: 100%;
 }
 
-.boardContainer {
+.board-container {
     @include center-items-flex-display;
     margin-top: 45px;
 }
 
-.gameBoard {
+.game-board {
     @include center-items-flex-display;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -20,14 +20,14 @@
     border-radius: $main-radius;
 }
 
-#turnsContainer {
+#turns-container {
     display: flex;
     flex-direction: column;
     position: absolute;
     margin-left: 15px;
 }
 
-#winnerContainer {
+#winner-container {
     @include button-pop-up;
     width: 500px;
     height: 200px;
@@ -38,7 +38,7 @@
     }
 }
 
-.restartAndMuteContainer {
+.left-side-buttons-container {
     display: flex;
     flex-direction: row;
 }
