@@ -11,9 +11,7 @@ function startGame() {
 function restartGame() {
     const matrixNotEmpty = gameMatrix.flat().some((e) => e.sign !== null);
     // restart allowed after only after started game
-    if (matrixNotEmpty) {
-        startGame();
-    }
+    if (matrixNotEmpty) startGame();
 }
 
 function chooseButton(position) {
