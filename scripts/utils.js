@@ -1,11 +1,5 @@
 function showCurrentTurn() {
-    if (currentTurn === 'O') {
-        playerOTurn.turnOn();
-        playerXTurn.turnOff();
-    } else {
-        playerOTurn.turnOff();
-        playerXTurn.turnOn();
-    }
+    currentTurnDisplay.element.innerText = `Its the turn of ${currentTurn} `;
 }
 
 function swapTurn() {

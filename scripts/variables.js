@@ -18,8 +18,7 @@ const soundButton = new SoundButton('sound-button');
 const startGameButton = new GameElement('start-button');
 const winnerPopup = new GameElement('winner-container');
 const winnerText = new GameElement('winner-text');
-const playerOTurn = new GameElement('playerOTurn');
-const playerXTurn = new GameElement('playerXTurn');
+const currentTurnDisplay = new GameElement('turn-display');
 
 let currentTurn = 'O';
 let isFinishedGame = true;
