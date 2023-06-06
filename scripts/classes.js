@@ -14,35 +14,29 @@ class GameElement {
     addClass(classes) {
         if (!(classes instanceof Array)) classes = [classes];
 
-        for (const class1 of classes) {
-            this.element.classList.add(class1);
-        }
+        classes.forEach((c) => this.element.classList.add(c));
     }
 
     deleteClass(classes) {
         if (!(classes instanceof Array)) classes = [classes];
 
-        for (const class1 of classes) {
-            this.element.classList.remove(class1);
-        }
+        classes.forEach((c) => this.element.classList.remove(c));
     }
 
     addAttribute(attributes) {
         if (!(attributes instanceof Array)) attributes = [attributes];
 
-        for (const attribute of attributes) {
-            for (const [name, value] of Object.entries(attribute)) {
+        attributes.forEach((attr) => {
+            Object.entries(attr).forEach(([name, value]) => {
                 this.element.setAttribute(name, value);
-            }
-        }
+            });
+        });
     }
 
     deleteAttribute(attributes) {
         if (!(attributes instanceof Array)) attributes = [attributes];
 
-        for (const attribute of attributes) {
-            this.element.removeAttribute(attribute);
-        }
+        attributes.forEach((attr) => this.element.removeAttribute(attr));
     }
 
     turnOn() {
@@ -86,26 +80,21 @@ class ActionButton extends GameElement {
 
     static resetAll() {
         const allButtons = ActionButton.allButtons;
-        for (let i = 0; i < allButtons.length; i++) {
-            allButtons[i].sign = null;
-            allButtons[i].turnOn();
-            allButtons[i].deleteClass('locked');
+        allButtons.forEach((btn) => {
+            btn.sign = null;
+            btn.turnOn();
+            btn.deleteClass('locked');
 
-            const isClickable = allButtons[i].element.hasAttribute('onClick');
+            const isClickable = btn.element.hasAttribute('onClick');
             if (!isClickable) {
-                allButtons[i].addAttribute({
-                    onclick: `chooseButton(${i})`,
-                });
+                btn.addAttribute({ onclick: `chooseButton(${i})` });
             }
-        }
-
+        });
         ActionButton.toggleAll();
     }
 
     static lockEmptyButtons() {
-        ActionButton.emptyButtons.forEach((button) => {
-            button.lock();
-        });
+        ActionButton.emptyButtons.forEach((btn) => btn.lock());
     }
 
     constructor(id) {
