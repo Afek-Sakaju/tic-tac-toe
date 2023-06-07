@@ -14,19 +14,19 @@ class GameElement {
     addClass(classes) {
         if (!(classes instanceof Array)) classes = [classes];
 
-        classes.forEach((c) => this.element.classList.add(c));
+        classes?.forEach((c) => this.element.classList.add(c));
     }
 
     deleteClass(classes) {
         if (!(classes instanceof Array)) classes = [classes];
 
-        classes.forEach((c) => this.element.classList.remove(c));
+        classes?.forEach((c) => this.element.classList.remove(c));
     }
 
     addAttribute(attributes) {
         if (!(attributes instanceof Array)) attributes = [attributes];
 
-        attributes.forEach((attr) => {
+        attributes?.forEach((attr) => {
             Object.entries(attr).forEach(([name, value]) => {
                 this.element.setAttribute(name, value);
             });
@@ -36,7 +36,7 @@ class GameElement {
     deleteAttribute(attributes) {
         if (!(attributes instanceof Array)) attributes = [attributes];
 
-        attributes.forEach((attr) => this.element.removeAttribute(attr));
+        attributes?.forEach((attr) => this.element.removeAttribute(attr));
     }
 
     turnOn() {
@@ -58,16 +58,17 @@ class ActionButton extends GameElement {
     }
 
     static toggleAll() {
-        const classes = {};
-        classes.add = currentTurn === 'O' ? 'player-1' : 'player-2';
-        classes.remove = currentTurn === 'O' ? 'player-2' : 'player-1';
+        const classes = {
+            add: currentTurn === 'O' ? 'player-1' : 'player-2',
+            remove: currentTurn === 'O' ? 'player-2' : 'player-1',
+        };
 
         ActionButton.allButtons.forEach((button) => {
             const isLocked = button.element.classList.contains('locked');
 
             if (!isLocked || isFinishedGame) {
                 button.deleteClass([
-                    'default-logo',
+                    'empty-logo',
                     'locked',
                     'winner-button',
                     classes.remove,
