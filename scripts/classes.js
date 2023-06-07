@@ -68,7 +68,7 @@ class ActionButton extends GameElement {
         this.deleteAttribute(['onclick']);
     }
 
-    highlight() {
+    winner() {
         this.addClass('winner-button');
     }
 }
