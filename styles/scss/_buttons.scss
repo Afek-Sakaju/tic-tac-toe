@@ -18,16 +18,16 @@
 }
 
 .default-logo {
-    background-image: $Thinking-image-url;
+    background-image: $Empty-image-url;
     background-size: 105px;
 }
 
 .button-o {
     &.locked:not(.off) {
-        background-image: $O-image-url;
+        background-image: $Player-2-image;
     }
     &:hover:not(.off) {
-        background-image: $O-image-url;
+        background-image: $Player-2-image;
     }
     background-size: 135px;
 }
@@ -35,10 +35,10 @@
 .button-x {
     background-size: 81px;
     &.locked:not(.off) {
-        background-image: $X-image-url;
+        background-image: $Player-1-image;
     }
     &:hover:not(.off) {
-        background-image: $X-image-url;
+        background-image: $Player-1-image;
     }
 }
 
@@ -48,22 +48,32 @@
 
 #start-button {
     @include button-pop-up;
-    @include button-main-design;
+    background-color: rgba(255, 255, 255, 0.895);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    border-radius: $main-radius;
+    opacity: 0.8;
     font-size: 2em;
     user-select: none;
+    cursor: pointer;
     &.off {
         visibility: hidden;
     }
 }
 
 #restart-button {
-    @include center-items-flex-display;
-    @include button-main-design;
+    @include flex-center;
+    background-color: rgba(255, 255, 255, 0.895);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
+    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    border-radius: $main-radius;
+    opacity: 0.8;
     width: 157px;
     height: 2.3em;
     font-size: large;
     margin: 0 13px 55px;
     user-select: none;
+    cursor: pointer;
 }
 
 .winner-button {
@@ -71,8 +81,9 @@
 }
 
 #sound-button {
-    @include button-hover-affect;
     margin-left: 15px;
     height: 55px;
     width: 50px;
+    opacity: 0.8;
+    cursor: pointer;
 }

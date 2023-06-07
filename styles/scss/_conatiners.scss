@@ -1,16 +1,16 @@
 #main-title-container {
-    @include center-items-flex-display;
+    @include flex-center;
     max-height: 200px;
     width: 100%;
 }
 
 .board-container {
-    @include center-items-flex-display;
+    @include flex-center;
     margin-top: 45px;
 }
 
 .game-board {
-    @include center-items-flex-display;
+    @include flex-center;
     display: grid;
     grid-template-columns: auto auto auto;
     height: 500px;

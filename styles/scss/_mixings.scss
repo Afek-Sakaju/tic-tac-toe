@@ -3,20 +3,20 @@
     src: url(../../assets/fonts/Tomorrow-Medium.ttf);
 }
 
-@mixin big-title-designed {
+@mixin title-design {
     font-weight: bolder;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.084);
     text-shadow: 0 1px 1.5px white;
 }
 
-@mixin center-items-flex-display {
+@mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @mixin button-pop-up {
-    @include center-items-flex-display;
+    @include flex-center;
     width: 9em;
     height: 3em;
     position: absolute;
@@ -25,17 +25,11 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin button-hover-affect {
-    &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-    }
-}
-
-@mixin button-main-design {
+@mixin button-design {
     background-color: rgba(255, 255, 255, 0.895);
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
     text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
     border-radius: $main-radius;
-    @include button-hover-affect;
+    opacity: 0.8;
+    cursor: pointer;
 }
