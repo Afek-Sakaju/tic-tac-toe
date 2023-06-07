@@ -1,7 +1,7 @@
 function startGame() {
     swapTurn();
     soundButton.play('start');
-    ActionButton.resetAll();
+    resetAllBoardButtons();
     hidePopUps();
     showCurrentTurn();
     isFinishedGame = false;
@@ -25,10 +25,10 @@ function chooseButton(position) {
 
     if (isGameOver()) {
         isFinishedGame = true;
-        disableEmptyButtons();
+        disableEmptyBoardButtons();
     } else {
         swapTurn();
-        ActionButton.toggleAll();
+        toggleCurrentSelection();
         showCurrentTurn();
     }
 }

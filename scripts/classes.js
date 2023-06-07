@@ -49,34 +49,8 @@ class GameElement {
 }
 
 class ActionButton extends GameElement {
-    static get allButtons() {
-        return gameMatrix.flat();
-    }
-
-    static toggleAll() {
-        const classes = {
-            add: currentTurn === 'O' ? 'player-1' : 'player-2',
-            remove: currentTurn === 'O' ? 'player-2' : 'player-1',
-        };
-
-        ActionButton.allButtons.forEach((button) => {
-            const isLocked = button.element.classList.contains('disabled');
-
-            if (!isLocked || isFinishedGame) {
-                button.deleteClass([
-                    'empty-logo',
-                    'disabled',
-                    'winner-button',
-                    classes.remove,
-                ]);
-
-                button.addClass(classes.add);
-            }
-        });
-    }
-
     static resetAll() {
-        const allButtons = ActionButton.allButtons;
+        const allButtons = getAllBoardButtons();
         allButtons.forEach((btn, i) => {
             btn.sign = null;
             btn.turnOn();
@@ -87,7 +61,7 @@ class ActionButton extends GameElement {
                 btn.addAttribute({ onclick: `chooseButton(${i})` });
             }
         });
-        ActionButton.toggleAll();
+        toggleCurrentSelection();
     }
 
     constructor(id) {
