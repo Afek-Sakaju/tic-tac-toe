@@ -8,10 +8,10 @@
     font-size: 30px;
     height: 90px;
     width: 100px;
-    &:not(.locked) {
+    &:not(.disabled) {
         opacity: 0.38;
     }
-    &:not(.locked):not(.empty-logo):hover {
+    &:not(.disabled):not(.empty-logo):hover {
         cursor: pointer;
         opacity: 0.82;
     }
@@ -23,7 +23,7 @@
 }
 
 .player-1 {
-    &.locked:not(.off) {
+    &.disabled:not(.off) {
         background-image: $Player-2-image;
     }
     &:hover:not(.off) {
@@ -34,7 +34,7 @@
 
 .player-2 {
     background-size: 81px;
-    &.locked:not(.off) {
+    &.disabled:not(.off) {
         background-image: $Player-1-image;
     }
     &:hover:not(.off) {
@@ -42,7 +42,7 @@
     }
 }
 
-.locked {
+.disabled {
     opacity: 1;
 }
 

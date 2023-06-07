@@ -11,3 +11,14 @@ function showPopups(isDraw = false) {
     startGameButton.element.innerText = 'Play-Again';
     startGameButton.turnOn();
 }
+
+function hidePopUps() {
+    winnerPopup.turnOff();
+    startGameButton.turnOff();
+}
+
+function disableEmptyButtons() {
+    gameMatrix.flat().forEach((btn) => {
+        if (btn.sign === null) btn.disable();
+    });
+}

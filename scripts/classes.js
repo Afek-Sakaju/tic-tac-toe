@@ -49,10 +49,6 @@ class GameElement {
 }
 
 class ActionButton extends GameElement {
-    static get emptyButtons() {
-        return gameMatrix.flat().filter((e) => e.sign === null);
-    }
-
     static get allButtons() {
         return gameMatrix.flat();
     }
@@ -64,12 +60,12 @@ class ActionButton extends GameElement {
         };
 
         ActionButton.allButtons.forEach((button) => {
-            const isLocked = button.element.classList.contains('locked');
+            const isLocked = button.element.classList.contains('disabled');
 
             if (!isLocked || isFinishedGame) {
                 button.deleteClass([
                     'empty-logo',
-                    'locked',
+                    'disabled',
                     'winner-button',
                     classes.remove,
                 ]);
@@ -84,7 +80,7 @@ class ActionButton extends GameElement {
         allButtons.forEach((btn, i) => {
             btn.sign = null;
             btn.turnOn();
-            btn.deleteClass('locked');
+            btn.deleteClass('disabled');
 
             const isClickable = btn.element.hasAttribute('onClick');
             if (!isClickable) {
@@ -92,10 +88,6 @@ class ActionButton extends GameElement {
             }
         });
         ActionButton.toggleAll();
-    }
-
-    static lockEmptyButtons() {
-        ActionButton.emptyButtons.forEach((btn) => btn.lock());
     }
 
     constructor(id) {
@@ -111,9 +103,9 @@ class ActionButton extends GameElement {
         return this._sign;
     }
 
-    lock() {
+    disable() {
         if (isFinishedGame) this.turnOff();
-        this.addClass('locked');
+        this.addClass('disabled');
         this.deleteAttribute(['onclick']);
     }
 
