@@ -49,21 +49,6 @@ class GameElement {
 }
 
 class ActionButton extends GameElement {
-    static resetAll() {
-        const allButtons = getAllBoardButtons();
-        allButtons.forEach((btn, i) => {
-            btn.sign = null;
-            btn.turnOn();
-            btn.deleteClass('disabled');
-
-            const isClickable = btn.element.hasAttribute('onClick');
-            if (!isClickable) {
-                btn.addAttribute({ onclick: `chooseButton(${i})` });
-            }
-        });
-        toggleCurrentSelection();
-    }
-
     constructor(id) {
         super(id);
         this._sign = null;
