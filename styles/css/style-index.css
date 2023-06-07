@@ -105,10 +105,10 @@ h1 {
   height: 90px;
   width: 100px;
 }
-.action-button:not(.locked) {
+.action-button:not(.disabled) {
   opacity: 0.38;
 }
-.action-button:not(.locked):not(.empty-logo):hover {
+.action-button:not(.disabled):not(.empty-logo):hover {
   cursor: pointer;
   opacity: 0.82;
 }
@@ -121,7 +121,7 @@ h1 {
 .player-1 {
   background-size: 135px;
 }
-.player-1.locked:not(.off) {
+.player-1.disabled:not(.off) {
   background-image: url("../../assets/pictures/O-White.png");
 }
 .player-1:hover:not(.off) {
@@ -131,14 +131,14 @@ h1 {
 .player-2 {
   background-size: 81px;
 }
-.player-2.locked:not(.off) {
+.player-2.disabled:not(.off) {
   background-image: url("../../assets/pictures/X-White.png");
 }
 .player-2:hover:not(.off) {
   background-image: url("../../assets/pictures/X-White.png");
 }
 
-.locked {
+.disabled {
   opacity: 1;
 }
 

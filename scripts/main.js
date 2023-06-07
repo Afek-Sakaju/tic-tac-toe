@@ -20,12 +20,12 @@ function chooseButton(position) {
 
     if (defaultLogoExists) return;
 
-    gameMatrix.flat()[position].lock();
+    gameMatrix.flat()[position].disable();
     gameMatrix.flat()[position].sign = currentTurn;
 
     if (isGameOver()) {
         isFinishedGame = true;
-        ActionButton.lockEmptyButtons();
+        disableEmptyButtons();
     } else {
         swapTurn();
         ActionButton.toggleAll();
