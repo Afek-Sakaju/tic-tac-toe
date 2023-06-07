@@ -1,5 +1,5 @@
 function startGame() {
-    currentTurn = 'O';
+    currentTurn = currentTurn === 'O' ? 'X' : 'O';
     soundButton.play('start');
     ActionButton.resetAll();
     winnerPopup.turnOff();
