@@ -122,23 +122,23 @@ h1 {
   background-size: 105px;
 }
 
-.button-o {
+.player-1 {
   background-size: 135px;
 }
-.button-o.locked:not(.off) {
+.player-1.locked:not(.off) {
   background-image: url("../../assets/pictures/O-White.png");
 }
-.button-o:hover:not(.off) {
+.player-1:hover:not(.off) {
   background-image: url("../../assets/pictures/O-White.png");
 }
 
-.button-x {
+.player-2 {
   background-size: 81px;
 }
-.button-x.locked:not(.off) {
+.player-2.locked:not(.off) {
   background-image: url("../../assets/pictures/X-White.png");
 }
-.button-x:hover:not(.off) {
+.player-2:hover:not(.off) {
   background-image: url("../../assets/pictures/X-White.png");
 }
 

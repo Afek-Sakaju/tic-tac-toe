@@ -22,7 +22,7 @@
     background-size: 105px;
 }
 
-.button-o {
+.player-1 {
     &.locked:not(.off) {
         background-image: $Player-2-image;
     }
@@ -32,7 +32,7 @@
     background-size: 135px;
 }
 
-.button-x {
+.player-2 {
     background-size: 81px;
     &.locked:not(.off) {
         background-image: $Player-1-image;
