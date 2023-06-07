@@ -49,10 +49,11 @@
 #start-button {
     @include button-pop-up;
     background-color: rgba(255, 255, 255, 0.895);
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    color: black;
     border-radius: $main-radius;
-    opacity: 0.8;
+    &:hover {
+        opacity: 0.8;
+    }
     font-size: 2em;
     user-select: none;
     cursor: pointer;
@@ -64,16 +65,17 @@
 #restart-button {
     @include flex-center;
     background-color: rgba(255, 255, 255, 0.895);
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-    text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
+    color: black;
     border-radius: $main-radius;
-    opacity: 0.8;
     width: 157px;
     height: 2.3em;
     font-size: large;
     margin: 0 13px 55px;
     user-select: none;
     cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .winner-button {
@@ -84,6 +86,8 @@
     margin-left: 15px;
     height: 55px;
     width: 50px;
-    opacity: 0.8;
+    &:hover {
+        opacity: 0.8;
+    }
     cursor: pointer;
 }

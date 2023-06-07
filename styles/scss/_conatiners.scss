@@ -41,4 +41,9 @@
 .left-side-buttons-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span {
+        margin: 0 auto;
+    }
 }
