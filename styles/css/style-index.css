@@ -30,7 +30,7 @@
   border-radius: 20px;
 }
 
-#turns-container {
+#side-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -56,7 +56,7 @@
   visibility: hidden;
 }
 
-.left-side-buttons-container {
+.side-buttons-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,6 +191,7 @@ h1 {
   margin-left: 15px;
   height: 55px;
   width: 50px;
+  user-select: none;
   cursor: pointer;
 }
 #sound-button:hover {

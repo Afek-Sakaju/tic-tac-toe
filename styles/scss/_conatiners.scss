@@ -20,7 +20,7 @@
     border-radius: $main-radius;
 }
 
-#turns-container {
+#side-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -38,6 +38,6 @@
     }
 }
 
-.left-side-buttons-container {
+.side-buttons-container {
     @include flex-center;
 }
