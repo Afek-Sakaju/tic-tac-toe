@@ -1,6 +1,6 @@
 h1 {
-    @include center-items-flex-display;
-    @include big-title-designed;
+    @include flex-center;
+    @include title-design;
     margin: 5px;
     height: 80px;
     width: 70%;
@@ -22,7 +22,7 @@ h1 {
 }
 
 #winner-text {
-    @include big-title-designed;
+    @include title-design;
     animation: flip 1.5s infinite alternate-reverse;
     font-size: 2.7em;
     user-select: none;

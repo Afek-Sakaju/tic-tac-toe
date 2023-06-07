@@ -117,7 +117,7 @@ h1 {
 }
 
 .default-logo {
-  background-image: url("../../assets/pictures/thinking.png");
+  background-image: url("../../assets/pictures/Empty.png");
   background-size: 105px;
 }
 
@@ -159,11 +159,9 @@ h1 {
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
   text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
   border-radius: 20px;
+  opacity: 0.8;
   font-size: 2em;
   user-select: none;
-}
-#start-button:hover {
-  opacity: 0.8;
   cursor: pointer;
 }
 #start-button.off {
@@ -178,14 +176,12 @@ h1 {
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
   text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
   border-radius: 20px;
+  opacity: 0.8;
   width: 157px;
   height: 2.3em;
   font-size: large;
   margin: 0 13px 55px;
   user-select: none;
-}
-#restart-button:hover {
-  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -197,8 +193,6 @@ h1 {
   margin-left: 15px;
   height: 55px;
   width: 50px;
-}
-#sound-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
