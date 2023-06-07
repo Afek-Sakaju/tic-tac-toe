@@ -126,20 +126,20 @@ h1 {
   background-size: 135px;
 }
 .button-o.locked:not(.off) {
-  background-image: url("../../assets/pictures/O.png");
+  background-image: url("../../assets/pictures/O-White.png");
 }
 .button-o:hover:not(.off) {
-  background-image: url("../../assets/pictures/O.png");
+  background-image: url("../../assets/pictures/O-White.png");
 }
 
 .button-x {
   background-size: 81px;
 }
 .button-x.locked:not(.off) {
-  background-image: url("../../assets/pictures/X.png");
+  background-image: url("../../assets/pictures/X-White.png");
 }
 .button-x:hover:not(.off) {
-  background-image: url("../../assets/pictures/X.png");
+  background-image: url("../../assets/pictures/X-White.png");
 }
 
 .locked {
