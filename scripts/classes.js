@@ -80,7 +80,7 @@ class ActionButton extends GameElement {
 
     static resetAll() {
         const allButtons = ActionButton.allButtons;
-        allButtons.forEach((btn) => {
+        allButtons.forEach((btn, i) => {
             btn.sign = null;
             btn.turnOn();
             btn.deleteClass('locked');
