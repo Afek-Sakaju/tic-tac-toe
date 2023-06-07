@@ -112,12 +112,12 @@ h1 {
 .action-button:not(.locked) {
   opacity: 0.38;
 }
-.action-button:not(.locked):not(.default-logo):hover {
+.action-button:not(.locked):not(.empty-logo):hover {
   cursor: pointer;
   opacity: 0.82;
 }
 
-.default-logo {
+.empty-logo {
   background-image: url("../../assets/pictures/Empty.png");
   background-size: 105px;
 }

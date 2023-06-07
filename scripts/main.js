@@ -1,9 +1,8 @@
 function startGame() {
-    currentTurn = currentTurn === 'O' ? 'X' : 'O';
+    swapTurn();
     soundButton.play('start');
     ActionButton.resetAll();
-    winnerPopup.turnOff();
-    startGameButton.turnOff();
+    hidePopUps();
     showCurrentTurn();
     isFinishedGame = false;
 }
@@ -17,7 +16,7 @@ function restartGame() {
 function chooseButton(position) {
     const defaultLogoExists = gameMatrix
         .flat()
-        .some((button) => button.element.classList.contains('default-logo'));
+        .some((button) => button.element.classList.contains('empty-logo'));
 
     if (defaultLogoExists) return;
 

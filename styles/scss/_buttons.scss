@@ -11,13 +11,13 @@
     &:not(.locked) {
         opacity: 0.38;
     }
-    &:not(.locked):not(.default-logo):hover {
+    &:not(.locked):not(.empty-logo):hover {
         cursor: pointer;
         opacity: 0.82;
     }
 }
 
-.default-logo {
+.empty-logo {
     background-image: $Empty-image-url;
     background-size: 105px;
 }
