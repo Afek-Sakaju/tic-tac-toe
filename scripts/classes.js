@@ -40,11 +40,11 @@ class GameElement {
         attributes?.forEach((attr) => this.element.removeAttribute(attr));
     }
 
-    toggleMode(modeName, shouldToggleOn) {
+    toggleMode(modeName, shouldToggleOff) {
         const classes = this?.modes?.[modeName];
 
-        if (shouldToggleOn) this.addClass(classes);
-        else this.deleteClass(classes);
+        if (shouldToggleOff) this.deleteClass(classes);
+        else this.addClass(classes);
     }
 
     turnOn() {
