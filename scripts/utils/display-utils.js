@@ -19,7 +19,7 @@ function hidePopUps() {
 
 function disableEmptyBoardButtons() {
     gameMatrix.flat().forEach((btn) => {
-        if (btn.sign === null) btn.disable();
+        if (btn.sign === null) btn.toggleMode(disabled);
     });
 }
 
