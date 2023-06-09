@@ -1,6 +1,7 @@
 class GameElement {
-    constructor(id) {
+    constructor(id, modes) {
         this._id = id;
+        this.modes = modes;
     }
 
     get id() {
@@ -12,19 +13,19 @@ class GameElement {
     }
 
     addClass(classes) {
-        if (!(classes instanceof Array)) classes = [classes];
+        classes = assertArray(classes);
 
         classes?.forEach((c) => this.element.classList.add(c));
     }
 
     deleteClass(classes) {
-        if (!(classes instanceof Array)) classes = [classes];
+        classes = assertArray(classes);
 
         classes?.forEach((c) => this.element.classList.remove(c));
     }
 
     addAttribute(attributes) {
-        if (!(attributes instanceof Array)) attributes = [attributes];
+        attributes = assertArray(attributes);
 
         attributes?.forEach((attr) => {
             Object.entries(attr).forEach(([name, value]) => {
@@ -34,9 +35,16 @@ class GameElement {
     }
 
     deleteAttribute(attributes) {
-        if (!(attributes instanceof Array)) attributes = [attributes];
+        attributes = assertArray(attributes);
 
         attributes?.forEach((attr) => this.element.removeAttribute(attr));
+    }
+
+    toggleMode(modeName, shouldToggleOn) {
+        const classes = this?.modes?.[modeName];
+
+        if (shouldToggleOn) this.addClass(classes);
+        else this.deleteClass(classes);
     }
 
     turnOn() {

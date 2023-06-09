@@ -2,6 +2,8 @@ function swapTurn() {
     currentTurn = currentTurn === 'O' ? 'X' : 'O';
 }
 
-function getAllBoardButtons() {
-    return gameMatrix.flat();
+const getAllBoardButtons = () => gameMatrix.flat();
+
+function assertArray(variable) {
+    return variable instanceof Array ? variable : [variable];
 }
