@@ -10,73 +10,79 @@
         <title>Tic-Tac-Toe</title>
     </head>
     <body>
-        <div id="main-title-container">
-            <h1>Tic-Tac-Toe</h1>
-        </div>
-        <div class="off" id="winner-container">
-            <p id="winner-text">Player ? is the Winner!</p>
-        </div>
-        <div class="side-container">
-            <div class="side-buttons-container">
-                <span id="restart-button" onclick="restartGame()">
-                    Restart
-                </span>
-                <img
-                    id="sound-button"
-                    src="./assets/pictures/toggle-sound-on.png"
-                    alt="site's logo"
-                    onclick="toggleSound()"
-                />
+        <div class="content-wrapper">
+            <div class="left-container">
+                <div class="side-buttons-container">
+                    <span id="restart-button" onclick="restartGame()">
+                        Restart
+                    </span>
+                    <img
+                        id="sound-button"
+                        src="./assets/pictures/toggle-sound-on.png"
+                        alt="site's logo"
+                        onclick="toggleSound()"
+                    />
+                </div>
+                <div class="turn-display-container">
+                    <p id="turn-display"></p>
+                </div>
             </div>
-            <p id="turn-display"></p>
-        </div>
-        <div class="board-container">
-            <div class="game-board">
-                <div
-                    id="actionButton1"
-                    class="action-button empty-logo"
-                    onclick="pickButton(0)"
-                ></div>
-                <div
-                    id="actionButton2"
-                    class="action-button empty-logo"
-                    onclick="pickButton(1)"
-                ></div>
-                <div
-                    id="actionButton3"
-                    class="action-button empty-logo"
-                    onclick="pickButton(2)"
-                ></div>
-                <div
-                    id="actionButton4"
-                    class="action-button empty-logo"
-                    onclick="pickButton(3)"
-                ></div>
-                <div
-                    id="actionButton5"
-                    class="action-button empty-logo"
-                    onclick="pickButton(4)"
-                ></div>
-                <div
-                    id="actionButton6"
-                    class="action-button empty-logo"
-                    onclick="pickButton(5)"
-                ></div>
-                <div
-                    id="actionButton7"
-                    class="action-button empty-logo"
-                    onclick="pickButton(6)"
-                ></div>
-                <div
-                    id="actionButton8"
-                    class="action-button empty-logo"
-                    onclick="pickButton(7)"
-                ></div>
-                <div
-                    id="actionButton9"
-                    class="action-button empty-logo"
-                    onclick="pickButton(8)"
-                ></div>
+            <div class="mid-container">
+                <h1>Tic-Tac-Toe</h1>
+                <div class="board-container">
+                    <div class="game-board">
+                        <div
+                            id="actionButton1"
+                            class="action-button empty-logo"
+                            onclick="pickButton(0)"
+                        ></div>
+                        <div
+                            id="actionButton2"
+                            class="action-button empty-logo"
+                            onclick="pickButton(1)"
+                        ></div>
+                        <div
+                            id="actionButton3"
+                            class="action-button empty-logo"
+                            onclick="pickButton(2)"
+                        ></div>
+                        <div
+                            id="actionButton4"
+                            class="action-button empty-logo"
+                            onclick="pickButton(3)"
+                        ></div>
+                        <div
+                            id="actionButton5"
+                            class="action-button empty-logo"
+                            onclick="pickButton(4)"
+                        ></div>
+                        <div
+                            id="actionButton6"
+                            class="action-button empty-logo"
+                            onclick="pickButton(5)"
+                        ></div>
+                        <div
+                            id="actionButton7"
+                            class="action-button empty-logo"
+                            onclick="pickButton(6)"
+                        ></div>
+                        <div
+                            id="actionButton8"
+                            class="action-button empty-logo"
+                            onclick="pickButton(7)"
+                        ></div>
+                        <div
+                            id="actionButton9"
+                            class="action-button empty-logo"
+                            onclick="pickButton(8)"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="off" id="winner-container">
+                    <p id="winner-text">Player ? is the Winner!</p>
+                </div>
             </div>
         </div>
         <p id="start-button" onclick="startGame()">Start-Playing</p>

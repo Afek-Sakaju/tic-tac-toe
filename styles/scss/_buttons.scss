@@ -48,15 +48,12 @@
 
 #start-button {
     @include button-pop-up;
-    background-color: rgba(255, 255, 255, 0.895);
-    color: black;
-    border-radius: $main-radius;
-    &:hover {
-        opacity: 0.8;
-    }
+    @include button-design;
+    position: absolute;
+    left: 50%;
+    top: 82%;
+    transform: translate(-50%, -50%);
     font-size: 2em;
-    user-select: none;
-    cursor: pointer;
     &.off {
         visibility: hidden;
     }
@@ -64,17 +61,10 @@
 
 #restart-button {
     @include flex-center;
-    background-color: rgba(255, 255, 255, 0.895);
-    color: black;
-    border-radius: $main-radius;
+    @include button-design;
     width: 157px;
     height: 2.3em;
     font-size: large;
-    user-select: none;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.8;
-    }
 }
 
 .winner-button {
