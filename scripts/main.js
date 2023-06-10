@@ -1,6 +1,6 @@
 function startGame() {
     swapTurn();
-    soundButton.play('start');
+    playSound('start');
     resetAllBoardButtons();
     hidePopUps();
     showCurrentTurn();
