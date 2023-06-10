@@ -7,16 +7,16 @@ function isGameOver() {
     const boardButtons = getAllBoardButtons();
     const matrixNotFull = boardButtons.some((button) => !button.sign);
     if (matrixWinnerItems) {
-        soundButton.play('win');
+        playSound('win');
         matrixWinnerItems.forEach((item) => item.toggleMode('winner'));
         showPopups();
         return true;
     } else if (matrixNotFull) {
-        soundButton.play('action');
+        playSound('action');
         return false;
     }
 
-    soundButton.play('fullBoard');
+    playSound('fullBoard');
     showPopups(true);
     return true;
 }

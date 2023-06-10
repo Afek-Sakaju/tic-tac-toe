@@ -63,7 +63,18 @@ function resetAllBoardButtons() {
     toggleCurrentSelection();
 }
 
-function play(sound) {
-    if (isSoundMuted && sound !== 'toggleOff') return;
+function playSound(sound) {
+    if (isSoundMuted && sound !== 'on') return;
     new Audio(`./assets/sounds/${sound}.mp3`).play();
+}
+
+function toggleSound() {
+    const toggleMode = isSoundMuted ? 'on' : 'off';
+
+    playSound(toggleMode);
+    isSoundMuted = !isSoundMuted;
+    soundButton.deleteAttribute('src');
+    soundButton.addAttribute({
+        src: `./assets/pictures/toggle-sound-${toggleMode}.png`,
+    });
 }

@@ -1,8 +1,8 @@
-const soundButton = new SoundButton('sound-button');
 const startGameButton = new GameElement('start-button');
 const winnerPopup = new GameElement('winner-container');
 const winnerText = new GameElement('winner-text');
 const currentTurnDisplay = new GameElement('turn-display');
+const soundButton = new GameElement('sound-button');
 
 const gameMatrix = [
     [1, 2, 3],
