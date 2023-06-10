@@ -12,7 +12,7 @@
 
 **Requirements**
 
--   _NodeJS_ version 18.1+
+-   _NodeJS_ version 16.4+
 
 **Command lines**
 
