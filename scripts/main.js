@@ -8,20 +8,21 @@ function startGame() {
 }
 
 function restartGame() {
-    const matrixNotEmpty = gameMatrix.flat().some((e) => e.sign !== null);
-
+    const boardButtons = getAllBoardButtons();
+    const matrixNotEmpty = boardButtons.some((e) => e.sign !== null);
     if (matrixNotEmpty) startGame();
 }
 
 function chooseButton(position) {
-    const defaultLogoExists = gameMatrix
-        .flat()
-        .some((button) => button.element.classList.contains('empty-logo'));
+    const boardButtons = getAllBoardButtons();
+    const defaultLogoExists = boardButtons.some((button) =>
+        button.element.classList.contains('empty-logo')
+    );
 
     if (defaultLogoExists) return;
 
-    gameMatrix.flat()[position].disable();
-    gameMatrix.flat()[position].sign = currentTurn;
+    boardButtons[position].disable();
+    boardButtons[position].sign = currentTurn;
 
     if (isGameOver()) {
         isFinishedGame = true;

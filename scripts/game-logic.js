@@ -4,8 +4,8 @@ function isGameOver() {
         getMatrixWinnersByColumn() ||
         getMatrixWinnersBySlant();
 
-    const matrixNotFull = gameMatrix.flat().some((button) => !button.sign);
-
+    const boardButtons = getAllBoardButtons();
+    const matrixNotFull = boardButtons.some((button) => !button.sign);
     if (matrixWinnerItems) {
         soundButton.play('win');
         matrixWinnerItems.forEach((item) => item.toggleMode('winner'));
