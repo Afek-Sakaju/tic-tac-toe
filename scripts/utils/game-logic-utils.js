@@ -1,26 +1,3 @@
-function isGameOver() {
-    const matrixWinnerItems =
-        getMatrixWinnersByRow() ||
-        getMatrixWinnersByColumn() ||
-        getMatrixWinnersBySlant();
-
-    const boardButtons = getAllBoardButtons();
-    const matrixNotFull = boardButtons.some((button) => !button.sign);
-    if (matrixWinnerItems) {
-        playSound('win');
-        matrixWinnerItems.forEach((item) => item.toggleMode('winner'));
-        showPopups();
-        return true;
-    } else if (matrixNotFull) {
-        playSound('action');
-        return false;
-    }
-
-    playSound('fullBoard');
-    showPopups(true);
-    return true;
-}
-
 function getMatrixWinnersByRow() {
     for (let i = 0; i < gameMatrix.length; i++) {
         if (

@@ -1,3 +1,22 @@
+function processGameCondition() {
+    const gameCondition = getGameCondition();
+
+    switch (gameCondition) {
+        case 2:
+            isFinishedGame = true;
+            playSound('win');
+            showPopups();
+            break;
+        case 1:
+            isFinishedGame = true;
+            playSound('fullBoard');
+            showPopups(true);
+            break;
+        default:
+            playSound('action');
+    }
+}
+
 function showCurrentTurn() {
     currentTurnDisplay.element.innerText = `Its the turn of ${currentTurn} `;
 }
@@ -62,11 +81,6 @@ function resetAllBoardButtons() {
         if (dontHaveOnClick) btn.addAttribute({ onclick: `pickButton(${i})` });
     });
     toggleCurrentSelection();
-}
-
-function playSound(sound) {
-    if (isSoundMuted && sound !== 'on') return;
-    new Audio(`./assets/sounds/${sound}.mp3`).play();
 }
 
 function toggleSound() {
