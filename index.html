@@ -12,20 +12,12 @@
     <body>
         <div class="content-wrapper">
             <div class="left-container">
-                <div class="side-buttons-container">
-                    <span id="restart-button" onclick="restartGame()">
-                        Restart
-                    </span>
-                    <img
-                        id="sound-button"
-                        src="./assets/pictures/toggle-sound-on.png"
-                        alt="site's logo"
-                        onclick="toggleSound()"
-                    />
-                </div>
                 <div class="turn-display-container">
-                    <p id="turn-display"></p>
+                    <span id="turn-display"></span>
                 </div>
+                <button id="restart-button" onclick="restartGame()">
+                    Restart
+                </button>
             </div>
             <div class="mid-container">
                 <h1>Tic-Tac-Toe</h1>
@@ -78,14 +70,19 @@
                         ></div>
                     </div>
                 </div>
-            </div>
-            <div class="right-container">
-                <div class="off" id="winner-container">
-                    <p id="winner-text">Player ? is the Winner!</p>
+                <div class="start-button-container">
+                    <p id="start-button" onclick="startGame()">Start-Playing</p>
                 </div>
             </div>
+            <div class="right-container">
+                <img
+                    id="sound-button"
+                    src="./assets/pictures/toggle-sound-on.png"
+                    alt="site's logo"
+                    onclick="toggleSound()"
+                />
+            </div>
         </div>
-        <p id="start-button" onclick="startGame()">Start-Playing</p>
     </body>
     <script src="./scripts/classes.js"></script>
     <script src="./scripts/variables/consts.js"></script>

@@ -11,7 +11,7 @@ function processGameCondition() {
         case 1:
             isFinishedGame = true;
             playSound('fullBoard');
-            showPopups(true);
+            showPopups();
             break;
         default:
             playSound('action');
@@ -22,18 +22,12 @@ function showCurrentTurn() {
     currentTurnDisplay.element.innerText = `The turn of ${currentTurn} `;
 }
 
-function showPopups(isDraw = false) {
-    if (!isDraw) {
-        winnerText.element.innerText = `Player ${currentTurn} is the Winner!`;
-        winnerPopup.toggleMode('off', true);
-    }
-
+function showPopups() {
     startGameButton.element.innerText = 'Play-Again';
     startGameButton.toggleMode('off', true);
 }
 
 function hidePopUps() {
-    winnerPopup.toggleMode('off');
     startGameButton.toggleMode('off');
 }
 

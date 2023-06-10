@@ -1,7 +1,11 @@
+button {
+    font-family: mainFont;
+}
+
 .action-button {
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px dotted rgba(255, 255, 255, 0.815);
+    border: 2px dotted rgba(white, 0.815);
     border-radius: $main-radius;
     padding: 20px;
     margin: 16px;
@@ -33,7 +37,7 @@
 }
 
 .player-2 {
-    background-size: 81px;
+    background-size: 95px;
     &.disabled:not(.off) {
         background-image: $Player-1-image;
     }
@@ -47,12 +51,9 @@
 }
 
 #start-button {
-    @include button-pop-up;
     @include button-design;
-    position: absolute;
-    left: 50%;
-    top: 82%;
-    transform: translate(-50%, -50%);
+    width: 9em;
+    height: 3em;
     font-size: 2em;
     &.off {
         visibility: hidden;
@@ -60,8 +61,8 @@
 }
 
 #restart-button {
-    @include flex-center;
     @include button-design;
+    margin: 15px 25px;
     width: 157px;
     height: 2.3em;
     font-size: large;
@@ -72,12 +73,12 @@
 }
 
 #sound-button {
-    margin-left: 15px;
     height: 55px;
     width: 50px;
+    margin: 15px 25px;
+    user-select: none;
+    cursor: pointer;
     &:hover {
         opacity: 0.8;
     }
-    user-select: none;
-    cursor: pointer;
 }
