@@ -27,10 +27,6 @@ function showPopups() {
     startGameButton.toggleMode('off', true);
 }
 
-function hidePopUps() {
-    startGameButton.toggleMode('off');
-}
-
 function disableEmptyBoardButtons() {
     const boardButtons = getAllBoardButtons();
     boardButtons
@@ -89,7 +85,9 @@ function toggleSound() {
     });
 }
 
-const displayWinningButtons = (buttons) => {
+const displayWinningButtons = () => {
     const winningBoardButtons = getWinnerButtons();
     winningBoardButtons.forEach((btn) => btn.toggleMode('winner'));
 };
+
+const hidePopUps = () => startGameButton.toggleMode('off');
