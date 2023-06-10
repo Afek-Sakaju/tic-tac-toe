@@ -1,10 +1,10 @@
 function startGame() {
-    swapTurn();
+    isFinishedGame = false;
     playSound('start');
+    swapTurn();
     resetAllBoardButtons();
     hidePopUps();
     showCurrentTurn();
-    isFinishedGame = false;
 }
 
 function restartGame() {
@@ -15,19 +15,17 @@ function restartGame() {
 
 function pickButton(position) {
     const boardButtons = getAllBoardButtons();
-    const defaultLogoExists = boardButtons.some((button) =>
-        button.element.classList.contains('empty-logo')
+    const isGameNotStarted = boardButtons.some((btn) =>
+        btn.element.classList.contains('empty-logo')
     );
-
-    if (defaultLogoExists) return;
+    if (isGameNotStarted) return;
 
     boardButtons[position].disable();
     boardButtons[position].sign = currentTurn;
 
-    if (isGameOver()) {
-        isFinishedGame = true;
-        disableEmptyBoardButtons();
-    } else {
+    processGameCondition();
+    if (isFinishedGame) disableEmptyBoardButtons();
+    else {
         swapTurn();
         toggleCurrentSelection();
         showCurrentTurn();
