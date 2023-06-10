@@ -62,3 +62,8 @@ function resetAllBoardButtons() {
     });
     toggleCurrentSelection();
 }
+
+function play(sound) {
+    if (isSoundMuted && sound !== 'toggleOff') return;
+    new Audio(`./assets/sounds/${sound}.mp3`).play();
+}
