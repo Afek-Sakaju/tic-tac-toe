@@ -3,20 +3,14 @@
     src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
 
-
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin button-pop-up {
-    @include flex-center;
-    width: 9em;
-    height: 3em;
-}
-
 @mixin button-design {
+    @include flex-center;
     background-color: rgba(white, 0.895);
     color: black;
     border-radius: $main-radius;

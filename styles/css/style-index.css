@@ -10,6 +10,7 @@
 }
 .content-wrapper > div {
   height: 100%;
+  width: 100%;
   flex: 1 1 auto;
 }
 
@@ -17,7 +18,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 45px;
+}
+
+.turn-display-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.start-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.right-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mid-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .game-board {
@@ -28,20 +56,13 @@
   grid-template-columns: auto auto auto;
   height: 500px;
   width: 550px;
+  margin-top: 20px;
   padding: 5px;
-  border: 5px solid rgba(255, 255, 255, 0.05);
+  border: 3px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
 }
 
-.turn-display-container {
-  min-width: 245px;
-  margin-left: 200px;
-}
-
 #winner-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 9em;
   height: 3em;
   width: 500px;
@@ -49,12 +70,6 @@
 }
 #winner-container.off {
   visibility: hidden;
-}
-
-.side-buttons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 h1 {
@@ -67,8 +82,7 @@ h1 {
 }
 
 #turn-display {
-  margin: 0;
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 2em;
   user-select: none;
 }
@@ -76,11 +90,8 @@ h1 {
   opacity: 0.7;
 }
 
-#winner-text {
-  font-weight: bolder;
-  animation: flip 1.5s infinite alternate-reverse;
-  font-size: 2.7em;
-  user-select: none;
+button {
+  font-family: mainFont;
 }
 
 .action-button {
@@ -118,7 +129,7 @@ h1 {
 }
 
 .player-2 {
-  background-size: 81px;
+  background-size: 95px;
 }
 .player-2.disabled:not(.off) {
   background-image: url("../../assets/pictures/X-White.png");
@@ -135,17 +146,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 9em;
-  height: 3em;
   background-color: rgba(255, 255, 255, 0.895);
   color: black;
   border-radius: 20px;
   user-select: none;
   cursor: pointer;
-  position: absolute;
-  left: 50%;
-  top: 82%;
-  transform: translate(-50%, -50%);
+  width: 9em;
+  height: 3em;
   font-size: 2em;
 }
 #start-button:hover {
@@ -164,6 +171,7 @@ h1 {
   border-radius: 20px;
   user-select: none;
   cursor: pointer;
+  margin: 15px 25px;
   width: 157px;
   height: 2.3em;
   font-size: large;
@@ -177,9 +185,9 @@ h1 {
 }
 
 #sound-button {
-  margin-left: 15px;
   height: 55px;
   width: 50px;
+  margin: 15px 25px;
   user-select: none;
   cursor: pointer;
 }
@@ -217,7 +225,7 @@ h1 {
 }
 body {
   font-family: mainFont;
-  color: rgb(255, 255, 255);
+  color: white;
   background-color: rgb(0, 0, 6);
 }
 
