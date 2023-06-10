@@ -6,6 +6,7 @@ function processGameCondition() {
             isFinishedGame = true;
             playSound('win');
             showPopups();
+            displayWinningButtons();
             break;
         case 1:
             isFinishedGame = true;
@@ -93,3 +94,8 @@ function toggleSound() {
         src: `./assets/pictures/toggle-sound-${toggleMode}.png`,
     });
 }
+
+const displayWinningButtons = (buttons) => {
+    const winningBoardButtons = getWinnerButtons();
+    winningBoardButtons.forEach((btn) => btn.toggleMode('winner'));
+};
