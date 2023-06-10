@@ -21,7 +21,7 @@
 }
 
 .turn-display-container {
-  width: 200px;
+  width: 210px;
   margin: 0 auto;
 }
 
@@ -84,6 +84,7 @@ h1 {
 #turn-display {
   color: white;
   font-size: 2em;
+  font-weight: 500;
   user-select: none;
 }
 #turn-display.off {
