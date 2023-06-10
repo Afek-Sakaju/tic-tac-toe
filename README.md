@@ -2,7 +2,7 @@
 
 <img src="./readme-resources/tic-tac-toe.png" width=100px height=100px align="right">
 
-### js + html + css(sass)<br />
+### This project was developed using JavaScript, HTML, and SCSS.<br />
 
 #### Try it out: [Live-Demo](https://afektheminilearner.github.io/Tic-tac-toe/)
 
@@ -17,33 +17,25 @@
 **Command lines**
 
 -   **The command to run the project**
-    -   `npm run start`<br /> (runs the project with _lite-server_, styled with the _css_ compiled files)
-    -   For developing the _sass_ style its necessary to install _sass_ with the following command:<br />
-        `npm install` <br />
-        Than to compile the scss files into css you should run this script :<br />
-        `"sass-compile": "sass styles/scss:styles/css"`
+
+    -   `npm run start`<br /> For running the project (with _lite-server_).
+    -   `npm install` <br /> Install all the necessary packages for developing the project.
+    -   `sass-compile`<br />Compile all the _SCSS_ files to _CSS_ files.<br/>
+    -   `npm run sass-watch-folder`<br />Automatically compiles SCSS files into CSS files whenever changes are detected.
 
 ---
 
-### **Small peek to the game:**
+### **Here's a sneak peek of the game:**
 
-![Example-GIF](./readme-resources/game-gif.gif)
+![Tic-Tac-Toe-GIF](./readme-resources/game-gif.gif)
 
 ---
 
-### Features that I used for the game:
+### Here are a few features that were implemented in the game:
 
--   [x] **Scripting** : the use of _js_ script files inside the client pages allowed me to interact with the page when the user click on a button or element.
--   [x] **Hovering, animations and sound effects** : using effects while the user hover\clicks on some components & using _keyframes_ animations or sound effects inside the page makes the page more responsive and allow the user to feel better game experience, it improves all of the interaction with the game.
--   [x] **Dark-design** : this design allows the game to be more **pleasant and comfort to the eye**, the game looks simple and it makes all of the neccessary elements of the game such as: the game board, the turns display, & other titles and popups **look more highlighted**.
--   [x] **Designing with precision on small aspects** : using features like shadows, borders, fonts, different opacity levels, proper sounds & pictures picking for this game, allowed me to improve the experience while playing it much more.
--   [x] **high strictness** under the guidance of best practices and standards, a lot of work that summarize my knowladge about.
-
-### Development tools:
-
--   [x] _**prettier**_ : fix annotation and organized code by standard with _prettier_ watcher.
--   [x] _**sass**_ : using _sass_ allowed me to use mixins, variable, and generally write more organized, simple, and readable code.
--   [x] _**lite-server**_ : watch any real-time changes in the _sass_ & _html_ files.
+-   [x] **Scripting** : The utilization of _JavaScript_ script files within the client pages to enable page interaction when the user clicks/hovers on a button or element.
+-   [x] **Animations and sound effects** : Incorporating effects when the user hovers or clicks on components, along with using keyframes animations and sound effects, significantly enhances the page's responsiveness.<br /> These additions contribute to a more immersive game experience.
+-   [x] **High strictness** : Following best practices and standards, a significant amount of work was dedicated to summarizing my knowledge of JavaScript, HTML, and SCSS.
 
 ## Author
 
