@@ -5,21 +5,24 @@ function showCurrentTurn() {
 function showPopups(isDraw = false) {
     if (!isDraw) {
         winnerText.element.innerText = `Player ${currentTurn} is the Winner!`;
-        winnerPopup.toggleMode('on');
+        winnerPopup.toggleMode('off', true);
     }
 
     startGameButton.element.innerText = 'Play-Again';
-    startGameButton.toggleMode('on');
+    startGameButton.toggleMode('off', true);
 }
 
 function hidePopUps() {
-    winnerPopup.toggleMode('on', true);
-    startGameButton.toggleMode('on', true);
+    winnerPopup.toggleMode('off');
+    startGameButton.toggleMode('off');
 }
 
 function disableEmptyBoardButtons() {
     gameMatrix.flat().forEach((btn) => {
-        if (btn.sign === null) btn.disable();
+        if (btn.sign === null) {
+            btn.toggleMode('off');
+            btn.disable();
+        }
     });
 }
 
@@ -29,8 +32,8 @@ function toggleCurrentSelection() {
         remove: currentTurn === 'O' ? 'player-2' : 'player-1',
     };
 
-    const allButtons = getAllBoardButtons();
-    allButtons.forEach((button) => {
+    const boardButtons = getAllBoardButtons();
+    boardButtons.forEach((button) => {
         const isLocked = button.element.classList.contains('disabled');
 
         if (!isLocked || isFinishedGame) {
@@ -47,11 +50,11 @@ function toggleCurrentSelection() {
 }
 
 function resetAllBoardButtons() {
-    const allButtons = getAllBoardButtons();
+    const boardButtons = getAllBoardButtons();
 
-    allButtons.forEach((btn, i) => {
+    boardButtons.forEach((btn, i) => {
         btn.sign = null;
-        btn.toggleMode('on');
+        btn.toggleMode('off', true);
         btn.deleteClass('disabled');
 
         const isClickable = btn.element.hasAttribute('onClick');
