@@ -8,9 +8,7 @@ const gameMatrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
-].map((row) =>
-    row.map((num) => new ActionButton(`actionButton${num}`, boardButtonsModes))
-);
+].map((row) => row.map((num) => new ActionButton(`actionButton${num}`)));
 
 let currentTurn = 'O';
 let isFinishedGame = true;
