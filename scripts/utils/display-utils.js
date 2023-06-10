@@ -18,12 +18,13 @@ function hidePopUps() {
 }
 
 function disableEmptyBoardButtons() {
-    gameMatrix.flat().forEach((btn) => {
-        if (btn.sign === null) {
+    const boardButtons = getAllBoardButtons();
+    boardButtons
+        .filter((btn) => btn.sign === null)
+        .forEach((btn) => {
             btn.toggleMode('off');
             btn.disable();
-        }
-    });
+        });
 }
 
 function toggleCurrentSelection() {
@@ -33,18 +34,18 @@ function toggleCurrentSelection() {
     };
 
     const boardButtons = getAllBoardButtons();
-    boardButtons.forEach((button) => {
-        const isLocked = button.element.classList.contains('disabled');
+    boardButtons.forEach((btn) => {
+        const isNotDisabled = !btn.element.classList.contains('disabled');
 
-        if (!isLocked || isFinishedGame) {
-            button.deleteClass([
+        if (isFinishedGame || isNotDisabled) {
+            btn.deleteClass([
                 'empty-logo',
                 'disabled',
                 'winner-button',
                 classes.remove,
             ]);
 
-            button.addClass(classes.add);
+            btn.addClass(classes.add);
         }
     });
 }
@@ -53,12 +54,12 @@ function resetAllBoardButtons() {
     const boardButtons = getAllBoardButtons();
 
     boardButtons.forEach((btn, i) => {
-        btn.sign = null;
         btn.toggleMode('off', true);
-        btn.deleteClass('disabled');
+        btn.toggleMode('disabled', true);
+        btn.sign = null;
 
-        const isClickable = btn.element.hasAttribute('onClick');
-        if (!isClickable) btn.addAttribute({ onclick: `chooseButton(${i})` });
+        const dontHaveOnClick = !btn.element.hasAttribute('onClick');
+        if (dontHaveOnClick) btn.addAttribute({ onclick: `pickButton(${i})` });
     });
     toggleCurrentSelection();
 }

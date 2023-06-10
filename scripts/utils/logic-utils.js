@@ -4,6 +4,4 @@ function swapTurn() {
 
 const getAllBoardButtons = () => gameMatrix.flat();
 
-function assertArray(variable) {
-    return variable instanceof Array ? variable : [variable];
-}
+const assertArray = (value) => (value instanceof Array ? value : [value]);
