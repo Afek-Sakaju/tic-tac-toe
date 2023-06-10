@@ -14,3 +14,4 @@ const gameMatrix = [
 
 let currentTurn = 'O';
 let isFinishedGame = true;
+let isSoundMuted = false;
