@@ -19,7 +19,7 @@ function processGameCondition() {
 }
 
 function showCurrentTurn() {
-    currentTurnDisplay.element.innerText = `Its the turn of ${currentTurn} `;
+    currentTurnDisplay.element.innerText = `The turn of ${currentTurn} `;
 }
 
 function showPopups(isDraw = false) {

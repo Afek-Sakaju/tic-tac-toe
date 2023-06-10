@@ -3,9 +3,6 @@
     src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
 
-@mixin title-design {
-    font-weight: bolder;
-}
 
 @mixin flex-center {
     display: flex;
@@ -17,15 +14,15 @@
     @include flex-center;
     width: 9em;
     height: 3em;
-    position: absolute;
-    left: 50%;
-    top: 82%;
-    transform: translate(-50%, -50%);
 }
 
 @mixin button-design {
-    background-color: rgba(255, 255, 255, 0.895);
+    background-color: rgba(white, 0.895);
+    color: black;
     border-radius: $main-radius;
-    opacity: 0.8;
+    &:hover {
+        opacity: 0.8;
+    }
+    user-select: none;
     cursor: pointer;
 }

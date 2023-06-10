@@ -2,12 +2,15 @@
   font-family: mainFont;
   src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
-#main-title-container {
+.content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 200px;
-  width: 100%;
+  height: 98vh;
+}
+.content-wrapper > div {
+  height: 100%;
+  flex: 1 1 auto;
 }
 
 .board-container {
@@ -30,11 +33,9 @@
   border-radius: 20px;
 }
 
-.side-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  margin-left: 15px;
+.turn-display-container {
+  min-width: 245px;
+  margin-left: 200px;
 }
 
 #winner-container {
@@ -43,14 +44,8 @@
   align-items: center;
   width: 9em;
   height: 3em;
-  position: absolute;
-  left: 50%;
-  top: 82%;
-  transform: translate(-50%, -50%);
   width: 500px;
   height: 200px;
-  top: 18%;
-  left: 85.5%;
 }
 #winner-container.off {
   visibility: hidden;
@@ -63,24 +58,18 @@
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   font-weight: bolder;
   margin: 5px;
-  height: 80px;
-  width: 70%;
-  font-size: 70px;
+  max-height: 85px;
+  font-size: 3.7em;
   user-select: none;
 }
 
 #turn-display {
-  text-align: center;
+  margin: 0;
   color: rgb(255, 255, 255);
   font-size: 2em;
-  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.257);
-  text-shadow: 0 1px 1.5px rgba(255, 255, 255, 0.59);
-  margin: 0 10px 10px;
   user-select: none;
 }
 #turn-display.off {
@@ -148,16 +137,16 @@ h1 {
   align-items: center;
   width: 9em;
   height: 3em;
+  background-color: rgba(255, 255, 255, 0.895);
+  color: black;
+  border-radius: 20px;
+  user-select: none;
+  cursor: pointer;
   position: absolute;
   left: 50%;
   top: 82%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.895);
-  color: black;
-  border-radius: 20px;
   font-size: 2em;
-  user-select: none;
-  cursor: pointer;
 }
 #start-button:hover {
   opacity: 0.8;
@@ -173,11 +162,11 @@ h1 {
   background-color: rgba(255, 255, 255, 0.895);
   color: black;
   border-radius: 20px;
+  user-select: none;
+  cursor: pointer;
   width: 157px;
   height: 2.3em;
   font-size: large;
-  user-select: none;
-  cursor: pointer;
 }
 #restart-button:hover {
   opacity: 0.8;
