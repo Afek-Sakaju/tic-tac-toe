@@ -54,8 +54,8 @@ class GameElement {
 }
 
 class ActionButton extends GameElement {
-    constructor(id) {
-        super(id);
+    constructor(id, modes) {
+        super(id, modes);
         this._sign = null;
     }
 
@@ -69,8 +69,8 @@ class ActionButton extends GameElement {
 }
 
 class SoundButton extends GameElement {
-    constructor(id) {
-        super(id);
+    constructor(id, modes) {
+        super(id, modes);
         this._isMute = false;
     }
 
