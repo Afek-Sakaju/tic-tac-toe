@@ -18,19 +18,13 @@ class GameElement {
     addClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => {
-            const isClassExists = this.element.classList.contains(c);
-            if (!isClassExists) this.element.classList.add(c);
-        });
+        classes?.forEach((c) => this.element.classList.add(c));
     }
 
     deleteClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => {
-            const isClassExists = this.element.classList.contains(c);
-            if (isClassExists) this.element.classList.remove(c);
-        });
+        classes?.forEach((c) => this.element.classList.remove(c));
     }
 
     addAttribute(attributes) {
