@@ -1,3 +1,3 @@
 const boardButtonsModes = {
-    disabled: 'disabled',
+    winner: 'winner-button',
 };

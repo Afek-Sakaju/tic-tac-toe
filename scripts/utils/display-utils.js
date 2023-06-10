@@ -5,21 +5,21 @@ function showCurrentTurn() {
 function showPopups(isDraw = false) {
     if (!isDraw) {
         winnerText.element.innerText = `Player ${currentTurn} is the Winner!`;
-        winnerPopup.turnOn();
+        winnerPopup.toggleMode('on');
     }
 
     startGameButton.element.innerText = 'Play-Again';
-    startGameButton.turnOn();
+    startGameButton.toggleMode('on');
 }
 
 function hidePopUps() {
-    winnerPopup.turnOff();
-    startGameButton.turnOff();
+    winnerPopup.toggleMode('on', true);
+    startGameButton.toggleMode('on', true);
 }
 
 function disableEmptyBoardButtons() {
     gameMatrix.flat().forEach((btn) => {
-        if (btn.sign === null) btn.toggleMode(disabled);
+        if (btn.sign === null) btn.disable();
     });
 }
 
@@ -51,7 +51,7 @@ function resetAllBoardButtons() {
 
     allButtons.forEach((btn, i) => {
         btn.sign = null;
-        btn.turnOn();
+        btn.toggleMode('on');
         btn.deleteClass('disabled');
 
         const isClickable = btn.element.hasAttribute('onClick');

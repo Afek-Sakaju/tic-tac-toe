@@ -47,12 +47,9 @@ class GameElement {
         else this.addClass(classes);
     }
 
-    turnOn() {
-        this.deleteClass('off');
-    }
-
-    turnOff() {
-        this.addClass('off');
+    disable() {
+        this.addClass('disabled');
+        this.deleteAttribute(['onclick']);
     }
 }
 
@@ -68,16 +65,6 @@ class ActionButton extends GameElement {
 
     get sign() {
         return this._sign;
-    }
-
-    disable() {
-        if (isFinishedGame) this.turnOff();
-        this.addClass('disabled');
-        this.deleteAttribute(['onclick']);
-    }
-
-    winner() {
-        this.addClass('winner-button');
     }
 }
 
