@@ -9,7 +9,7 @@ const gameMatrix = [
     [4, 5, 6],
     [7, 8, 9],
 ].map((row) =>
-    row.map((num) => new GameElement(`actionButton${num}`, boardButtonsModes))
+    row.map((num) => new ActionButton(`actionButton${num}`, boardButtonsModes))
 );
 
 let currentTurn = 'O';
