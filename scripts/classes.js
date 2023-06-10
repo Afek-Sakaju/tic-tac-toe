@@ -1,7 +1,10 @@
 class GameElement {
-    constructor(id, modes) {
+    static get modes() {
+        return GAME_ELEMENT_MODES;
+    }
+
+    constructor(id) {
         this._id = id;
-        this.modes = modes;
     }
 
     get id() {
@@ -15,13 +18,19 @@ class GameElement {
     addClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => this.element.classList.add(c));
+        classes?.forEach((c) => {
+            const isClassExists = this.element.classList.contains(c);
+            if (!isClassExists) this.element.classList.add(c);
+        });
     }
 
     deleteClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => this.element.classList.remove(c));
+        classes?.forEach((c) => {
+            const isClassExists = this.element.classList.contains(c);
+            if (isClassExists) this.element.classList.remove(c);
+        });
     }
 
     addAttribute(attributes) {
@@ -41,7 +50,7 @@ class GameElement {
     }
 
     toggleMode(modeName, shouldToggleOff) {
-        const classes = this?.modes?.[modeName];
+        const classes = GameElement.modes?.[modeName];
 
         if (shouldToggleOff) this.deleteClass(classes);
         else this.addClass(classes);

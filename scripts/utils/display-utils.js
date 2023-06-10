@@ -13,6 +13,7 @@ function showPopups(isDraw = false) {
 }
 
 function hidePopUps() {
+    debugger;
     winnerPopup.toggleMode('off');
     startGameButton.toggleMode('off');
 }

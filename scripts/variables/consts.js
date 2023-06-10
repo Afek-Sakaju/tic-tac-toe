@@ -1,4 +1,4 @@
-const boardButtonsModes = {
+const GAME_ELEMENT_MODES = {
     winner: 'winner-button',
     off: 'off',
 };
