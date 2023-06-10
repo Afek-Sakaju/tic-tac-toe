@@ -8,7 +8,7 @@ function isGameOver() {
 
     if (matrixWinnerItems) {
         soundButton.play('win');
-        matrixWinnerItems.forEach((item) => item.winner());
+        matrixWinnerItems.forEach((item) => item.toggleMode('winner'));
         showPopups();
         return true;
     } else if (matrixNotFull) {

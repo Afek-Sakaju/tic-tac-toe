@@ -20,7 +20,7 @@ function chooseButton(position) {
 
     if (defaultLogoExists) return;
 
-    gameMatrix.flat()[position].toggleMode(disabled);
+    gameMatrix.flat()[position].disable();
     gameMatrix.flat()[position].sign = currentTurn;
 
     if (isGameOver()) {
