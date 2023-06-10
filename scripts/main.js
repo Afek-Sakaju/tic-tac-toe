@@ -13,7 +13,7 @@ function restartGame() {
     if (matrixNotEmpty) startGame();
 }
 
-function chooseButton(position) {
+function pickButton(position) {
     const boardButtons = getAllBoardButtons();
     const defaultLogoExists = boardButtons.some((button) =>
         button.element.classList.contains('empty-logo')

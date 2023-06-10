@@ -57,7 +57,7 @@ class GameElement {
     }
 
     disable() {
-        this.addClass('disabled');
+        this.toggleMode('disabled');
         this.deleteAttribute(['onclick']);
     }
 }
