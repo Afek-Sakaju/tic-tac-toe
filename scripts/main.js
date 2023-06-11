@@ -8,18 +8,11 @@ function startGame() {
 }
 
 function restartGame() {
-    const boardButtons = getAllBoardButtons();
-    const matrixNotEmpty = boardButtons.some((e) => e.sign !== null);
-    if (matrixNotEmpty) startGame();
+    if (!isMatrixEmpty()) startGame();
 }
 
 function pickButton(position) {
     const boardButtons = getAllBoardButtons();
-    const isGameNotStarted = boardButtons.some((btn) =>
-        btn.element.classList.contains('empty-logo')
-    );
-    if (isGameNotStarted) return;
-
     boardButtons[position].disable();
     boardButtons[position].sign = currentTurn;
 
