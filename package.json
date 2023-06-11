@@ -2,7 +2,7 @@
     "name": "Tic-Tac-Toe",
     "description": "This is a web-based tic-tac-toe game app for players to enjoy",
     "author": "afek-sakaju",
-    "homepage": "https://github.com/afekTheMiniLearner/Tic-tac-toe#readme",
+    "homepage": "https://github.com/afekTheMiniLearner/Tic-Tac-Toe#readme",
     "keywords": [
         "game",
         "tic-tac-toe",
@@ -18,11 +18,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/afekTheMiniLearner/Tic-tac-toe.git"
+        "url": "git+https://github.com/afekTheMiniLearner/Tic-Tac-Toe.git"
     },
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/afekTheMiniLearner/Tic-tac-toe/issues"
+        "url": "https://github.com/afekTheMiniLearner/Tic-Tac-Toe/issues"
     },
     "devDependencies": {
         "gh-pages": "^3.2.0",
