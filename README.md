@@ -19,7 +19,7 @@
 
 -   `npm run start`<br /> For running the project (with _lite-server_).
 -   `npm install` <br /> Install all the necessary packages for developing the project.
--   `sass-compile`<br />Compile all the _SCSS_ files to _CSS_ files.<br/>
+-   `npm run sass-compile`<br />Compile all the _SCSS_ files to _CSS_ files.<br/>
 -   `npm run sass-watch-folder`<br />Automatically compiles SCSS files into CSS files whenever changes are detected.
 
 ---
