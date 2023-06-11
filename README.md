@@ -4,7 +4,7 @@
 
 ### This project was developed using JavaScript, HTML, and SCSS.<br />
 
-#### Try it out: [Live-Demo](https://afektheminilearner.github.io/Tic-tac-toe/)
+#### Try it out: [Live-Demo](https://afektheminilearner.github.io/Tic-Tac-Toe/)
 
 ---
 
