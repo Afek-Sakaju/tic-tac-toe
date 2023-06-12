@@ -4,7 +4,7 @@
 
 ### This project was developed using JavaScript, HTML, and SCSS.<br />
 
-#### Try it out: [Live-Demo](https://afektheminilearner.github.io/Tic-Tac-Toe/)
+#### Try it out: [Live-Demo](https://afektheminilearner.github.io/tic-tac-toe/)
 
 ---
 
@@ -26,7 +26,7 @@
 
 ### **Here's a sneak peek of the game:**
 
-![Tic-Tac-Toe-GIF](./readme-resources/game-gif.gif)
+![tic-tac-toe-GIF](./readme-resources/game-gif.gif)
 
 ---
 
