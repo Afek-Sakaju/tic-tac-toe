@@ -1,8 +1,4 @@
 class GameElement {
-    static get modes() {
-        return GAME_ELEMENT_MODES;
-    }
-
     constructor(id) {
         this._id = id;
     }
@@ -43,11 +39,9 @@ class GameElement {
         attributes.forEach((attr) => this.element.removeAttribute(attr));
     }
 
-    switchMode(modeName, shouldToggleOff) {
-        const classes = GameElement.modes?.[modeName];
-
-        if (shouldToggleOff) this.deleteClass(classes);
-        else this.addClass(classes);
+    switchMode(mode, shouldToggleOff) {
+        if (shouldToggleOff) this.deleteClass(mode);
+        else this.addClass(mode);
     }
 
     disable() {
