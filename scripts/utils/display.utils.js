@@ -48,12 +48,15 @@ function toggleCurrentSelection() {
         const isNotDisabled = !btn.element.classList.contains('disabled');
 
         if (isFinishedGame || isNotDisabled) {
-            btn.switchMode([
-                GAME_ELEMENT_MODES.EMPTY,
-                GAME_ELEMENT_MODES.DISABLED,
-                GAME_ELEMENT_MODES.WINNER,
-                classes.remove,
-            ],true);
+            btn.switchMode(
+                [
+                    GAME_ELEMENT_MODES.EMPTY,
+                    GAME_ELEMENT_MODES.DISABLED,
+                    GAME_ELEMENT_MODES.WINNER,
+                    classes.remove,
+                ],
+                true
+            );
 
             btn.addClass(classes.add);
         }
@@ -87,7 +90,9 @@ function toggleSound() {
 
 const displayWinningButtons = () => {
     const winningBoardButtons = getWinnerButtons();
-    winningBoardButtons.forEach((btn) => btn.switchMode(GAME_ELEMENT_MODES.WINNER));
+    winningBoardButtons.forEach((btn) =>
+        btn.switchMode(GAME_ELEMENT_MODES.WINNER)
+    );
 };
 
 const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.OFF);
