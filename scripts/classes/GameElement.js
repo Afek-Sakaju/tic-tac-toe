@@ -18,19 +18,19 @@ class GameElement {
     addClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => this.element.classList.add(c));
+        classes.forEach((c) => this.element.classList.add(c));
     }
 
     deleteClass(classes) {
         classes = assertArray(classes);
 
-        classes?.forEach((c) => this.element.classList.remove(c));
+        classes.forEach((c) => this.element.classList.remove(c));
     }
 
     addAttribute(attributes) {
         attributes = assertArray(attributes);
 
-        attributes?.forEach((attr) => {
+        attributes.forEach((attr) => {
             Object.entries(attr).forEach(([name, value]) => {
                 this.element.setAttribute(name, value);
             });
@@ -40,7 +40,7 @@ class GameElement {
     deleteAttribute(attributes) {
         attributes = assertArray(attributes);
 
-        attributes?.forEach((attr) => this.element.removeAttribute(attr));
+        attributes.forEach((attr) => this.element.removeAttribute(attr));
     }
 
     toggleMode(modeName, shouldToggleOff) {
