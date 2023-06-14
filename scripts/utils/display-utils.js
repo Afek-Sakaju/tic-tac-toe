@@ -24,7 +24,7 @@ function showCurrentTurn() {
 
 function showPopups() {
     startGameButton.element.innerText = 'Play-Again';
-    startGameButton.toggleMode('off', true);
+    startGameButton.toggleMode(GAME_ELEMENT_MODES.OFF, true);
 }
 
 function disableEmptyBoardButtons() {
@@ -32,7 +32,7 @@ function disableEmptyBoardButtons() {
     boardButtons
         .filter((btn) => btn.sign === null)
         .forEach((btn) => {
-            btn.toggleMode('off');
+            btn.toggleMode(GAME_ELEMENT_MODES.OFF);
             btn.disable();
         });
 }
@@ -48,12 +48,12 @@ function toggleCurrentSelection() {
         const isNotDisabled = !btn.element.classList.contains('disabled');
 
         if (isFinishedGame || isNotDisabled) {
-            btn.deleteClass([
-                'empty-logo',
-                'disabled',
-                'winner-button',
+            btn.toggleMode([
+                GAME_ELEMENT_MODES.EMPTY,
+                GAME_ELEMENT_MODES.DISABLED,
+                GAME_ELEMENT_MODES.WINNER,
                 classes.remove,
-            ]);
+            ],true);
 
             btn.addClass(classes.add);
         }
@@ -64,8 +64,8 @@ function resetAllBoardButtons() {
     const boardButtons = getAllBoardButtons();
 
     boardButtons.forEach((btn, i) => {
-        btn.toggleMode('off', true);
-        btn.toggleMode('disabled', true);
+        btn.toggleMode(GAME_ELEMENT_MODES.OFF, true);
+        btn.toggleMode(GAME_ELEMENT_MODES.DISABLED, true);
         btn.sign = null;
 
         const dontHaveOnClick = !btn.element.hasAttribute('onClick');
@@ -87,7 +87,7 @@ function toggleSound() {
 
 const displayWinningButtons = () => {
     const winningBoardButtons = getWinnerButtons();
-    winningBoardButtons.forEach((btn) => btn.toggleMode('winner'));
+    winningBoardButtons.forEach((btn) => btn.toggleMode(GAME_ELEMENT_MODES.WINNER));
 };
 
-const hidePopUps = () => startGameButton.toggleMode('off');
+const hidePopUps = () => startGameButton.toggleMode(GAME_ELEMENT_MODES.OFF);
