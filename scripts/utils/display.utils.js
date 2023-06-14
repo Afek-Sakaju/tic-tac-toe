@@ -24,7 +24,7 @@ function showCurrentTurn() {
 
 function showPopups() {
     startGameButton.element.innerText = 'Play-Again';
-    startGameButton.toggleMode(GAME_ELEMENT_MODES.OFF, true);
+    startGameButton.switchMode(GAME_ELEMENT_MODES.OFF, true);
 }
 
 function disableEmptyBoardButtons() {
@@ -32,7 +32,7 @@ function disableEmptyBoardButtons() {
     boardButtons
         .filter((btn) => btn.sign === null)
         .forEach((btn) => {
-            btn.toggleMode(GAME_ELEMENT_MODES.OFF);
+            btn.switchMode(GAME_ELEMENT_MODES.OFF);
             btn.disable();
         });
 }
@@ -48,7 +48,7 @@ function toggleCurrentSelection() {
         const isNotDisabled = !btn.element.classList.contains('disabled');
 
         if (isFinishedGame || isNotDisabled) {
-            btn.toggleMode([
+            btn.switchMode([
                 GAME_ELEMENT_MODES.EMPTY,
                 GAME_ELEMENT_MODES.DISABLED,
                 GAME_ELEMENT_MODES.WINNER,
@@ -64,8 +64,8 @@ function resetAllBoardButtons() {
     const boardButtons = getAllBoardButtons();
 
     boardButtons.forEach((btn, i) => {
-        btn.toggleMode(GAME_ELEMENT_MODES.OFF, true);
-        btn.toggleMode(GAME_ELEMENT_MODES.DISABLED, true);
+        btn.switchMode(GAME_ELEMENT_MODES.OFF, true);
+        btn.switchMode(GAME_ELEMENT_MODES.DISABLED, true);
         btn.sign = null;
 
         const dontHaveOnClick = !btn.element.hasAttribute('onClick');
@@ -75,19 +75,19 @@ function resetAllBoardButtons() {
 }
 
 function toggleSound() {
-    const toggleMode = isSoundMuted ? 'on' : 'off';
+    const switchMode = isSoundMuted ? 'on' : 'off';
 
-    playSound(toggleMode);
+    playSound(switchMode);
     isSoundMuted = !isSoundMuted;
     soundButton.deleteAttribute('src');
     soundButton.addAttribute({
-        src: `./assets/pictures/toggle-sound-${toggleMode}.png`,
+        src: `./assets/pictures/toggle-sound-${switchMode}.png`,
     });
 }
 
 const displayWinningButtons = () => {
     const winningBoardButtons = getWinnerButtons();
-    winningBoardButtons.forEach((btn) => btn.toggleMode(GAME_ELEMENT_MODES.WINNER));
+    winningBoardButtons.forEach((btn) => btn.switchMode(GAME_ELEMENT_MODES.WINNER));
 };
 
-const hidePopUps = () => startGameButton.toggleMode(GAME_ELEMENT_MODES.OFF);
+const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.OFF);
