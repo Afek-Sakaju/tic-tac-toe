@@ -1,5 +1,6 @@
-const GAME_ELEMENT_MODES = {
-    winner: 'winner-button',
-    off: 'off',
-    disabled: 'disabled',
-};
+const GAME_ELEMENT_MODES = Object.freeze({
+    WINNER: 'winner-button',
+    OFF: 'off',
+    DISABLED: 'disabled',
+    EMPTY:'empty-logo'
+});
