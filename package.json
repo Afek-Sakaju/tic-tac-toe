@@ -1,33 +1,40 @@
 {
-    "name": "tic-tac-toe",
-    "description": "This is a web-based tic-tac-toe game app for players to enjoy",
-    "author": "afek-sakaju",
-    "homepage": "https://github.com/afekTheMiniLearner/tic-tac-toe#readme",
-    "keywords": [
-        "game",
-        "tic-tac-toe",
-        "noughts and crosses"
-    ],
-    "version": "1.0.0",
-    "private": true,
-    "main": "index.js",
-    "scripts": {
-        "start": "lite-server",
-        "sass-compile": "sass styles/scss:styles/css",
-        "sass-watch-folder": "sass --watch styles/scss:styles/css"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/afekTheMiniLearner/tic-tac-toe.git"
-    },
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/afekTheMiniLearner/tic-tac-toe/issues"
-    },
-    "devDependencies": {
-        "gh-pages": "^3.2.0",
-        "lite-server": "^2.6.1",
-        "prettier": "^2.8.0",
-        "sass": "^1.56.1"
-    }
+  "name": "tic-tac-toe",
+  "description": "This is a web-based tic-tac-toe game app for players to enjoy",
+  "author": "afek-sakaju",
+  "homepage": "https://github.com/afekTheMiniLearner/tic-tac-toe#readme",
+  "keywords": [
+    "game",
+    "tic-tac-toe",
+    "noughts and crosses"
+  ],
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "lint": "eslint .",
+    "sass-compile": "sass styles/scss:styles/css",
+    "sass-watch-folder": "sass --watch styles/scss:styles/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afekTheMiniLearner/tic-tac-toe.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afekTheMiniLearner/tic-tac-toe/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^3.2.0",
+    "lite-server": "^2.6.1",
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1"
+  }
 }
