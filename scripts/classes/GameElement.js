@@ -1,51 +1,51 @@
 class GameElement {
-    constructor(id) {
-        this._id = id;
-    }
+  constructor(id) {
+    this._id = id;
+  }
 
-    get id() {
-        return this._id;
-    }
+  get id() {
+    return this._id;
+  }
 
-    get element() {
-        return document.getElementById(this._id);
-    }
+  get element() {
+    return document.getElementById(this._id);
+  }
 
-    addClass(classes) {
-        classes = assertArray(classes);
+  addClass(classes) {
+    const classesArray = assertArray(classes);
 
-        classes.forEach((c) => this.element.classList.add(c));
-    }
+    classesArray.forEach((c) => this.element.classList.add(c));
+  }
 
-    deleteClass(classes) {
-        classes = assertArray(classes);
+  deleteClass(classes) {
+    const classesArray = assertArray(classes);
 
-        classes.forEach((c) => this.element.classList.remove(c));
-    }
+    classesArray.forEach((c) => this.element.classList.remove(c));
+  }
 
-    addAttribute(attributes) {
-        attributes = assertArray(attributes);
+  addAttribute(attributes) {
+    const attributesArray = assertArray(attributes);
 
-        attributes.forEach((attr) => {
-            Object.entries(attr).forEach(([name, value]) => {
-                this.element.setAttribute(name, value);
-            });
-        });
-    }
+    attributesArray.forEach((attr) => {
+      Object.entries(attr).forEach(([name, value]) => {
+        this.element.setAttribute(name, value);
+      });
+    });
+  }
 
-    deleteAttribute(attributes) {
-        attributes = assertArray(attributes);
+  deleteAttribute(attributes) {
+    const attributesArray = assertArray(attributes);
 
-        attributes.forEach((attr) => this.element.removeAttribute(attr));
-    }
+    attributesArray.forEach((attr) => this.element.removeAttribute(attr));
+  }
 
-    switchMode(mode, shouldToggleOff) {
-        if (shouldToggleOff) this.deleteClass(mode);
-        else this.addClass(mode);
-    }
+  switchMode(mode, shouldToggleOff) {
+    if (shouldToggleOff) this.deleteClass(mode);
+    else this.addClass(mode);
+  }
 
-    disable() {
-        this.switchMode('disabled');
-        this.deleteAttribute(['onclick']);
-    }
+  disable() {
+    this.switchMode('disabled');
+    this.deleteAttribute(['onclick']);
+  }
 }
