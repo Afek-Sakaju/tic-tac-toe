@@ -6,7 +6,7 @@
 
 ---
 
-#### Try it out: [Live-Demo](https://afektheminilearner.github.io/tic-tac-toe/)
+#### Try it out: [Live-Demo](https://Afek-Sakaju.github.io/tic-tac-toe/)
 
 ---
 
@@ -40,4 +40,4 @@
 :octocat: **Afek Sakaju**
 
 - LinkedIn: [@afeksa](https://www.linkedin.com/in/afeksa/)
-- GitHub: [@afekTheMiniLearner](https://github.com/afekTheMiniLearner)
+- GitHub: [@Afek-Sakaju](https://github.com/Afek-Sakaju)
