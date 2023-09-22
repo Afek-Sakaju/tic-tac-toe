@@ -1,9 +1,9 @@
 .main-content-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   position: relative;
+  gap: 60px;
   height: 100%;
 }
 
@@ -17,7 +17,6 @@
   grid-template-columns: auto auto auto;
   height: 500px;
   width: 550px;
-  margin-top: 20px;
   padding: 5px;
   border: 3px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -26,9 +25,9 @@
 .main-heading {
   text-align: center;
   font-weight: bolder;
-  margin: 5px;
   max-height: 85px;
   font-size: 3.7em;
+  margin: 0;
   user-select: none;
 }
 
@@ -56,23 +55,26 @@
   height: 90px;
   width: 100px;
 }
-.action-button:not(.chosen) {
-  opacity: 0.38;
+.action-button.winner-button {
+  animation: rotation infinite 1.4s ease-in-out;
 }
-.action-button:not(.chosen):not(.empty-logo):hover {
-  cursor: pointer;
-  opacity: 0.82;
-}
-
-.empty-logo {
+.action-button.cell-placeholder {
   background-image: url("../../assets/pictures/question-mark.png");
   background-size: 105px;
+  opacity: 0.4;
+}
+.action-button:not(.locked) {
+  opacity: 0.4;
+}
+.action-button:not(.locked):hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .player-1 {
   background-size: 135px;
 }
-.player-1.chosen:not(.off) {
+.player-1.locked:not(.off) {
   background-image: url("../../assets/pictures/o-icon.png");
 }
 .player-1:hover:not(.off) {
@@ -82,19 +84,14 @@
 .player-2 {
   background-size: 95px;
 }
-.player-2.chosen:not(.off) {
+.player-2.locked:not(.off) {
   background-image: url("../../assets/pictures/x-icon.png");
 }
 .player-2:hover:not(.off) {
   background-image: url("../../assets/pictures/x-icon.png");
 }
 
-.chosen {
-  opacity: 1;
-}
-
 .start-game-button {
-  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,10 +129,6 @@
 }
 .restart-game-board-button:hover {
   opacity: 0.8;
-}
-
-.winner-button {
-  animation: rotation infinite 1.4s ease-in-out;
 }
 
 .toggle-sound-mode-button {
