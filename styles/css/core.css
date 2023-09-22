@@ -50,7 +50,7 @@
   visibility: hidden;
 }
 
-h1 {
+.main-heading {
   text-align: center;
   font-weight: bolder;
   margin: 5px;
