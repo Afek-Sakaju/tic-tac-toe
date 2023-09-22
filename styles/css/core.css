@@ -10,10 +10,20 @@
   flex: 1 1 auto;
 }
 
-.board-container {
+.game-board {
+  justify-self: center;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: 500px;
+  width: 550px;
+  margin-top: 20px;
+  padding: 5px;
+  border: 3px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
 }
 
 .turn-display-container {
@@ -43,20 +53,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-
-.game-board {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  height: 500px;
-  width: 550px;
-  margin-top: 20px;
-  padding: 5px;
-  border: 3px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
 }
 
 #winner-container {
