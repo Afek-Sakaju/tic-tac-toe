@@ -60,7 +60,7 @@ button {
   }
 }
 
-#restart-button {
+.restart-game-board-button {
   @include button-design;
   margin: 15px 25px;
   width: 157px;

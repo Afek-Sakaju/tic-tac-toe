@@ -164,7 +164,7 @@ button {
   visibility: hidden;
 }
 
-#restart-button {
+.restart-game-board-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,7 +178,7 @@ button {
   height: 2.3em;
   font-size: large;
 }
-#restart-button:hover {
+.restart-game-board-button:hover {
   opacity: 0.8;
 }
 
