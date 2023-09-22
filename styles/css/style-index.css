@@ -2,13 +2,13 @@
   font-family: mainFont;
   src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
-.content-wrapper {
+.main-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 98vh;
 }
-.content-wrapper > div {
+.main-content-container > div {
   height: 100%;
   width: 100%;
   flex: 1 1 auto;
