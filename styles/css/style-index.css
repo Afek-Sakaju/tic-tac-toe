@@ -1,7 +1,3 @@
-@font-face {
-  font-family: mainFont;
-  src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
-}
 .main-content-container {
   display: flex;
   justify-content: center;
@@ -144,14 +140,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.895);
-  color: black;
-  border-radius: 20px;
-  user-select: none;
-  cursor: pointer;
   width: 9em;
   height: 3em;
   font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.895);
+  border-radius: 20px;
+  color: black;
+  user-select: none;
+  cursor: pointer;
 }
 .start-game-button:hover {
   opacity: 0.8;
@@ -164,15 +160,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.895);
-  color: black;
-  border-radius: 20px;
-  user-select: none;
-  cursor: pointer;
-  margin: 15px 25px;
   width: 157px;
   height: 2.3em;
+  margin: 15px 25px;
   font-size: large;
+  background-color: rgba(255, 255, 255, 0.895);
+  border-radius: 20px;
+  color: black;
+  user-select: none;
+  cursor: pointer;
 }
 .restart-game-board-button:hover {
   opacity: 0.8;

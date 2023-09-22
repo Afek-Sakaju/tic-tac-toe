@@ -47,21 +47,44 @@
 }
 
 .start-game-button {
-  @include button-design;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 9em;
   height: 3em;
   font-size: 2em;
+  background-color: rgba(white, 0.895);
+  border-radius: $main-radius;
+  color: black;
+
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+
   &.off {
     visibility: hidden;
   }
 }
 
 .restart-game-board-button {
-  @include button-design;
-  margin: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 157px;
   height: 2.3em;
+  margin: 15px 25px;
   font-size: large;
+  background-color: rgba(white, 0.895);
+  border-radius: $main-radius;
+  color: black;
+
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .winner-button {
