@@ -82,13 +82,13 @@ h1 {
   user-select: none;
 }
 
-#turn-display {
+.current-turn-display {
   color: white;
   font-size: 2em;
   font-weight: 500;
   user-select: none;
 }
-#turn-display.off {
+.current-turn-display.off {
   opacity: 0.7;
 }
 
@@ -186,14 +186,14 @@ button {
   animation: rotation infinite 1.4s ease-in-out;
 }
 
-#sound-button {
+.toggle-sound-mode-button {
   height: 55px;
   width: 50px;
   margin: 15px 25px;
   user-select: none;
   cursor: pointer;
 }
-#sound-button:hover {
+.toggle-sound-mode-button:hover {
   opacity: 0.8;
 }
 
