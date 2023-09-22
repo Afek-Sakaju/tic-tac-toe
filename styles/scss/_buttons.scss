@@ -2,7 +2,7 @@
   background-repeat: no-repeat;
   background-position: center;
   border: 2px dotted rgba(white, 0.815);
-  border-radius: $main-radius;
+  border-radius: 20px;
   padding: 20px;
   margin: 16px;
   font-size: 30px;
@@ -18,16 +18,16 @@
 }
 
 .empty-logo {
-  background-image: $Empty-image-url;
+  background-image: url('../../assets/pictures/question-mark.png');
   background-size: 105px;
 }
 
 .player-1 {
   &.disabled:not(.off) {
-    background-image: $Player-2-image;
+    background-image: url('../../assets/pictures/o-icon.png');
   }
   &:hover:not(.off) {
-    background-image: $Player-2-image;
+    background-image: url('../../assets/pictures/o-icon.png');
   }
   background-size: 135px;
 }
@@ -35,10 +35,10 @@
 .player-2 {
   background-size: 95px;
   &.disabled:not(.off) {
-    background-image: $Player-1-image;
+    background-image: url('../../assets/pictures/x-icon.png');
   }
   &:hover:not(.off) {
-    background-image: $Player-1-image;
+    background-image: url('../../assets/pictures/x-icon.png');
   }
 }
 
@@ -54,7 +54,7 @@
   height: 3em;
   font-size: 2em;
   background-color: rgba(white, 0.895);
-  border-radius: $main-radius;
+  border-radius: 20px;
   color: black;
 
   user-select: none;
@@ -77,7 +77,7 @@
   margin: 15px 25px;
   font-size: large;
   background-color: rgba(white, 0.895);
-  border-radius: $main-radius;
+  border-radius: 20px;
   color: black;
 
   user-select: none;
