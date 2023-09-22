@@ -1,6 +1,6 @@
 const GAME_ELEMENT_MODES = Object.freeze({
   WINNER: 'winner-button',
   OFF: 'off',
-  CHOSEN: 'chosen',
-  EMPTY: 'empty-logo',
+  LOCKED: 'locked',
+  EMPTY: 'cell-placeholder',
 });
