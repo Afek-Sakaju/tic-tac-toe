@@ -1,22 +1,18 @@
 @font-face {
-    font-family: mainFont;
-    src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
-}
-
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: mainFont;
+  src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
 
 @mixin button-design {
-    @include flex-center;
-    background-color: rgba(white, 0.895);
-    color: black;
-    border-radius: $main-radius;
-    &:hover {
-        opacity: 0.8;
-    }
-    user-select: none;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(white, 0.895);
+  color: black;
+  border-radius: $main-radius;
+  &:hover {
+    opacity: 0.8;
+  }
+  user-select: none;
+  cursor: pointer;
 }

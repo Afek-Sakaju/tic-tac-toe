@@ -1,5 +1,7 @@
 .main-content-container {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 98vh;
 
   > div {
@@ -10,7 +12,9 @@
 }
 
 .board-container {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .turn-display-container {
@@ -20,7 +24,9 @@
 }
 
 .start-button-container {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-container {
@@ -41,7 +47,9 @@
 }
 
 .game-board {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: grid;
   grid-template-columns: auto auto auto;
   height: 500px;

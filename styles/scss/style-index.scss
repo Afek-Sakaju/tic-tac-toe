@@ -5,8 +5,17 @@
 @import 'buttons';
 @import 'keyframes';
 
+@font-face {
+  font-family: 'Oswald';
+  src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
+}
+
 body {
-    font-family: mainFont;
-    color: $main-text-color;
-    background-color: rgb(0, 0, 6);
+  font-family: 'Oswald', sans-serif;
+  color: $main-text-color;
+  background-color: rgb(0, 0, 6);
+}
+
+button {
+  font-family: 'Oswald', sans-serif;
 }
