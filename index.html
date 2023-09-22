@@ -17,7 +17,7 @@
     <div class="main-content-container">
       <div class="left-container">
         <div class="turn-display-container">
-          <span id="turn-display"></span>
+          <span id="turn-status" class="current-turn-display"></span>
         </div>
         <button class="restart-game-board-button" onclick="restartGame()">
           Restart
@@ -46,7 +46,8 @@
       </div>
       <div class="right-container">
         <img
-          id="sound-button"
+          id="sound-btn"
+          class="toggle-sound-mode-button"
           src="./assets/pictures/unmute.png"
           alt="site's logo"
           onclick="toggleSound()"

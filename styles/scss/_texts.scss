@@ -1,18 +1,18 @@
 h1 {
-    text-align: center;
-    font-weight: bolder;
-    margin: 5px;
-    max-height: 85px;
-    font-size: 3.7em;
-    user-select: none;
+  text-align: center;
+  font-weight: bolder;
+  margin: 5px;
+  max-height: 85px;
+  font-size: 3.7em;
+  user-select: none;
 }
 
-#turn-display {
-    color: $main-text-color;
-    font-size: 2em;
-    font-weight: 500;
-    user-select: none;
-    &.off {
-        opacity: 0.7;
-    }
+.current-turn-display {
+  color: $main-text-color;
+  font-size: 2em;
+  font-weight: 500;
+  user-select: none;
+  &.off {
+    opacity: 0.7;
+  }
 }
