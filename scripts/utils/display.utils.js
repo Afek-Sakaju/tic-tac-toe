@@ -1,5 +1,5 @@
 function showCurrentTurn() {
-  currentTurnDisplay.element.innerText = `The turn of ${currentTurn} `;
+  currentTurnDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
 
 function showPopups() {
@@ -19,8 +19,8 @@ function disableEmptyBoardButtons() {
 
 function toggleCurrentSelection() {
   const classes = {
-    add: currentTurn === 'O' ? 'player-1' : 'player-2',
-    remove: currentTurn === 'O' ? 'player-2' : 'player-1',
+    add: currentTurn === 'o' ? 'player-1' : 'player-2',
+    remove: currentTurn === 'o' ? 'player-2' : 'player-1',
   };
 
   const boardButtons = getAllBoardButtons();
@@ -80,6 +80,7 @@ const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.OFF);
 
 function processGameCondition() {
   const gameCondition = getGameCondition();
+  const currentTurnActionSound = `action-${currentTurn}`;
 
   switch (gameCondition) {
     case 2:
@@ -90,10 +91,10 @@ function processGameCondition() {
       break;
     case 1:
       isFinishedGame = true;
-      playSound('fullBoard');
+      playSound('full-board');
       showPopups();
       break;
     default:
-      playSound('action');
+      playSound(currentTurnActionSound);
   }
 }
