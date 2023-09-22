@@ -15,40 +15,34 @@
     <script src="./scripts/utils/gameLogic.utils.js" defer></script>
     <script src="./scripts/utils/logic.utils.js" defer></script>
     <div class="main-content-container">
-      <div class="left-container">
-        <div class="turn-display-container">
-          <span id="turn-status" class="current-turn-display"></span>
-        </div>
-        <button class="restart-game-board-button" onclick="restartGame()">
-          Restart
-        </button>
+      <span id="turn-status" class="current-turn-display"
+        >Next move: Player X</span
+      >
+      <button class="restart-game-board-button" onclick="restartGame()">
+        Restart
+      </button>
+      <h1>Tic-Tac-Toe</h1>
+      <div class="game-board">
+        <div id="actionButton1" class="action-button empty-logo"></div>
+        <div id="actionButton2" class="action-button empty-logo"></div>
+        <div id="actionButton3" class="action-button empty-logo"></div>
+        <div id="actionButton4" class="action-button empty-logo"></div>
+        <div id="actionButton5" class="action-button empty-logo"></div>
+        <div id="actionButton6" class="action-button empty-logo"></div>
+        <div id="actionButton7" class="action-button empty-logo"></div>
+        <div id="actionButton8" class="action-button empty-logo"></div>
+        <div id="actionButton9" class="action-button empty-logo"></div>
       </div>
-      <div class="mid-container">
-        <h1>Tic-Tac-Toe</h1>
-        <div class="game-board">
-          <div id="actionButton1" class="action-button empty-logo"></div>
-          <div id="actionButton2" class="action-button empty-logo"></div>
-          <div id="actionButton3" class="action-button empty-logo"></div>
-          <div id="actionButton4" class="action-button empty-logo"></div>
-          <div id="actionButton5" class="action-button empty-logo"></div>
-          <div id="actionButton6" class="action-button empty-logo"></div>
-          <div id="actionButton7" class="action-button empty-logo"></div>
-          <div id="actionButton8" class="action-button empty-logo"></div>
-          <div id="actionButton9" class="action-button empty-logo"></div>
-        </div>
-        <button id="start-btn" class="start-game-button" onclick="startGame()">
-          Start-Playing
-        </button>
-      </div>
-      <div class="right-container">
-        <img
-          id="sound-btn"
-          class="toggle-sound-mode-button"
-          src="./assets/pictures/unmute.png"
-          alt="site's logo"
-          onclick="toggleSound()"
-        />
-      </div>
+      <button id="start-btn" class="start-game-button" onclick="startGame()">
+        Start-Playing
+      </button>
+      <img
+        id="sound-btn"
+        class="toggle-sound-mode-button"
+        src="./assets/pictures/unmute.png"
+        alt="site's logo"
+        onclick="toggleSound()"
+      />
     </div>
   </body>
 </html>

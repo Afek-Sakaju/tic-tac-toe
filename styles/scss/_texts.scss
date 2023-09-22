@@ -8,6 +8,9 @@ h1 {
 }
 
 .current-turn-display {
+  position: absolute;
+  left: 30px;
+  top: 15px;
   color: white;
   font-size: 2em;
   font-weight: 500;
