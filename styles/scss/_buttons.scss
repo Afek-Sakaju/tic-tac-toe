@@ -1,84 +1,84 @@
 button {
-    font-family: mainFont;
+  font-family: mainFont;
 }
 
 .action-button {
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 2px dotted rgba(white, 0.815);
-    border-radius: $main-radius;
-    padding: 20px;
-    margin: 16px;
-    font-size: 30px;
-    height: 90px;
-    width: 100px;
-    &:not(.disabled) {
-        opacity: 0.38;
-    }
-    &:not(.disabled):not(.empty-logo):hover {
-        cursor: pointer;
-        opacity: 0.82;
-    }
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px dotted rgba(white, 0.815);
+  border-radius: $main-radius;
+  padding: 20px;
+  margin: 16px;
+  font-size: 30px;
+  height: 90px;
+  width: 100px;
+  &:not(.disabled) {
+    opacity: 0.38;
+  }
+  &:not(.disabled):not(.empty-logo):hover {
+    cursor: pointer;
+    opacity: 0.82;
+  }
 }
 
 .empty-logo {
-    background-image: $Empty-image-url;
-    background-size: 105px;
+  background-image: $Empty-image-url;
+  background-size: 105px;
 }
 
 .player-1 {
-    &.disabled:not(.off) {
-        background-image: $Player-2-image;
-    }
-    &:hover:not(.off) {
-        background-image: $Player-2-image;
-    }
-    background-size: 135px;
+  &.disabled:not(.off) {
+    background-image: $Player-2-image;
+  }
+  &:hover:not(.off) {
+    background-image: $Player-2-image;
+  }
+  background-size: 135px;
 }
 
 .player-2 {
-    background-size: 95px;
-    &.disabled:not(.off) {
-        background-image: $Player-1-image;
-    }
-    &:hover:not(.off) {
-        background-image: $Player-1-image;
-    }
+  background-size: 95px;
+  &.disabled:not(.off) {
+    background-image: $Player-1-image;
+  }
+  &:hover:not(.off) {
+    background-image: $Player-1-image;
+  }
 }
 
 .disabled {
-    opacity: 1;
+  opacity: 1;
 }
 
-#start-button {
-    @include button-design;
-    width: 9em;
-    height: 3em;
-    font-size: 2em;
-    &.off {
-        visibility: hidden;
-    }
+.start-game-button {
+  @include button-design;
+  width: 9em;
+  height: 3em;
+  font-size: 2em;
+  &.off {
+    visibility: hidden;
+  }
 }
 
 #restart-button {
-    @include button-design;
-    margin: 15px 25px;
-    width: 157px;
-    height: 2.3em;
-    font-size: large;
+  @include button-design;
+  margin: 15px 25px;
+  width: 157px;
+  height: 2.3em;
+  font-size: large;
 }
 
 .winner-button {
-    animation: rotation infinite 1.4s ease-in-out;
+  animation: rotation infinite 1.4s ease-in-out;
 }
 
 #sound-button {
-    height: 55px;
-    width: 50px;
-    margin: 15px 25px;
-    user-select: none;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.8;
-    }
+  height: 55px;
+  width: 50px;
+  margin: 15px 25px;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }

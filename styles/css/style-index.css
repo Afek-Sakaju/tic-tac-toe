@@ -144,7 +144,7 @@ button {
   opacity: 1;
 }
 
-#start-button {
+.start-game-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,10 +157,10 @@ button {
   height: 3em;
   font-size: 2em;
 }
-#start-button:hover {
+.start-game-button:hover {
   opacity: 0.8;
 }
-#start-button.off {
+.start-game-button.off {
   visibility: hidden;
 }
 
