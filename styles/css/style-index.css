@@ -116,7 +116,7 @@ button {
 }
 
 .empty-logo {
-  background-image: url("../../assets/pictures/Empty.png");
+  background-image: url("../../assets/pictures/question-mark.png");
   background-size: 105px;
 }
 
@@ -124,20 +124,20 @@ button {
   background-size: 135px;
 }
 .player-1.disabled:not(.off) {
-  background-image: url("../../assets/pictures/O-White.png");
+  background-image: url("../../assets/pictures/o-icon.png");
 }
 .player-1:hover:not(.off) {
-  background-image: url("../../assets/pictures/O-White.png");
+  background-image: url("../../assets/pictures/o-icon.png");
 }
 
 .player-2 {
   background-size: 95px;
 }
 .player-2.disabled:not(.off) {
-  background-image: url("../../assets/pictures/X-White.png");
+  background-image: url("../../assets/pictures/x-icon.png");
 }
 .player-2:hover:not(.off) {
-  background-image: url("../../assets/pictures/X-White.png");
+  background-image: url("../../assets/pictures/x-icon.png");
 }
 
 .disabled {
