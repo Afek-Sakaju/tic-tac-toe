@@ -1,5 +1,5 @@
 function swapTurn() {
-  currentTurn = currentTurn === 'O' ? 'X' : 'O';
+  currentTurn = currentTurn === 'o' ? 'x' : 'o';
 }
 
 function getWinnerButtons() {

@@ -9,6 +9,6 @@ const gameMatrix = [
   [7, 8, 9],
 ].map((row) => row.map((num) => new ActionButton(`actionButton${num}`)));
 
-let currentTurn = 'O';
+let currentTurn = 'o';
 let isFinishedGame = true;
 let isSoundMuted = false;
