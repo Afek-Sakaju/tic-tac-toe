@@ -11,7 +11,7 @@ function getWinnerButtons() {
 }
 
 function playSound(sound) {
-  if (isSoundMuted && sound !== 'on') return;
+  if (isSoundMuted && sound !== 'unmute') return;
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 }
 
