@@ -59,13 +59,13 @@ function resetAllBoardButtons() {
 }
 
 function toggleSound() {
-  const switchMode = isSoundMuted ? 'on' : 'off';
+  const soundModeToSet = isSoundMuted ? 'unmute' : 'mute';
 
-  playSound(switchMode);
+  playSound(soundModeToSet);
   isSoundMuted = !isSoundMuted;
   soundButton.deleteAttribute('src');
   soundButton.addAttribute({
-    src: `./assets/pictures/toggle-sound-${switchMode}.png`,
+    src: `./assets/pictures/${soundModeToSet}.png`,
   });
 }
 
@@ -91,7 +91,7 @@ function processGameCondition() {
       break;
     case 1:
       isFinishedGame = true;
-      playSound('full-board');
+      playSound('draw');
       showPopups();
       break;
     default:

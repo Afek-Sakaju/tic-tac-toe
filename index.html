@@ -1,86 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="icon" href="./assets/pictures/tic-tac-toe.png" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="styles/css/style-index.css"
-        />
-        <title>Tic-Tac-Toe</title>
-    </head>
-    <body>
-        <script src="./scripts/classes/GameElement.js" defer></script>
-        <script src="./scripts/classes/ActionButton.js" defer></script>
-        <script src="./scripts/variables/consts.js" defer></script>
-        <script src="./scripts/variables/gameVariables.js" defer></script>
-        <script src="./scripts/main.js" defer></script>
-        <script src="./scripts/utils/display.utils.js" defer></script>
-        <script src="./scripts/utils/gameLogic.utils.js" defer></script>
-        <script src="./scripts/utils/logic.utils.js" defer></script>
-        <div class="content-wrapper">
-            <div class="left-container">
-                <div class="turn-display-container">
-                    <span id="turn-display"></span>
-                </div>
-                <button id="restart-button" onclick="restartGame()">
-                    Restart
-                </button>
-            </div>
-            <div class="mid-container">
-                <h1>Tic-Tac-Toe</h1>
-                <div class="board-container">
-                    <div class="game-board">
-                        <div
-                            id="actionButton1"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton2"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton3"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton4"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton5"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton6"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton7"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton8"
-                            class="action-button empty-logo"
-                        ></div>
-                        <div
-                            id="actionButton9"
-                            class="action-button empty-logo"
-                        ></div>
-                    </div>
-                </div>
-                <div class="start-button-container">
-                    <p id="start-button" onclick="startGame()">Start-Playing</p>
-                </div>
-            </div>
-            <div class="right-container">
-                <img
-                    id="sound-button"
-                    src="./assets/pictures/toggle-sound-on.png"
-                    alt="site's logo"
-                    onclick="toggleSound()"
-                />
-            </div>
+  <head>
+    <link rel="icon" href="./assets/pictures/tic-tac-toe.png" />
+    <link rel="stylesheet" type="text/css" href="styles/css/style-index.css" />
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <script src="./scripts/classes/GameElement.js" defer></script>
+    <script src="./scripts/classes/ActionButton.js" defer></script>
+    <script src="./scripts/variables/consts.js" defer></script>
+    <script src="./scripts/variables/gameVariables.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/utils/display.utils.js" defer></script>
+    <script src="./scripts/utils/gameLogic.utils.js" defer></script>
+    <script src="./scripts/utils/logic.utils.js" defer></script>
+    <div class="content-wrapper">
+      <div class="left-container">
+        <div class="turn-display-container">
+          <span id="turn-display"></span>
         </div>
-    </body>
+        <button id="restart-button" onclick="restartGame()">Restart</button>
+      </div>
+      <div class="mid-container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="board-container">
+          <div class="game-board">
+            <div id="actionButton1" class="action-button empty-logo"></div>
+            <div id="actionButton2" class="action-button empty-logo"></div>
+            <div id="actionButton3" class="action-button empty-logo"></div>
+            <div id="actionButton4" class="action-button empty-logo"></div>
+            <div id="actionButton5" class="action-button empty-logo"></div>
+            <div id="actionButton6" class="action-button empty-logo"></div>
+            <div id="actionButton7" class="action-button empty-logo"></div>
+            <div id="actionButton8" class="action-button empty-logo"></div>
+            <div id="actionButton9" class="action-button empty-logo"></div>
+          </div>
+        </div>
+        <div class="start-button-container">
+          <p id="start-button" onclick="startGame()">Start-Playing</p>
+        </div>
+      </div>
+      <div class="right-container">
+        <img
+          id="sound-button"
+          src="./assets/pictures/unmute.png"
+          alt="site's logo"
+          onclick="toggleSound()"
+        />
+      </div>
+    </div>
+  </body>
 </html>
