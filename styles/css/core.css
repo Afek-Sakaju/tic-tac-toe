@@ -1,13 +1,10 @@
 .main-content-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 98vh;
-}
-.main-content-container > div {
+  flex-direction: column;
+  position: relative;
   height: 100%;
-  width: 100%;
-  flex: 1 1 auto;
 }
 
 .game-board {
@@ -24,12 +21,6 @@
   padding: 5px;
   border: 3px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-}
-
-.turn-display-container {
-  display: flex;
-  align-items: flex-start;
-  margin: 15px 33px;
 }
 
 .left-container {
@@ -69,6 +60,9 @@ h1 {
 }
 
 .current-turn-display {
+  position: absolute;
+  left: 30px;
+  top: 15px;
   color: white;
   font-size: 2em;
   font-weight: 500;
@@ -137,7 +131,6 @@ h1 {
   background-color: rgba(255, 255, 255, 0.895);
   border-radius: 20px;
   color: black;
-  margin: 40px;
   user-select: none;
   cursor: pointer;
 }
@@ -152,9 +145,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
   width: 157px;
   height: 2.3em;
-  margin: 15px 25px;
   font-size: large;
   background-color: rgba(255, 255, 255, 0.895);
   border-radius: 20px;
@@ -171,9 +166,11 @@ h1 {
 }
 
 .toggle-sound-mode-button {
+  position: absolute;
+  right: 25px;
+  top: 15px;
   height: 55px;
   width: 50px;
-  margin: 15px 25px;
   user-select: none;
   cursor: pointer;
 }
@@ -217,6 +214,7 @@ body {
   font-family: "Oswald", sans-serif;
   color: white;
   background-color: rgb(0, 0, 6);
+  height: 98vh;
 }
 body * {
   font-family: "Oswald", sans-serif;

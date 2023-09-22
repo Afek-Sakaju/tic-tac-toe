@@ -57,7 +57,6 @@
   background-color: rgba(white, 0.895);
   border-radius: 20px;
   color: black;
-  margin: 40px;
 
   user-select: none;
   cursor: pointer;
@@ -74,9 +73,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
   width: 157px;
   height: 2.3em;
-  margin: 15px 25px;
   font-size: large;
   background-color: rgba(white, 0.895);
   border-radius: 20px;
@@ -94,9 +95,12 @@
 }
 
 .toggle-sound-mode-button {
+  position: absolute;
+  right: 25px;
+  top: 15px;
   height: 55px;
   width: 50px;
-  margin: 15px 25px;
+
   user-select: none;
   cursor: pointer;
   &:hover {
