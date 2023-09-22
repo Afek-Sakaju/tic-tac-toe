@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 const startGameButton = new GameElement('start-btn');
-const currentTurnDisplay = new GameElement('turn-status');
+const currentTurnDisplay = new GameElement('turn-status-info');
 const soundButton = new GameElement('sound-btn');
 
 const gameMatrix = [
