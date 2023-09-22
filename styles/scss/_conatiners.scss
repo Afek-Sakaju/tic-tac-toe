@@ -22,30 +22,3 @@
   border: 3px solid rgba(white, 0.05);
   border-radius: 20px;
 }
-
-.left-container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.right-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.mid-container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-#winner-container {
-  width: 9em;
-  height: 3em;
-  width: 500px;
-  height: 200px;
-  &.off {
-    visibility: hidden;
-  }
-}
