@@ -25,13 +25,13 @@ function toggleCurrentSelection() {
 
   const boardButtons = getAllBoardButtons();
   boardButtons.forEach((btn) => {
-    const isNotDisabled = !btn.element.classList.contains('disabled');
+    const isNotDisabled = !btn.element.classList.contains('chosen');
 
     if (isFinishedGame || isNotDisabled) {
       btn.switchMode(
         [
           GAME_ELEMENT_MODES.EMPTY,
-          GAME_ELEMENT_MODES.DISABLED,
+          GAME_ELEMENT_MODES.CHOSEN,
           GAME_ELEMENT_MODES.WINNER,
           classes.remove,
         ],
@@ -48,7 +48,7 @@ function resetAllBoardButtons() {
 
   boardButtons.forEach((btn, i) => {
     btn.switchMode(GAME_ELEMENT_MODES.OFF, true);
-    btn.switchMode(GAME_ELEMENT_MODES.DISABLED, true);
+    btn.switchMode(GAME_ELEMENT_MODES.CHOSEN, true);
     // eslint-disable-next-line no-param-reassign
     btn.sign = null;
 

@@ -8,10 +8,10 @@
   font-size: 30px;
   height: 90px;
   width: 100px;
-  &:not(.disabled) {
+  &:not(.chosen) {
     opacity: 0.38;
   }
-  &:not(.disabled):not(.empty-logo):hover {
+  &:not(.chosen):not(.empty-logo):hover {
     cursor: pointer;
     opacity: 0.82;
   }
@@ -23,7 +23,7 @@
 }
 
 .player-1 {
-  &.disabled:not(.off) {
+  &.chosen:not(.off) {
     background-image: url('../../assets/pictures/o-icon.png');
   }
   &:hover:not(.off) {
@@ -34,7 +34,7 @@
 
 .player-2 {
   background-size: 95px;
-  &.disabled:not(.off) {
+  &.chosen:not(.off) {
     background-image: url('../../assets/pictures/x-icon.png');
   }
   &:hover:not(.off) {
@@ -42,7 +42,7 @@
   }
 }
 
-.disabled {
+.chosen {
   opacity: 1;
 }
 

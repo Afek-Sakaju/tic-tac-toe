@@ -83,10 +83,10 @@ h1 {
   height: 90px;
   width: 100px;
 }
-.action-button:not(.disabled) {
+.action-button:not(.chosen) {
   opacity: 0.38;
 }
-.action-button:not(.disabled):not(.empty-logo):hover {
+.action-button:not(.chosen):not(.empty-logo):hover {
   cursor: pointer;
   opacity: 0.82;
 }
@@ -99,7 +99,7 @@ h1 {
 .player-1 {
   background-size: 135px;
 }
-.player-1.disabled:not(.off) {
+.player-1.chosen:not(.off) {
   background-image: url("../../assets/pictures/o-icon.png");
 }
 .player-1:hover:not(.off) {
@@ -109,14 +109,14 @@ h1 {
 .player-2 {
   background-size: 95px;
 }
-.player-2.disabled:not(.off) {
+.player-2.chosen:not(.off) {
   background-image: url("../../assets/pictures/x-icon.png");
 }
 .player-2:hover:not(.off) {
   background-image: url("../../assets/pictures/x-icon.png");
 }
 
-.disabled {
+.chosen {
   opacity: 1;
 }
 
