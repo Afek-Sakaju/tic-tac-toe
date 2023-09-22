@@ -47,6 +47,7 @@
 }
 
 .start-game-button {
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +57,7 @@
   background-color: rgba(white, 0.895);
   border-radius: 20px;
   color: black;
+  margin: 40px;
 
   user-select: none;
   cursor: pointer;
