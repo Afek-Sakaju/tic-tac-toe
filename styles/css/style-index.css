@@ -21,8 +21,9 @@
 }
 
 .turn-display-container {
-  width: 210px;
-  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 33px;
 }
 
 .start-button-container {
