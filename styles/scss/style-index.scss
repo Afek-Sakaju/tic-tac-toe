@@ -12,8 +12,9 @@ body {
   font-family: 'Oswald', sans-serif;
   color: white;
   background-color: rgb(0, 0, 6);
-}
 
-button {
-  font-family: 'Oswald', sans-serif;
+  // This line ensures that the font is applied to certain elements that previously didn't have it.
+  * {
+    font-family: 'Oswald', sans-serif;
+  }
 }
