@@ -1,16 +1,16 @@
 function updateCurrentTurnStatus() {
-  currentTurnStatusDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
+  currentTurnStatusDisplay.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
 
 function modifyElementsOnFinishedGame() {
-  startGameButton.element.innerText = 'Play-Again';
-  startGameButton.toggleClass(GAME_ELEMENT_MODES.HIDDEN, true);
-  currentTurnStatusDisplay.toggleClass(GAME_ELEMENT_MODES.HIDDEN);
+  startGameButton.innerText = 'Play-Again';
+  startGameButton.classList.remove(GAME_ELEMENT_MODES.HIDDEN);
+  currentTurnStatusDisplay.classList.add(GAME_ELEMENT_MODES.HIDDEN);
 }
 
 function modifyElementsOnGameStart() {
-  startGameButton.toggleClass(GAME_ELEMENT_MODES.HIDDEN);
-  currentTurnStatusDisplay.toggleClass(GAME_ELEMENT_MODES.HIDDEN, true);
+  startGameButton.classList.add(GAME_ELEMENT_MODES.HIDDEN);
+  currentTurnStatusDisplay.classList.remove(GAME_ELEMENT_MODES.HIDDEN);
 }
 
 function lockUnselectedBoardCells() {
@@ -73,8 +73,9 @@ function toggleMuteStatus() {
 
   playSound(soundModeToSet);
   isSoundMuted = !isSoundMuted;
-  toggleMuteButton.deleteAttribute('src');
-  toggleMuteButton.addAttribute({
-    src: `./assets/pictures/${soundModeToSet}.png`,
-  });
+  toggleMuteButton.removeAttribute('src');
+  toggleMuteButton.setAttribute(
+    'src',
+    `./assets/pictures/${soundModeToSet}.png`
+  );
 }
