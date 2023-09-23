@@ -86,19 +86,11 @@ function processGameCondition() {
   const gameCondition = getGameCondition();
   const currentSelectionSound = `selection-sound-${currentTurn}`;
 
-  switch (gameCondition) {
-    case 2:
-      isFinishedGame = true;
-      playSound('win');
-      modifyElementsOnFinishedGame();
-      displayWinningButtons();
-      break;
-    case 1:
-      isFinishedGame = true;
-      playSound('draw');
-      modifyElementsOnFinishedGame();
-      break;
-    default:
-      playSound(currentSelectionSound);
+  if (!gameCondition) playSound(currentSelectionSound);
+  else {
+    playSound(gameCondition);
+    isFinishedGame = true;
+    if (gameCondition === 'victory') displayWinningButtons();
+    modifyElementsOnFinishedGame();
   }
 }
