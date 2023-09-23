@@ -19,3 +19,5 @@ function selectBoardCell(position) {
   if (!gameCondition) continueGame();
   else finishGame(gameCondition);
 }
+
+window.onload = () => initializeGameBoardCells();
