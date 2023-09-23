@@ -84,7 +84,7 @@ const displayWinningButtons = () => {
 
 function processGameCondition() {
   const gameCondition = getGameCondition();
-  const currentTurnActionSound = `action-${currentTurn}`;
+  const currentSelectionSound = `selection-sound-${currentTurn}`;
 
   switch (gameCondition) {
     case 2:
@@ -99,6 +99,6 @@ function processGameCondition() {
       modifyElementsOnFinishedGame();
       break;
     default:
-      playSound(currentTurnActionSound);
+      playSound(currentSelectionSound);
   }
 }
