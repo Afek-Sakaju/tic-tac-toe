@@ -64,6 +64,13 @@ function resetBoardCells() {
   updateBoardCellsOnChange();
 }
 
+const highlightWinningBoardCells = () => {
+  const winningBoardButtons = getWinningCells();
+  winningBoardButtons.forEach((btn) =>
+    btn.switchMode(GAME_ELEMENT_MODES.WINNER)
+  );
+};
+
 function toggleMuteStatus() {
   const soundModeToSet = isSoundMuted ? 'unmute' : 'mute';
 
@@ -73,27 +80,4 @@ function toggleMuteStatus() {
   toggleMuteButton.addAttribute({
     src: `./assets/pictures/${soundModeToSet}.png`,
   });
-}
-
-const highlightWinningCells = () => {
-  const winningBoardButtons = getWinnerButtons();
-  winningBoardButtons.forEach((btn) =>
-    btn.switchMode(GAME_ELEMENT_MODES.WINNER)
-  );
-};
-
-function finishGameAndModifyDisplay(gameCondition) {
-  playSound(gameCondition);
-  isGameFinished = true;
-  if (gameCondition === 'victory') highlightWinningCells();
-  modifyElementsOnFinishedGame();
-  lockUnselectedBoardCells();
-}
-
-function continueGameAndModifyDisplay() {
-  const currentSelectionSound = `selection-sound-${currentTurn}`;
-  playSound(currentSelectionSound);
-  swapTurn();
-  updateBoardCellsOnChange();
-  updateCurrentTurnStatus();
 }

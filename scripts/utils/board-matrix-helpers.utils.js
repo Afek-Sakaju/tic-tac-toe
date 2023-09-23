@@ -1,4 +1,4 @@
-function getMatrixWinnersByRow() {
+function getMatrixWinningCellsByRow() {
   for (let i = 0; i < gameBoardMatrix.length; i++) {
     if (
       gameBoardMatrix[i][0].sign !== null &&
@@ -15,7 +15,7 @@ function getMatrixWinnersByRow() {
   return false;
 }
 
-function getMatrixWinnersByColumn() {
+function getMatrixWinningCellsByColumn() {
   for (let j = 0; j < gameBoardMatrix.length; j++) {
     if (
       gameBoardMatrix[0][j].sign !== null &&
@@ -32,7 +32,7 @@ function getMatrixWinnersByColumn() {
   return false;
 }
 
-function getMatrixWinnersBySlant() {
+function getMatrixWinningCellsBySlant() {
   if (
     gameBoardMatrix[0][0].sign !== null &&
     gameBoardMatrix[0][0].sign === gameBoardMatrix[1][1].sign &&
@@ -59,3 +59,23 @@ function getMatrixWinnersBySlant() {
 
   return false;
 }
+
+const getAllBoardCells = () => gameBoardMatrix.flat();
+
+const isMatrixEmpty = () => {
+  const boardButtons = getAllBoardCells();
+  return boardButtons.every((e) => e.sign === null);
+};
+
+const isMatrixFull = () => {
+  const boardButtons = getAllBoardCells();
+  return boardButtons.every((e) => e.sign !== null);
+};
+
+const getWinningCells = () => {
+  return (
+    getMatrixWinningCellsByRow() ||
+    getMatrixWinningCellsByColumn() ||
+    getMatrixWinningCellsBySlant()
+  );
+};

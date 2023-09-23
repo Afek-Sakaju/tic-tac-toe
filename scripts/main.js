@@ -16,6 +16,6 @@ function selectBoardCell(position) {
 
   const gameCondition = getGameCondition();
   // Undefined gameCondition means the game continues.
-  if (!gameCondition) continueGameAndModifyDisplay();
-  else finishGameAndModifyDisplay(gameCondition);
+  if (!gameCondition) continueGame();
+  else finishGame(gameCondition);
 }
