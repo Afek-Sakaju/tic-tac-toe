@@ -1,7 +1,7 @@
 const setSelectedCellStatus = (position) => {
   const boardButtons = getAllBoardCells();
   boardButtons[position].cellElement.classList.add('locked');
-  boardButtons[position].cellElement.removeAttribute('onclick');
+  boardButtons[position].cellElement.setAttribute('disabled', true);
   boardButtons[position].sign = currentTurn;
 };
 
