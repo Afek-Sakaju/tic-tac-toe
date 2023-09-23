@@ -7,7 +7,12 @@ const gameBoardMatrix = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
-].map((row) => row.map((num) => new ActionButton(`actionButton${num}`)));
+].map((row) =>
+  row.map((num) => ({
+    cellElement: document.getElementById(`actionButton${num}`),
+    sign: null,
+  }))
+);
 
 let currentTurn = 'o';
 let isGameFinished = true;
