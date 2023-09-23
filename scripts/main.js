@@ -18,7 +18,7 @@ function pickButton(position) {
 
   processGameCondition();
   if (isFinishedGame) {
-    lockUnselectedBoardButtons();
+    lockUnselectedBoardCells();
     currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
   } else {
     swapTurn();
