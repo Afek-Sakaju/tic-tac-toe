@@ -64,12 +64,12 @@
   opacity: 0.4;
 }
 .action-button.o {
-  background-size: 135px;
   background-image: url("../../assets/pictures/o-icon.png");
+  background-size: 135px;
 }
 .action-button.x {
-  background-size: 95px;
   background-image: url("../../assets/pictures/x-icon.png");
+  background-size: 95px;
 }
 .action-button:not(.locked) {
   opacity: 0.4;
