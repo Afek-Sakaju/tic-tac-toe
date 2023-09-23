@@ -2,7 +2,7 @@ function startGame() {
   isFinishedGame = false;
   playSound('start');
   swapTurn();
-  resetAllBoardButtons();
+  resetBoardCells();
   hidePopUps();
   showCurrentTurn();
 }
@@ -12,13 +12,13 @@ function restartGame() {
 }
 
 function pickButton(position) {
-  const boardButtons = getAllBoardButtons();
+  const boardButtons = getAllBoardCells();
   boardButtons[position].disable();
   boardButtons[position].sign = currentTurn;
 
   processGameCondition();
   if (isFinishedGame) {
-    disableEmptyBoardButtons();
+    lockUnselectedBoardButtons();
     currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
   } else {
     swapTurn();

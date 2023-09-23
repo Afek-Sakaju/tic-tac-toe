@@ -15,17 +15,17 @@ function playSound(sound) {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 }
 
-const getAllBoardButtons = () => gameMatrix.flat();
+const getAllBoardCells = () => gameMatrix.flat();
 
 const assertArray = (value) => (value instanceof Array ? value : [value]);
 
 const isMatrixEmpty = () => {
-  const boardButtons = getAllBoardButtons();
+  const boardButtons = getAllBoardCells();
   return boardButtons.every((e) => e.sign === null);
 };
 
 const isMatrixFull = () => {
-  const boardButtons = getAllBoardButtons();
+  const boardButtons = getAllBoardCells();
   return boardButtons.every((e) => e.sign !== null);
 };
 
