@@ -17,8 +17,10 @@ function pickButton(position) {
   boardButtons[position].sign = currentTurn;
 
   processGameCondition();
-  if (isFinishedGame) disableEmptyBoardButtons();
-  else {
+  if (isFinishedGame) {
+    disableEmptyBoardButtons();
+    currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
+  } else {
     swapTurn();
     toggleCurrentSelection();
     showCurrentTurn();

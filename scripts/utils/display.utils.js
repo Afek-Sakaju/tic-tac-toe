@@ -1,10 +1,11 @@
 function showCurrentTurn() {
+  currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
   currentTurnDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
 
 function showPopups() {
   startGameButton.element.innerText = 'Play-Again';
-  startGameButton.switchMode(GAME_ELEMENT_MODES.OFF, true);
+  startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
 function disableEmptyBoardButtons() {
@@ -12,7 +13,7 @@ function disableEmptyBoardButtons() {
   boardButtons
     .filter((btn) => btn.sign === null)
     .forEach((btn) => {
-      btn.switchMode(GAME_ELEMENT_MODES.OFF);
+      btn.switchMode(GAME_ELEMENT_MODES.HIDDEN);
       btn.disable();
     });
 }
@@ -48,7 +49,7 @@ function resetAllBoardButtons() {
   const boardButtons = getAllBoardButtons();
 
   boardButtons.forEach((btn, i) => {
-    btn.switchMode(GAME_ELEMENT_MODES.OFF, true);
+    btn.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
     btn.switchMode(GAME_ELEMENT_MODES.LOCKED, true);
     // eslint-disable-next-line no-param-reassign
     btn.sign = null;
@@ -77,7 +78,7 @@ const displayWinningButtons = () => {
   );
 };
 
-const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.OFF);
+const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN);
 
 function processGameCondition() {
   const gameCondition = getGameCondition();
