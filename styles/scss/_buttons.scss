@@ -19,37 +19,26 @@
     opacity: 0.4;
   }
 
+  &.o {
+    background-size: 135px;
+    background-image: url('../../assets/pictures/o-icon.png');
+  }
+
+  &.x {
+    background-size: 95px;
+    background-image: url('../../assets/pictures/x-icon.png');
+  }
+
   &:not(.locked) {
     opacity: 0.4;
+    &:not(:hover) {
+      background-image: unset;
+    }
 
     &:hover {
       cursor: pointer;
       opacity: 0.8;
     }
-  }
-}
-
-.player-1 {
-  background-size: 135px;
-
-  &.locked:not(.off) {
-    background-image: url('../../assets/pictures/o-icon.png');
-  }
-
-  &:hover:not(.off) {
-    background-image: url('../../assets/pictures/o-icon.png');
-  }
-}
-
-.player-2 {
-  background-size: 95px;
-
-  &.locked:not(.off) {
-    background-image: url('../../assets/pictures/x-icon.png');
-  }
-
-  &:hover:not(.off) {
-    background-image: url('../../assets/pictures/x-icon.png');
   }
 }
 

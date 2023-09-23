@@ -18,9 +18,10 @@ function disableEmptyBoardButtons() {
 }
 
 function toggleCurrentSelection() {
+  const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
   const classes = {
-    add: currentTurn === 'o' ? 'player-1' : 'player-2',
-    remove: currentTurn === 'o' ? 'player-2' : 'player-1',
+    add: currentTurn,
+    remove: oppositeTurn,
   };
 
   const boardButtons = getAllBoardButtons();
