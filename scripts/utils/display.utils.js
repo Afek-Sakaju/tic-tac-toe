@@ -8,7 +8,7 @@ function showPopups() {
   startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
-function lockUnselectedBoardButtons() {
+function lockUnselectedBoardCells() {
   const boardButtons = getAllBoardCells();
   boardButtons
     .filter((btn) => btn.sign === null)
