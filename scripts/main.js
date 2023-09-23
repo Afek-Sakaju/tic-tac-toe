@@ -1,5 +1,5 @@
 function startGame() {
-  isFinishedGame = false;
+  isGameFinished = false;
   playSound('start');
   swapTurn();
   resetBoardCells();
@@ -17,9 +17,9 @@ function pickButton(position) {
   boardButtons[position].sign = currentTurn;
 
   processGameCondition();
-  if (isFinishedGame) {
+  if (isGameFinished) {
     lockUnselectedBoardCells();
-    currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
+    currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
   } else {
     swapTurn();
     updateBoardOnUserSelection();

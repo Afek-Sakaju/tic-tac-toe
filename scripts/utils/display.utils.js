@@ -1,5 +1,5 @@
 function updateCurrentTurnStatus() {
-  currentTurnDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
+  currentTurnStatusDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
 
 function modifyElementsOnFinishedGame() {
@@ -9,7 +9,7 @@ function modifyElementsOnFinishedGame() {
 
 function modifyElementsOnGameStart() {
   startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN);
-  currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
+  currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
 function lockUnselectedBoardCells() {
@@ -33,7 +33,7 @@ function updateBoardOnUserSelection() {
   boardCells.forEach((btn) => {
     const isNotDisabled = !btn.element.classList.contains('locked');
 
-    if (isFinishedGame || isNotDisabled) {
+    if (isGameFinished || isNotDisabled) {
       btn.switchMode(
         [
           GAME_ELEMENT_MODES.EMPTY,
@@ -64,18 +64,18 @@ function resetBoardCells() {
   updateBoardOnUserSelection();
 }
 
-function toggleSound() {
+function toggleMuteStatus() {
   const soundModeToSet = isSoundMuted ? 'unmute' : 'mute';
 
   playSound(soundModeToSet);
   isSoundMuted = !isSoundMuted;
-  soundButton.deleteAttribute('src');
-  soundButton.addAttribute({
+  toggleMuteButton.deleteAttribute('src');
+  toggleMuteButton.addAttribute({
     src: `./assets/pictures/${soundModeToSet}.png`,
   });
 }
 
-const displayWinningButtons = () => {
+const highlightWinningCells = () => {
   const winningBoardButtons = getWinnerButtons();
   winningBoardButtons.forEach((btn) =>
     btn.switchMode(GAME_ELEMENT_MODES.WINNER)
@@ -89,8 +89,8 @@ function processGameCondition() {
   if (!gameCondition) playSound(currentSelectionSound);
   else {
     playSound(gameCondition);
-    isFinishedGame = true;
-    if (gameCondition === 'victory') displayWinningButtons();
+    isGameFinished = true;
+    if (gameCondition === 'victory') highlightWinningCells();
     modifyElementsOnFinishedGame();
   }
 }
