@@ -1,4 +1,4 @@
-const getInitializedBoardCell = (num) => {
+function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {
     const isDisabled = cellElement.getAttribute('disabled');
@@ -6,7 +6,7 @@ const getInitializedBoardCell = (num) => {
   });
 
   return { cellElement, sign: null };
-};
+}
 
 function updateCurrentTurnStatus() {
   currentTurnStatusDisplay.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
@@ -78,7 +78,7 @@ const highlightWinningBoardCells = () => {
   );
 };
 
-function toggleMuteStatus() {
+const toggleMuteStatus = () => {
   const soundModeToSet = isSoundMuted ? 'unmute' : 'mute';
 
   playSound(soundModeToSet);
@@ -88,4 +88,4 @@ function toggleMuteStatus() {
     'src',
     `./assets/pictures/${soundModeToSet}.png`
   );
-}
+};
