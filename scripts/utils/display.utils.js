@@ -5,6 +5,7 @@ function updateCurrentTurnStatus() {
 function modifyElementsOnFinishedGame() {
   startGameButton.element.innerText = 'Play-Again';
   startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
+  currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
 }
 
 function modifyElementsOnGameStart() {
@@ -22,7 +23,7 @@ function lockUnselectedBoardCells() {
     });
 }
 
-function updateBoardOnUserSelection() {
+function updateBoardCellsOnChange() {
   const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
   const classes = {
     add: currentTurn,
@@ -53,15 +54,14 @@ function resetBoardCells() {
   const boardCells = getAllBoardCells();
 
   boardCells.forEach((btn, i) => {
-    btn.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
     btn.switchMode(GAME_ELEMENT_MODES.LOCKED, true);
     // eslint-disable-next-line no-param-reassign
     btn.sign = null;
 
     const dontHaveOnClick = !btn.element.hasAttribute('onClick');
-    if (dontHaveOnClick) btn.addAttribute({ onclick: `pickButton(${i})` });
+    if (dontHaveOnClick) btn.addAttribute({ onclick: `selectBoardCell(${i})` });
   });
-  updateBoardOnUserSelection();
+  updateBoardCellsOnChange();
 }
 
 function toggleMuteStatus() {

@@ -1,19 +1,15 @@
-function swapTurn() {
-  currentTurn = currentTurn === 'o' ? 'x' : 'o';
-}
-
-function getWinnerButtons() {
+const getWinnerButtons = () => {
   return (
     getMatrixWinnersByRow() ||
     getMatrixWinnersByColumn() ||
     getMatrixWinnersBySlant()
   );
-}
+};
 
-function playSound(sound) {
+const playSound = (sound) => {
   if (isSoundMuted && sound !== 'unmute') return;
   new Audio(`./assets/sounds/${sound}.mp3`).play();
-}
+};
 
 const getAllBoardCells = () => gameBoardMatrix.flat();
 
@@ -29,9 +25,19 @@ const isMatrixFull = () => {
   return boardButtons.every((e) => e.sign !== null);
 };
 
+const setSelectedCellStatus = (position) => {
+  const boardButtons = getAllBoardCells();
+  boardButtons[position].disable();
+  boardButtons[position].sign = currentTurn;
+};
+
 const getGameCondition = () => {
   const winningBoardButtons = getWinnerButtons();
 
   if (winningBoardButtons) return 'victory';
   if (isMatrixFull()) return 'tie';
+};
+
+const swapTurn = () => {
+  currentTurn = currentTurn === 'o' ? 'x' : 'o';
 };

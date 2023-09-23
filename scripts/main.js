@@ -11,18 +11,21 @@ function restartGame() {
   if (!isMatrixEmpty()) startGame();
 }
 
-function pickButton(position) {
-  const boardButtons = getAllBoardCells();
-  boardButtons[position].disable();
-  boardButtons[position].sign = currentTurn;
+function selectBoardCell(position) {
+  setSelectedCellStatus(position);
 
-  processGameCondition();
-  if (isGameFinished) {
+  const gameCondition = getGameCondition();
+  if (gameCondition) {
+    playSound(gameCondition);
+    isGameFinished = true;
+    if (gameCondition === 'victory') highlightWinningCells();
+    modifyElementsOnFinishedGame();
     lockUnselectedBoardCells();
-    currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
   } else {
+    const currentSelectionSound = `selection-sound-${currentTurn}`;
+    playSound(currentSelectionSound);
     swapTurn();
-    updateBoardOnUserSelection();
+    updateBoardCellsOnChange();
     updateCurrentTurnStatus();
   }
 }
