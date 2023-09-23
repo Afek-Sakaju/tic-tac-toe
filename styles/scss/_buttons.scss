@@ -20,17 +20,18 @@
   }
 
   &.o {
-    background-size: 135px;
     background-image: url('../../assets/pictures/o-icon.png');
+    background-size: 135px;
   }
 
   &.x {
-    background-size: 95px;
     background-image: url('../../assets/pictures/x-icon.png');
+    background-size: 95px;
   }
 
   &:not(.locked) {
     opacity: 0.4;
+
     &:not(:hover) {
       background-image: unset;
     }
