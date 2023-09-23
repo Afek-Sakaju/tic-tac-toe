@@ -3,8 +3,8 @@ function startGame() {
   playSound('start');
   swapTurn();
   resetBoardCells();
-  hidePopUps();
-  showCurrentTurn();
+  modifyElementsOnGameStart();
+  updateCurrentTurnStatus();
 }
 
 function restartGame() {
@@ -22,7 +22,7 @@ function pickButton(position) {
     currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
   } else {
     swapTurn();
-    toggleCurrentSelection();
-    showCurrentTurn();
+    updateBoardOnUserSelection();
+    updateCurrentTurnStatus();
   }
 }

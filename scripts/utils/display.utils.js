@@ -1,11 +1,15 @@
-function showCurrentTurn() {
-  currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
+function updateCurrentTurnStatus() {
   currentTurnDisplay.element.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
 
-function showPopups() {
+function modifyElementsOnFinishedGame() {
   startGameButton.element.innerText = 'Play-Again';
   startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
+}
+
+function modifyElementsOnGameStart() {
+  startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN);
+  currentTurnDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
 function lockUnselectedBoardCells() {
@@ -18,7 +22,7 @@ function lockUnselectedBoardCells() {
     });
 }
 
-function toggleCurrentSelection() {
+function updateBoardOnUserSelection() {
   const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
   const classes = {
     add: currentTurn,
@@ -46,9 +50,9 @@ function toggleCurrentSelection() {
 }
 
 function resetBoardCells() {
-  const boardButtons = getAllBoardCells();
+  const boardCells = getAllBoardCells();
 
-  boardButtons.forEach((btn, i) => {
+  boardCells.forEach((btn, i) => {
     btn.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
     btn.switchMode(GAME_ELEMENT_MODES.LOCKED, true);
     // eslint-disable-next-line no-param-reassign
@@ -57,7 +61,7 @@ function resetBoardCells() {
     const dontHaveOnClick = !btn.element.hasAttribute('onClick');
     if (dontHaveOnClick) btn.addAttribute({ onclick: `pickButton(${i})` });
   });
-  toggleCurrentSelection();
+  updateBoardOnUserSelection();
 }
 
 function toggleSound() {
@@ -78,8 +82,6 @@ const displayWinningButtons = () => {
   );
 };
 
-const hidePopUps = () => startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN);
-
 function processGameCondition() {
   const gameCondition = getGameCondition();
   const currentTurnActionSound = `action-${currentTurn}`;
@@ -88,13 +90,13 @@ function processGameCondition() {
     case 2:
       isFinishedGame = true;
       playSound('win');
-      showPopups();
+      modifyElementsOnFinishedGame();
       displayWinningButtons();
       break;
     case 1:
       isFinishedGame = true;
       playSound('draw');
-      showPopups();
+      modifyElementsOnFinishedGame();
       break;
     default:
       playSound(currentTurnActionSound);
