@@ -40,9 +40,6 @@
   font-weight: 500;
   user-select: none;
 }
-.current-turn-display.off {
-  opacity: 0.7;
-}
 
 .action-button {
   background-repeat: no-repeat;
@@ -97,9 +94,6 @@
 }
 .start-game-button:hover {
   opacity: 0.8;
-}
-.start-game-button.off {
-  visibility: hidden;
 }
 
 .restart-game-board-button {
@@ -175,6 +169,10 @@ body {
 }
 body * {
   font-family: "Oswald", sans-serif;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=core.css.map */
