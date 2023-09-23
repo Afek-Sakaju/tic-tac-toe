@@ -8,8 +8,8 @@ function showPopups() {
   startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
-function disableEmptyBoardButtons() {
-  const boardButtons = getAllBoardButtons();
+function lockUnselectedBoardButtons() {
+  const boardButtons = getAllBoardCells();
   boardButtons
     .filter((btn) => btn.sign === null)
     .forEach((btn) => {
@@ -25,8 +25,8 @@ function toggleCurrentSelection() {
     remove: oppositeTurn,
   };
 
-  const boardButtons = getAllBoardButtons();
-  boardButtons.forEach((btn) => {
+  const boardCells = getAllBoardCells();
+  boardCells.forEach((btn) => {
     const isNotDisabled = !btn.element.classList.contains('locked');
 
     if (isFinishedGame || isNotDisabled) {
@@ -45,8 +45,8 @@ function toggleCurrentSelection() {
   });
 }
 
-function resetAllBoardButtons() {
-  const boardButtons = getAllBoardButtons();
+function resetBoardCells() {
+  const boardButtons = getAllBoardCells();
 
   boardButtons.forEach((btn, i) => {
     btn.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
