@@ -1,6 +1,6 @@
 function startGame() {
-  isGameFinished = false;
   playSound('start');
+  isGameFinished = false;
   swapTurn();
   resetBoardCells();
   modifyElementsOnGameStart();
