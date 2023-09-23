@@ -4,13 +4,13 @@ function updateCurrentTurnStatus() {
 
 function modifyElementsOnFinishedGame() {
   startGameButton.element.innerText = 'Play-Again';
-  startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
-  currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN);
+  startGameButton.toggleClass(GAME_ELEMENT_MODES.HIDDEN, true);
+  currentTurnStatusDisplay.toggleClass(GAME_ELEMENT_MODES.HIDDEN);
 }
 
 function modifyElementsOnGameStart() {
-  startGameButton.switchMode(GAME_ELEMENT_MODES.HIDDEN);
-  currentTurnStatusDisplay.switchMode(GAME_ELEMENT_MODES.HIDDEN, true);
+  startGameButton.toggleClass(GAME_ELEMENT_MODES.HIDDEN);
+  currentTurnStatusDisplay.toggleClass(GAME_ELEMENT_MODES.HIDDEN, true);
 }
 
 function lockUnselectedBoardCells() {
@@ -18,7 +18,7 @@ function lockUnselectedBoardCells() {
   boardButtons
     .filter((btn) => btn.sign === null)
     .forEach((btn) => {
-      btn.switchMode(currentTurn, true);
+      btn.toggleClass(currentTurn, true);
       btn.disable();
     });
 }
@@ -35,7 +35,7 @@ function updateBoardCellsOnChange() {
     const isNotDisabled = !btn.element.classList.contains('locked');
 
     if (isGameFinished || isNotDisabled) {
-      btn.switchMode(
+      btn.toggleClass(
         [
           GAME_ELEMENT_MODES.EMPTY,
           GAME_ELEMENT_MODES.LOCKED,
@@ -54,7 +54,7 @@ function resetBoardCells() {
   const boardCells = getAllBoardCells();
 
   boardCells.forEach((btn, i) => {
-    btn.switchMode(GAME_ELEMENT_MODES.LOCKED, true);
+    btn.toggleClass(GAME_ELEMENT_MODES.LOCKED, true);
     // eslint-disable-next-line no-param-reassign
     btn.sign = null;
 
@@ -67,7 +67,7 @@ function resetBoardCells() {
 const highlightWinningBoardCells = () => {
   const winningBoardButtons = getWinningCells();
   winningBoardButtons.forEach((btn) =>
-    btn.switchMode(GAME_ELEMENT_MODES.WINNER)
+    btn.toggleClass(GAME_ELEMENT_MODES.WINNER)
   );
 };
 
