@@ -1,14 +1,14 @@
 /* eslint-disable prefer-const */
 const startGameButton = new GameElement('start-btn');
-const currentTurnDisplay = new GameElement('turn-status-info');
-const soundButton = new GameElement('sound-btn');
+const currentTurnStatusDisplay = new GameElement('turn-status-info');
+const toggleMuteButton = new GameElement('sound-btn');
 
-const gameMatrix = [
+const gameBoardMatrix = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
 ].map((row) => row.map((num) => new ActionButton(`actionButton${num}`)));
 
 let currentTurn = 'o';
-let isFinishedGame = true;
+let isGameFinished = true;
 let isSoundMuted = false;

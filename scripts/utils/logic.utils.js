@@ -15,7 +15,7 @@ function playSound(sound) {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 }
 
-const getAllBoardCells = () => gameMatrix.flat();
+const getAllBoardCells = () => gameBoardMatrix.flat();
 
 const assertArray = (value) => (value instanceof Array ? value : [value]);
 
