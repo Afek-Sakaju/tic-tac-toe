@@ -13,7 +13,7 @@ function disableEmptyBoardButtons() {
   boardButtons
     .filter((btn) => btn.sign === null)
     .forEach((btn) => {
-      btn.switchMode(GAME_ELEMENT_MODES.HIDDEN);
+      btn.switchMode(currentTurn, true);
       btn.disable();
     });
 }
