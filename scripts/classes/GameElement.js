@@ -39,13 +39,13 @@ class GameElement {
     attributesArray.forEach((attr) => this.element.removeAttribute(attr));
   }
 
-  switchMode(mode, shouldToggleOff) {
+  toggleClass(mode, shouldToggleOff) {
     if (shouldToggleOff) this.deleteClass(mode);
     else this.addClass(mode);
   }
 
   disable() {
-    this.switchMode('locked');
+    this.toggleClass('locked');
     this.deleteAttribute(['onclick']);
   }
 }
