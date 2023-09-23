@@ -82,15 +82,18 @@ const highlightWinningCells = () => {
   );
 };
 
-function processGameCondition() {
-  const gameCondition = getGameCondition();
-  const currentSelectionSound = `selection-sound-${currentTurn}`;
+function finishGameAndModifyDisplay(gameCondition) {
+  playSound(gameCondition);
+  isGameFinished = true;
+  if (gameCondition === 'victory') highlightWinningCells();
+  modifyElementsOnFinishedGame();
+  lockUnselectedBoardCells();
+}
 
-  if (!gameCondition) playSound(currentSelectionSound);
-  else {
-    playSound(gameCondition);
-    isGameFinished = true;
-    if (gameCondition === 'victory') highlightWinningCells();
-    modifyElementsOnFinishedGame();
-  }
+function continueGameAndModifyDisplay() {
+  const currentSelectionSound = `selection-sound-${currentTurn}`;
+  playSound(currentSelectionSound);
+  swapTurn();
+  updateBoardCellsOnChange();
+  updateCurrentTurnStatus();
 }
