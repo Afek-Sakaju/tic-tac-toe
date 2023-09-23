@@ -63,13 +63,13 @@ function getMatrixWinningCellsBySlant() {
 const getAllBoardCells = () => gameBoardMatrix.flat();
 
 const isMatrixEmpty = () => {
-  const boardButtons = getAllBoardCells();
-  return boardButtons.every((e) => e.sign === null);
+  const boardCells = getAllBoardCells();
+  return boardCells.every(({ sign }) => sign === null);
 };
 
 const isMatrixFull = () => {
-  const boardButtons = getAllBoardCells();
-  return boardButtons.every((e) => e.sign !== null);
+  const boardCells = getAllBoardCells();
+  return boardCells.every(({ sign }) => sign !== null);
 };
 
 const getWinningCells = () => {

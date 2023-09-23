@@ -16,10 +16,11 @@ function modifyElementsOnGameStart() {
 function lockUnselectedBoardCells() {
   const boardButtons = getAllBoardCells();
   boardButtons
-    .filter((btn) => btn.sign === null)
-    .forEach((btn) => {
-      btn.toggleClass(currentTurn, true);
-      btn.disable();
+    .filter(({ sign }) => sign === null)
+    .forEach(({ cellElement }) => {
+      cellElement.classList.remove(currentTurn);
+      cellElement.classList.add('locked');
+      cellElement.removeAttribute('onclick');
     });
 }
 
@@ -31,21 +32,18 @@ function updateBoardCellsOnChange() {
   };
 
   const boardCells = getAllBoardCells();
-  boardCells.forEach((btn) => {
-    const isNotDisabled = !btn.element.classList.contains('locked');
+  boardCells.forEach(({ cellElement }) => {
+    const isNotDisabled = !cellElement.classList.contains('locked');
 
     if (isGameFinished || isNotDisabled) {
-      btn.toggleClass(
-        [
-          GAME_ELEMENT_MODES.EMPTY,
-          GAME_ELEMENT_MODES.LOCKED,
-          GAME_ELEMENT_MODES.WINNER,
-          classes.remove,
-        ],
-        true
+      cellElement.classList.remove(
+        GAME_ELEMENT_MODES.EMPTY,
+        GAME_ELEMENT_MODES.LOCKED,
+        GAME_ELEMENT_MODES.WINNER,
+        classes.remove
       );
 
-      btn.addClass(classes.add);
+      cellElement.classList.add(classes.add);
     }
   });
 }
@@ -53,21 +51,23 @@ function updateBoardCellsOnChange() {
 function resetBoardCells() {
   const boardCells = getAllBoardCells();
 
-  boardCells.forEach((btn, i) => {
-    btn.toggleClass(GAME_ELEMENT_MODES.LOCKED, true);
+  boardCells.forEach((boardCell, i) => {
+    boardCell.cellElement.classList.remove(GAME_ELEMENT_MODES.LOCKED);
     // eslint-disable-next-line no-param-reassign
-    btn.sign = null;
+    boardCell.sign = null;
 
-    const dontHaveOnClick = !btn.element.hasAttribute('onClick');
-    if (dontHaveOnClick) btn.addAttribute({ onclick: `selectBoardCell(${i})` });
+    const dontHaveOnClick = !boardCell.cellElement.hasAttribute('onClick');
+    if (dontHaveOnClick) {
+      boardCell.cellElement.setAttribute('onclick', `selectBoardCell(${i})`);
+    }
   });
   updateBoardCellsOnChange();
 }
 
 const highlightWinningBoardCells = () => {
   const winningBoardButtons = getWinningCells();
-  winningBoardButtons.forEach((btn) =>
-    btn.toggleClass(GAME_ELEMENT_MODES.WINNER)
+  winningBoardButtons.forEach(({ cellElement }) =>
+    cellElement.classList.add(GAME_ELEMENT_MODES.WINNER)
   );
 };
 

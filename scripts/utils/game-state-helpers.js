@@ -1,6 +1,7 @@
 const setSelectedCellStatus = (position) => {
   const boardButtons = getAllBoardCells();
-  boardButtons[position].disable();
+  boardButtons[position].cellElement.classList.add('locked');
+  boardButtons[position].cellElement.removeAttribute('onclick');
   boardButtons[position].sign = currentTurn;
 };
 
@@ -8,7 +9,7 @@ const getGameCondition = () => {
   const winningBoardButtons = getWinningCells();
 
   if (winningBoardButtons) return 'victory';
-  if (isMatrixFull()) return 'tie';
+  return isMatrixFull() ? 'tie' : undefined;
 };
 
 const swapTurn = () => {
