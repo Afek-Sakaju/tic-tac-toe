@@ -20,7 +20,7 @@ function lockUnselectedBoardCells() {
     .forEach(({ cellElement }) => {
       cellElement.classList.remove(currentTurn);
       cellElement.classList.add('locked');
-      cellElement.removeAttribute('onclick');
+      cellElement.setAttribute('disabled', true);
     });
 }
 
@@ -56,10 +56,7 @@ function resetBoardCells() {
     // eslint-disable-next-line no-param-reassign
     boardCell.sign = null;
 
-    const dontHaveOnClick = !boardCell.cellElement.hasAttribute('onClick');
-    if (dontHaveOnClick) {
-      boardCell.cellElement.setAttribute('onclick', `selectBoardCell(${i})`);
-    }
+    boardCell.cellElement.removeAttribute('disabled');
   });
   updateBoardCellsOnChange();
 }
