@@ -15,17 +15,7 @@ function selectBoardCell(position) {
   setSelectedCellStatus(position);
 
   const gameCondition = getGameCondition();
-  if (gameCondition) {
-    playSound(gameCondition);
-    isGameFinished = true;
-    if (gameCondition === 'victory') highlightWinningCells();
-    modifyElementsOnFinishedGame();
-    lockUnselectedBoardCells();
-  } else {
-    const currentSelectionSound = `selection-sound-${currentTurn}`;
-    playSound(currentSelectionSound);
-    swapTurn();
-    updateBoardCellsOnChange();
-    updateCurrentTurnStatus();
-  }
+  // Undefined gameCondition means the game continues.
+  if (!gameCondition) continueGameAndModifyDisplay();
+  else finishGameAndModifyDisplay(gameCondition);
 }
