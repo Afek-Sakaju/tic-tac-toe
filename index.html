@@ -8,6 +8,7 @@
   <body>
     <script src="./scripts/variables/consts.js" defer></script>
     <script src="./scripts/utils/app-and-ui-helpers.js" defer></script>
+    <script src="./scripts/utils/app-inititlization-helpers.js" defer></script>
     <script src="./scripts/variables/gameVariables.js" defer></script>
     <script src="./scripts/utils/utility-helpers.js" defer></script>
     <script src="./scripts/utils/board-matrix-helpers.utils.js" defer></script>
@@ -19,53 +20,7 @@
         Restart
       </button>
       <h1 class="main-heading">Tic-Tac-Toe</h1>
-      <div class="game-board-container">
-        <div
-          id="board-cell-1"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-2"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-3"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-4"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-5"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-6"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-7"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-8"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-        <div
-          id="board-cell-9"
-          class="action-button cell-placeholder locked"
-          disabled="true"
-        ></div>
-      </div>
+      <div id="game-board" class="game-board-container"></div>
       <button id="start-btn" class="start-game-button" onclick="startGame()">
         Start-Playing
       </button>
