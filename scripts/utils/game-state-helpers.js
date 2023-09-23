@@ -1,14 +1,14 @@
 const setSelectedCellStatus = (position) => {
-  const boardButtons = getAllBoardCells();
-  boardButtons[position].cellElement.classList.add('locked');
-  boardButtons[position].cellElement.setAttribute('disabled', true);
-  boardButtons[position].sign = currentTurn;
+  const boardCells = getAllBoardCells();
+  boardCells[position].cellElement.classList.add('locked');
+  boardCells[position].cellElement.setAttribute('disabled', true);
+  boardCells[position].sign = currentTurn;
 };
 
 const getGameCondition = () => {
-  const winningBoardButtons = getWinningCells();
+  const winningBoardCells = getWinningCells();
 
-  if (winningBoardButtons) return 'victory';
+  if (winningBoardCells) return 'victory';
   return isMatrixFull() ? 'tie' : undefined;
 };
 

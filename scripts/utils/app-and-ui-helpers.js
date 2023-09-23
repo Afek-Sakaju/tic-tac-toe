@@ -1,3 +1,13 @@
+const getInitializedBoardCell = (num) => {
+  const cellElement = document.getElementById(`board-cell-${num}`);
+  cellElement.addEventListener('click', () => {
+    const isDisabled = cellElement.getAttribute('disabled');
+    if (!isDisabled) selectBoardCell(num - 1);
+  });
+
+  return { cellElement, sign: null };
+};
+
 function updateCurrentTurnStatus() {
   currentTurnStatusDisplay.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
 }
@@ -14,8 +24,8 @@ function modifyElementsOnGameStart() {
 }
 
 function lockUnselectedBoardCells() {
-  const boardButtons = getAllBoardCells();
-  boardButtons
+  const boardCells = getAllBoardCells();
+  boardCells
     .filter(({ sign }) => sign === null)
     .forEach(({ cellElement }) => {
       cellElement.classList.remove(currentTurn);
@@ -62,8 +72,8 @@ function resetBoardCells() {
 }
 
 const highlightWinningBoardCells = () => {
-  const winningBoardButtons = getWinningCells();
-  winningBoardButtons.forEach(({ cellElement }) =>
+  const winningBoardCells = getWinningCells();
+  winningBoardCells.forEach(({ cellElement }) =>
     cellElement.classList.add(GAME_ELEMENT_MODES.WINNER)
   );
 };
