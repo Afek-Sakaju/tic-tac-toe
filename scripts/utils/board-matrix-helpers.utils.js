@@ -1,65 +1,3 @@
-function getMatrixWinningCellsByRow() {
-  for (let i = 0; i < gameBoardMatrix.length; i++) {
-    if (
-      gameBoardMatrix[i][0].sign !== null &&
-      gameBoardMatrix[i][0].sign === gameBoardMatrix[i][1].sign &&
-      gameBoardMatrix[i][1].sign === gameBoardMatrix[i][2].sign
-    ) {
-      return [
-        gameBoardMatrix[i][0],
-        gameBoardMatrix[i][1],
-        gameBoardMatrix[i][2],
-      ];
-    }
-  }
-  return false;
-}
-
-function getMatrixWinningCellsByColumn() {
-  for (let j = 0; j < gameBoardMatrix.length; j++) {
-    if (
-      gameBoardMatrix[0][j].sign !== null &&
-      gameBoardMatrix[0][j].sign === gameBoardMatrix[1][j].sign &&
-      gameBoardMatrix[1][j].sign === gameBoardMatrix[2][j].sign
-    ) {
-      return [
-        gameBoardMatrix[0][j],
-        gameBoardMatrix[1][j],
-        gameBoardMatrix[2][j],
-      ];
-    }
-  }
-  return false;
-}
-
-function getMatrixWinningCellsBySlant() {
-  if (
-    gameBoardMatrix[0][0].sign !== null &&
-    gameBoardMatrix[0][0].sign === gameBoardMatrix[1][1].sign &&
-    gameBoardMatrix[1][1].sign === gameBoardMatrix[2][2].sign
-  ) {
-    return [
-      gameBoardMatrix[0][0],
-      gameBoardMatrix[1][1],
-      gameBoardMatrix[2][2],
-    ];
-  }
-
-  if (
-    gameBoardMatrix[0][2].sign !== null &&
-    gameBoardMatrix[0][2].sign === gameBoardMatrix[1][1].sign &&
-    gameBoardMatrix[1][1].sign === gameBoardMatrix[2][0].sign
-  ) {
-    return [
-      gameBoardMatrix[0][2],
-      gameBoardMatrix[1][1],
-      gameBoardMatrix[2][0],
-    ];
-  }
-
-  return false;
-}
-
 const getAllBoardCells = () => gameBoardMatrix.flat();
 
 const isMatrixEmpty = () => {
@@ -71,6 +9,66 @@ const isMatrixFull = () => {
   const boardCells = getAllBoardCells();
   return boardCells.every(({ sign }) => sign !== null);
 };
+
+function getMatrixSlants(matrix) {
+  const slant1 = [];
+  const slant2 = [];
+
+  const lastIndex = matrix.length - 1;
+
+  for (let i = 0; i <= lastIndex; i++) {
+    slant1.push(matrix[i][i]);
+    slant2.push(matrix[i][lastIndex - i]);
+  }
+
+  return { slant1, slant2 };
+}
+
+function getMatrixWinningCellsByRow() {
+  const winningRow = gameBoardMatrix.find((row) => {
+    const { sign: primarySign } = row[0];
+
+    const isWinningRow = row.every(({ sign }) => sign && sign === primarySign);
+    return isWinningRow ? row : false;
+  });
+
+  return winningRow;
+}
+
+function getMatrixWinningCellsByColumn() {
+  let winningColumn;
+  for (let j = 0; j < gameBoardMatrix[0].length; j++) {
+    const column = gameBoardMatrix.map((row) => row[j]);
+
+    const { sign: primarySign } = column[0];
+    const isWinningColumn = column.every(
+      ({ sign }) => sign && sign === primarySign
+    );
+
+    if (isWinningColumn) {
+      winningColumn = column;
+      break;
+    }
+  }
+
+  return winningColumn;
+}
+
+function getMatrixWinningCellsBySlant() {
+  const { slant1, slant2 } = getMatrixSlants(gameBoardMatrix);
+
+  const { sign: primarySign1 } = slant1[0];
+  const isSlant1Winning = slant1.every(
+    ({ sign }) => sign && sign === primarySign1
+  );
+
+  const { sign: primarySign2 } = slant2[0];
+  const isSlant2Winning = slant2.every(
+    ({ sign }) => sign && sign === primarySign2
+  );
+
+  return (isSlant1Winning && slant1) || (isSlant2Winning && slant2);
+}
 
 const getWinningCells = () => {
   return (
