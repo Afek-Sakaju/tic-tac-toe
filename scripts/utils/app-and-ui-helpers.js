@@ -1,3 +1,8 @@
+const playSound = (sound) => {
+  if (isSoundMuted && sound !== 'unmute') return;
+  new Audio(`./assets/sounds/${sound}.mp3`).play();
+};
+
 function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {
