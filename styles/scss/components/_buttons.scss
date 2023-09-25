@@ -44,51 +44,36 @@
 }
 
 .start-game-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include button-hover-effects;
+  @include generic-button-styles;
+
   width: 9em;
   height: 3em;
   font-size: 2em;
   background-color: rgba(white, 0.895);
   border-radius: 20px;
   color: black;
-
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
 }
 
 .reset-game-board-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include button-hover-effects;
+  @include generic-button-styles;
+
   position: absolute;
   left: 20px;
   bottom: 15px;
   width: 157px;
   height: 2.3em;
   font-size: large;
-  background-color: rgba(white, 0.895);
   border-radius: 20px;
-  color: black;
-
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
 }
 
 .toggle-sound-mode-button {
+  @include button-hover-effects;
+
   position: absolute;
   right: 25px;
   top: 15px;
   height: 55px;
   width: 50px;
-
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
 }
