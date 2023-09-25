@@ -17,6 +17,7 @@ body {
   // This line ensures that the font is applied to certain elements that previously didn't have it.
   * {
     font-family: 'Oswald', sans-serif;
+    user-select: none;
   }
 }
 

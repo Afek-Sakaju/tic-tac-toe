@@ -23,7 +23,6 @@
   max-height: 85px;
   font-size: 3.7em;
   margin: 0;
-  user-select: none;
 }
 
 .current-turn-display {
@@ -33,7 +32,6 @@
   color: white;
   font-size: 2em;
   font-weight: 500;
-  user-select: none;
 }
 
 .action-button {
@@ -84,7 +82,6 @@
   background-color: rgba(255, 255, 255, 0.895);
   border-radius: 20px;
   color: black;
-  user-select: none;
   cursor: pointer;
 }
 .start-game-button:hover {
@@ -104,7 +101,6 @@
   background-color: rgba(255, 255, 255, 0.895);
   border-radius: 20px;
   color: black;
-  user-select: none;
   cursor: pointer;
 }
 .restart-game-board-button:hover {
@@ -117,7 +113,6 @@
   top: 15px;
   height: 55px;
   width: 50px;
-  user-select: none;
   cursor: pointer;
 }
 .toggle-sound-mode-button:hover {
@@ -164,6 +159,7 @@ body {
 }
 body * {
   font-family: "Oswald", sans-serif;
+  user-select: none;
 }
 
 .hidden {
