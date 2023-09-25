@@ -1,13 +1,12 @@
 .game-board-cell {
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   border: 2px dotted rgba(white, 0.815);
   border-radius: 20px;
   padding: 20px;
   margin: 16px;
   font-size: 30px;
-  height: 110px;
-  width: 120px;
+  min-height: 110px;
+  min-width: 120px;
 
   &.winning-cell {
     animation: rotation infinite 1.4s ease-in-out;
@@ -15,30 +14,56 @@
 
   &.cell-placeholder {
     background-image: url('../../assets/pictures/question-mark.png');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 105px;
     opacity: 0.4;
   }
 
-  &.o {
-    background-image: url('../../assets/pictures/o-icon.png');
-    background-size: 135px;
+  &.x::before,
+  &.x::after {
+    content: '';
+    position: absolute;
+    width: 125px;
+    height: 24px;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    border-radius: 7px;
   }
 
-  &.x {
-    background-image: url('../../assets/pictures/x-icon.png');
-    background-size: 95px;
+  &.x::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &.x::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &.o::before {
+    content: '';
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 21px solid white;
+    border-radius: 50%;
   }
 
   &:not(.locked) {
+    @include button-hover-effects;
     opacity: 0.4;
 
     &:not(:hover) {
-      background-image: unset;
-    }
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.8;
+      &::before,
+      &::after {
+        border: unset;
+        background-color: unset;
+      }
     }
   }
 }

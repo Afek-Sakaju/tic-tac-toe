@@ -30,41 +30,64 @@
 }
 
 .game-board-cell {
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   border: 2px dotted rgba(255, 255, 255, 0.815);
   border-radius: 20px;
   padding: 20px;
   margin: 16px;
   font-size: 30px;
-  height: 110px;
-  width: 120px;
+  min-height: 110px;
+  min-width: 120px;
 }
 .game-board-cell.winning-cell {
   animation: rotation infinite 1.4s ease-in-out;
 }
 .game-board-cell.cell-placeholder {
   background-image: url("../../assets/pictures/question-mark.png");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 105px;
   opacity: 0.4;
 }
-.game-board-cell.o {
-  background-image: url("../../assets/pictures/o-icon.png");
-  background-size: 135px;
+.game-board-cell.x::before, .game-board-cell.x::after {
+  content: "";
+  position: absolute;
+  width: 125px;
+  height: 24px;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  border-radius: 7px;
 }
-.game-board-cell.x {
-  background-image: url("../../assets/pictures/x-icon.png");
-  background-size: 95px;
+.game-board-cell.x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.game-board-cell.x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.game-board-cell.o::before {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 21px solid white;
+  border-radius: 50%;
 }
 .game-board-cell:not(.locked) {
+  cursor: pointer;
   opacity: 0.4;
 }
-.game-board-cell:not(.locked):not(:hover) {
-  background-image: unset;
-}
 .game-board-cell:not(.locked):hover {
-  cursor: pointer;
   opacity: 0.8;
+}
+.game-board-cell:not(.locked):not(:hover)::before, .game-board-cell:not(.locked):not(:hover)::after {
+  border: unset;
+  background-color: unset;
 }
 
 .start-game-button {
