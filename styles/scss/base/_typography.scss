@@ -6,11 +6,11 @@
   margin: 0;
 }
 
-.current-turn-display {
+.current-turn-status-text {
   position: absolute;
   left: 30px;
   top: 15px;
   color: white;
   font-size: 2em;
-  font-weight: 500;
+  font-weight: bold;
 }
