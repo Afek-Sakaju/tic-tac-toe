@@ -1,4 +1,4 @@
-.action-button {
+.game-board-cell {
   background-repeat: no-repeat;
   background-position: center;
   border: 2px dotted rgba(white, 0.815);
@@ -9,7 +9,7 @@
   height: 110px;
   width: 120px;
 
-  &.winner-button {
+  &.winning-cell {
     animation: rotation infinite 1.4s ease-in-out;
   }
 

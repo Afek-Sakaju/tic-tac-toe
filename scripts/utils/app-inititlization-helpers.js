@@ -1,7 +1,7 @@
 function getInitializedBoardCell(num) {
   const cellElement = document.createElement('div');
   cellElement.id = `board-cell-${num}`;
-  cellElement.className = 'action-button cell-placeholder locked';
+  cellElement.className = 'game-board-cell cell-placeholder locked';
   cellElement.setAttribute('disabled', 'true');
 
   cellElement.addEventListener('click', () => {
