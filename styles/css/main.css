@@ -1,17 +1,169 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'containers';
- *   |         ^^^^^^^^^^^^
- *   '
- *   styles\scss\main.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'containers';\d\a   \2502          ^^^^^^^^^^^^\a   \2575 \a   styles\\scss\\main.scss 1:9  root stylesheet";
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(35deg);
+  }
 }
+@keyframes flip {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}
+.main-heading {
+  text-align: center;
+  font-weight: bolder;
+  max-height: 85px;
+  font-size: 3.7em;
+  margin: 0;
+}
+
+.current-turn-status-text {
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.game-board-cell {
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px dotted rgba(255, 255, 255, 0.815);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px;
+  font-size: 30px;
+  height: 110px;
+  width: 120px;
+}
+.game-board-cell.winning-cell {
+  animation: rotation infinite 1.4s ease-in-out;
+}
+.game-board-cell.cell-placeholder {
+  background-image: url("../../assets/pictures/question-mark.png");
+  background-size: 105px;
+  opacity: 0.4;
+}
+.game-board-cell.o {
+  background-image: url("../../assets/pictures/o-icon.png");
+  background-size: 135px;
+}
+.game-board-cell.x {
+  background-image: url("../../assets/pictures/x-icon.png");
+  background-size: 95px;
+}
+.game-board-cell:not(.locked) {
+  opacity: 0.4;
+}
+.game-board-cell:not(.locked):not(:hover) {
+  background-image: unset;
+}
+.game-board-cell:not(.locked):hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.start-game-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.895);
+  width: 9em;
+  height: 3em;
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.895);
+  border-radius: 20px;
+  color: black;
+}
+.start-game-button:hover {
+  opacity: 0.8;
+}
+
+.reset-game-board-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.895);
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  width: 157px;
+  height: 2.3em;
+  font-size: large;
+  border-radius: 20px;
+}
+.reset-game-board-button:hover {
+  opacity: 0.8;
+}
+
+.toggle-sound-mode-button {
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  height: 55px;
+  width: 50px;
+}
+.toggle-sound-mode-button:hover {
+  opacity: 0.8;
+}
+
+.main-content-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  gap: 50px;
+  height: 100%;
+}
+
+.game-board-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+  border: 3px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
+}
+body {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  background-color: rgb(0, 0, 6);
+  height: 98vh;
+}
+body * {
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=main.css.map */

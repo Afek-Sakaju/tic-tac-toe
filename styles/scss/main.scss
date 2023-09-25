@@ -1,7 +1,8 @@
-@import 'containers';
-@import 'texts';
-@import 'buttons';
-@import 'keyframes';
+@import './abstracts/keyframes';
+@import './abstracts/mixins';
+@import './base/typography';
+@import './components/buttons';
+@import './components/containers';
 
 @font-face {
   font-family: 'Oswald';
