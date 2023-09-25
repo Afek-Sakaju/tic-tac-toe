@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  // This line ensures that the font is applied to certain buttons.
+  font-family: 'Oswald', sans-serif;
   background-color: rgba(white, 0.895);
 }
