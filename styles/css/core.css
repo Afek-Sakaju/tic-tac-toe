@@ -34,7 +34,7 @@
   font-weight: 500;
 }
 
-.action-button {
+.game-board-cell {
   background-repeat: no-repeat;
   background-position: center;
   border: 2px dotted rgba(255, 255, 255, 0.815);
@@ -45,29 +45,29 @@
   height: 110px;
   width: 120px;
 }
-.action-button.winner-button {
+.game-board-cell.winning-cell {
   animation: rotation infinite 1.4s ease-in-out;
 }
-.action-button.cell-placeholder {
+.game-board-cell.cell-placeholder {
   background-image: url("../../assets/pictures/question-mark.png");
   background-size: 105px;
   opacity: 0.4;
 }
-.action-button.o {
+.game-board-cell.o {
   background-image: url("../../assets/pictures/o-icon.png");
   background-size: 135px;
 }
-.action-button.x {
+.game-board-cell.x {
   background-image: url("../../assets/pictures/x-icon.png");
   background-size: 95px;
 }
-.action-button:not(.locked) {
+.game-board-cell:not(.locked) {
   opacity: 0.4;
 }
-.action-button:not(.locked):not(:hover) {
+.game-board-cell:not(.locked):not(:hover) {
   background-image: unset;
 }
-.action-button:not(.locked):hover {
+.game-board-cell:not(.locked):hover {
   cursor: pointer;
   opacity: 0.8;
 }
