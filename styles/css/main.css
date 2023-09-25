@@ -12,20 +12,6 @@
     transform: rotate(35deg);
   }
 }
-@keyframes flip {
-  0% {
-    opacity: 0;
-    transform: rotateX(90deg);
-  }
-  50% {
-    opacity: 1;
-    transform: rotateX(720deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotateX(720deg);
-  }
-}
 .main-heading {
   text-align: center;
   font-weight: bolder;

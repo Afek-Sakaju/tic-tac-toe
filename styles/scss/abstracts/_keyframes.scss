@@ -1,29 +1,14 @@
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-35deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(35deg);
-    }
-}
-
-@keyframes flip {
-    0% {
-        opacity: 0;
-        transform: rotateX(90deg);
-    }
-    50% {
-        opacity: 1;
-        transform: rotateX(720deg);
-    }
-    100% {
-        opacity: 1;
-        transform: rotateX(720deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(35deg);
+  }
 }
