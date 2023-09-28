@@ -5,35 +5,36 @@ const getEmptyCellIdFromArray = (arr) => {
 
 // An "almost uniform" array is one in which all cells have the same sign except for one.
 const getAlmostUniformSignsStatus = (arr) => {
+  const almostUniformStatus = {};
   const primarySign = arr?.find(({ sign }) => sign)?.sign;
-  if (!primarySign) return {};
 
-  const sameSignCount = arr?.reduce((count, { sign }) => {
-    return sign === primarySign ? count + 1 : count;
-  }, 0);
+  const sameSignCount =
+    arr?.reduce((count, { sign }) => {
+      return sign === primarySign ? count + 1 : count;
+    }, 0) ?? 0;
 
-  const isAlmostUniformArr = sameSignCount === arr.length - 1;
-  // eslint-disable-next-line consistent-return
-  return { isAlmostUniformArr, primarySign };
+  almostUniformStatus.isAlmostUniform = sameSignCount === arr.length - 1;
+  almostUniformStatus.primarySign = primarySign;
+  return almostUniformStatus;
 };
 
-const getBestMoveInArray = (arr, oppositeTurn) => {
-  const { isAlmostUniformArr, primarySign } = getAlmostUniformSignsStatus(arr);
-  if (!isAlmostUniformArr) return {};
+const getBestMoveInArray = (arr, currentTurn) => {
+  const bestMoveStatus = {};
+  const { isAlmostUniform, primarySign } = getAlmostUniformSignsStatus(arr);
+  if (!isAlmostUniform) return {};
 
-  const bestMoveCellId = getEmptyCellIdFromArray(arr);
-  const isWinningMove = primarySign !== oppositeTurn;
-  // eslint-disable-next-line consistent-return
-  return { bestMoveCellId, isWinningMove };
+  bestMoveStatus.bestMoveCellId = getEmptyCellIdFromArray(arr);
+  bestMoveStatus.isWinningMove = primarySign === currentTurn;
+  return bestMoveStatus;
 };
 
-const getBestMoveByRow = (oppositeTurn) => {
+const getBestMoveByRow = () => {
   const bestMovesByRow = { lossPreventingMoves: [], winningMoves: [] };
 
   gameBoardMatrix.forEach((row) => {
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       row,
-      oppositeTurn
+      currentTurn
     );
     if (!bestMoveCellId) return;
 
@@ -44,7 +45,7 @@ const getBestMoveByRow = (oppositeTurn) => {
   return bestMovesByRow;
 };
 
-const getBestMoveByColumn = (oppositeTurn) => {
+const getBestMoveByColumn = () => {
   const bestMovesByColumn = { lossPreventingMoves: [], winningMoves: [] };
 
   for (let j = 0; j < gameBoardMatrix[0].length; j++) {
@@ -52,7 +53,7 @@ const getBestMoveByColumn = (oppositeTurn) => {
 
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       column,
-      oppositeTurn
+      currentTurn
     );
     if (bestMoveCellId) {
       if (isWinningMove) bestMovesByColumn.winningMoves.push(bestMoveCellId);
@@ -63,7 +64,7 @@ const getBestMoveByColumn = (oppositeTurn) => {
   return bestMovesByColumn;
 };
 
-const getBestMoveBySlant = (oppositeTurn) => {
+const getBestMoveBySlant = () => {
   const bestMovesBySlant = { lossPreventingMoves: [], winningMoves: [] };
   const slantsInMatrixResult = getMatrixSlants(gameBoardMatrix);
   const slants = Object.values(slantsInMatrixResult);
@@ -71,7 +72,7 @@ const getBestMoveBySlant = (oppositeTurn) => {
   slants?.forEach((slant) => {
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       slant,
-      oppositeTurn
+      currentTurn
     );
     if (!bestMoveCellId) return;
 
@@ -98,10 +99,9 @@ const getRandomMove = () => {
 };
 
 const getBotBestMove = () => {
-  const oppositeTurn = getOppositeTurn();
-  const bestMovesByRow = getBestMoveByRow(oppositeTurn);
-  const bestMovesByColumn = getBestMoveByColumn(oppositeTurn);
-  const bestMovesBySlant = getBestMoveBySlant(oppositeTurn);
+  const bestMovesByRow = getBestMoveByRow();
+  const bestMovesByColumn = getBestMoveByColumn();
+  const bestMovesBySlant = getBestMoveBySlant();
 
   const bestWinningMoves = [
     ...bestMovesByRow.winningMoves,
