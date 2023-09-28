@@ -129,12 +129,15 @@ const getBotBestMove = () => {
   return bestMove;
 };
 
-const playBotMove = () => {
-  const bestMove = getBotBestMove();
-  setTimeout(() => selectBoardCell(bestMove), 2000);
-};
-
-executeBotMoveIfItsTurn = () => {
+executeBotLogicIfItsTurn = () => {
   const isTurnOfBot = isCurrentBotTurn();
-  if (isTurnOfBot) playBotMove();
+  if (!isTurnOfBot) return;
+
+  toggleBoardCellSelectionDisabled();
+
+  const bestBotMove = getBotBestMove();
+  setTimeout(() => {
+    selectBoardCell(bestBotMove);
+    toggleBoardCellSelectionDisabled();
+  }, 2000);
 };

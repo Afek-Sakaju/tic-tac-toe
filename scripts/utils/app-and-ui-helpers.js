@@ -66,6 +66,17 @@ function updateBoardCellsOnChange() {
   });
 }
 
+function toggleBoardCellSelectionDisabled() {
+  const boardCells = getAllBoardCells();
+  boardCells.forEach(({ cellElement }) => {
+    const isNotLocked = !cellElement.classList.contains('locked');
+    const isDisabled = cellElement.getAttribute('disabled');
+
+    if (isDisabled && isNotLocked) cellElement.removeAttribute('disabled');
+    else cellElement.setAttribute('disabled', true);
+  });
+}
+
 function resetBoardCells() {
   const boardCells = getAllBoardCells();
 
