@@ -1,12 +1,11 @@
 function getInitializedBoardCell(num) {
   const cellElement = document.createElement('div');
   cellElement.id = `board-cell-${num}`;
-  cellElement.className = 'game-board-cell cell-placeholder locked';
+  cellElement.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
   cellElement.setAttribute('disabled', 'true');
 
   cellElement.addEventListener('click', () => {
     const isDisabled = cellElement.getAttribute('disabled');
-    // Subtracting 1 because the matrix calculations are based on index.
     if (!isDisabled) selectBoardCell(num);
   });
 
@@ -27,7 +26,7 @@ function getInitializedGameBoardMatrix() {
 }
 
 function initializeGameBoardCells() {
-  const gameBoardContainer = document.getElementById('game-board');
+  const gameBoardContainer = document.getElementById(ELEMENTS_IDS.GAME_BOARD);
 
   const boardCells = getAllBoardCells();
   boardCells.forEach(({ cellElement }) => {

@@ -1,10 +1,10 @@
-const getOppositeTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
+const getWaiterTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
 
-const isCurrentBotTurn = () => currentTurnSign === botTurnSign;
+const isCurrentTurnOfBot = () => currentTurnSign === BOT_TURN_SIGN;
 
 const setSelectedCellStatus = (position) => {
   const boardCells = getAllBoardCells();
-  boardCells[position].cellElement.classList.add('locked');
+  boardCells[position].cellElement.classList.add(STYLE_CLASSES.LOCKED_CELL);
   boardCells[position].cellElement.setAttribute('disabled', true);
   boardCells[position].sign = currentTurnSign;
 };
@@ -17,7 +17,7 @@ const getGameCondition = () => {
 };
 
 const swapTurn = () => {
-  currentTurnSign = getOppositeTurn();
+  currentTurnSign = getWaiterTurn();
 };
 
 function finishGame(gameCondition) {
