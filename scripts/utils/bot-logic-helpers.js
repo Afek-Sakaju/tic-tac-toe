@@ -98,7 +98,7 @@ const getRandomMove = () => {
 };
 
 const getBotBestMove = () => {
-  const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
+  const oppositeTurn = getOppositeTurn();
   const bestMovesByRow = getBestMoveByRow(oppositeTurn);
   const bestMovesByColumn = getBestMoveByColumn(oppositeTurn);
   const bestMovesBySlant = getBestMoveBySlant(oppositeTurn);
