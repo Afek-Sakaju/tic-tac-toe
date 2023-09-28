@@ -14,7 +14,10 @@ function getInitializedBoardCell(num) {
 }
 
 function updateCurrentTurnStatus() {
-  currentTurnStatusDisplay.innerText = `Next Move: Player (${currentTurnSign.toUpperCase()})`;
+  const isTurnOfBot = isCurrentBotTurn();
+  currentTurnStatusDisplay.innerText = `Next Move: \n ${currentTurnSign.toUpperCase()} - ${
+    isTurnOfBot ? 'Bot' : 'Player'
+  }`;
 }
 
 function modifyElementsOnFinishedGame() {
