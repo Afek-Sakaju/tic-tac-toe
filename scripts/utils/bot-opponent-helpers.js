@@ -131,7 +131,7 @@ const getBotBestMove = () => {
 
 const playBotMove = () => {
   const bestMove = getBotBestMove();
-  setTimeout(() => selectBoardCell(bestMove - 1), 2000);
+  setTimeout(() => selectBoardCell(bestMove), 2000);
 };
 
 executeBotMoveIfItsTurn = () => {

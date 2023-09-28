@@ -11,7 +11,7 @@ function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {
     const isDisabled = cellElement.getAttribute('disabled');
-    if (!isDisabled) selectBoardCell(num - 1);
+    if (!isDisabled) selectBoardCell(num );
   });
 
   return { cellElement, sign: null };
