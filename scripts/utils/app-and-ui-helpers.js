@@ -14,7 +14,7 @@ function getInitializedBoardCell(num) {
 }
 
 function updateCurrentTurnStatus() {
-  const isTurnOfBot = isCurrentBotTurn();
+  const isTurnOfBot = isCurrentTurnOfBot();
   currentTurnStatusDisplay.innerText = `Next Move: \n ${currentTurnSign.toUpperCase()} - ${
     isTurnOfBot ? 'Bot' : 'Player'
   }`;
@@ -22,13 +22,13 @@ function updateCurrentTurnStatus() {
 
 function modifyElementsOnFinishedGame() {
   startGameButton.innerText = 'Play-Again';
-  startGameButton.classList.remove(GAME_ELEMENT_MODES.HIDDEN);
-  currentTurnStatusDisplay.classList.add(GAME_ELEMENT_MODES.HIDDEN);
+  startGameButton.classList.remove(STYLE_CLASSES.HIDDEN);
+  currentTurnStatusDisplay.classList.add(STYLE_CLASSES.HIDDEN);
 }
 
 function modifyElementsOnGameStart() {
-  startGameButton.classList.add(GAME_ELEMENT_MODES.HIDDEN);
-  currentTurnStatusDisplay.classList.remove(GAME_ELEMENT_MODES.HIDDEN);
+  startGameButton.classList.add(STYLE_CLASSES.HIDDEN);
+  currentTurnStatusDisplay.classList.remove(STYLE_CLASSES.HIDDEN);
 }
 
 function lockUnselectedBoardCells() {
@@ -37,27 +37,29 @@ function lockUnselectedBoardCells() {
     .filter(({ sign }) => sign === null)
     .forEach(({ cellElement }) => {
       cellElement.classList.remove(currentTurnSign);
-      cellElement.classList.add('locked');
+      cellElement.classList.add(STYLE_CLASSES.LOCKED_CELL);
       cellElement.setAttribute('disabled', true);
     });
 }
 
 function updateBoardCellsOnChange() {
-  const oppositeTurn = getOppositeTurn();
+  const waiterTurn = getWaiterTurn();
   const classes = {
     add: currentTurnSign,
-    remove: oppositeTurn,
+    remove: waiterTurn,
   };
 
   const boardCells = getAllBoardCells();
   boardCells.forEach(({ cellElement }) => {
-    const isNotDisabled = !cellElement.classList.contains('locked');
+    const isNotDisabled = !cellElement.classList.contains(
+      STYLE_CLASSES.LOCKED_CELL
+    );
 
     if (isGameFinished || isNotDisabled) {
       cellElement.classList.remove(
-        GAME_ELEMENT_MODES.EMPTY,
-        GAME_ELEMENT_MODES.LOCKED,
-        GAME_ELEMENT_MODES.WINNER,
+        STYLE_CLASSES.PLACEHOLDER_CELL,
+        STYLE_CLASSES.LOCKED_CELL,
+        STYLE_CLASSES.WINNER_CELL,
         classes.remove
       );
 
@@ -69,7 +71,9 @@ function updateBoardCellsOnChange() {
 function toggleBoardCellSelectionDisabled() {
   const boardCells = getAllBoardCells();
   boardCells.forEach(({ cellElement }) => {
-    const isNotLocked = !cellElement.classList.contains('locked');
+    const isNotLocked = !cellElement.classList.contains(
+      STYLE_CLASSES.LOCKED_CELL
+    );
     const isDisabled = cellElement.getAttribute('disabled');
 
     if (isDisabled && isNotLocked) cellElement.removeAttribute('disabled');
@@ -81,7 +85,7 @@ function resetBoardCells() {
   const boardCells = getAllBoardCells();
 
   boardCells.forEach((boardCell, i) => {
-    boardCell.cellElement.classList.remove(GAME_ELEMENT_MODES.LOCKED);
+    boardCell.cellElement.classList.remove(STYLE_CLASSES.LOCKED_CELL);
     // eslint-disable-next-line no-param-reassign
     boardCell.sign = null;
 
@@ -93,7 +97,7 @@ function resetBoardCells() {
 const highlightWinningBoardCells = () => {
   const winningBoardCells = getWinningCells();
   winningBoardCells.forEach(({ cellElement }) =>
-    cellElement.classList.add(GAME_ELEMENT_MODES.WINNER)
+    cellElement.classList.add(STYLE_CLASSES.WINNER_CELL)
   );
 };
 

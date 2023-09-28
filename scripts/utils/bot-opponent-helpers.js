@@ -130,7 +130,7 @@ const getBotBestMove = () => {
 };
 
 executeBotLogicIfItsTurn = () => {
-  const isTurnOfBot = isCurrentBotTurn();
+  const isTurnOfBot = isCurrentTurnOfBot();
   if (!isTurnOfBot) return;
 
   toggleBoardCellSelectionDisabled();
