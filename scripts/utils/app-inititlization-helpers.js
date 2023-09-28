@@ -20,7 +20,7 @@ function getInitializedGameBoardMatrix() {
     [6, 7, 8],
   ];
 
-  const gameBoardMatrix = initialMatrix.map((row, i) => {
+  const gameBoardMatrix = initialMatrix.map((row) => {
     return row.map((num) => getInitializedBoardCell(num));
   });
   return gameBoardMatrix;
