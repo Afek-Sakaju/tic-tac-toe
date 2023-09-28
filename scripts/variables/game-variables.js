@@ -5,6 +5,6 @@ const toggleMuteButton = document.getElementById('sound-btn');
 
 const gameBoardMatrix = getInitializedGameBoardMatrix(3, 3);
 
-let currentTurn = 'o';
+let currentTurn = 'x';
 let isGameFinished = true;
 let isSoundMuted = false;
