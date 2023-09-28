@@ -18,13 +18,13 @@ const getAlmostUniformSignsStatus = (arr) => {
   return almostUniformStatus;
 };
 
-const getBestMoveInArray = (arr, currentTurn) => {
+const getBestMoveInArray = (arr, currentTurnSign) => {
   const bestMoveStatus = {};
   const { isAlmostUniform, primarySign } = getAlmostUniformSignsStatus(arr);
   if (!isAlmostUniform) return {};
 
   bestMoveStatus.bestMoveCellId = getEmptyCellIdFromArray(arr);
-  bestMoveStatus.isWinningMove = primarySign === currentTurn;
+  bestMoveStatus.isWinningMove = primarySign === currentTurnSign;
   return bestMoveStatus;
 };
 
@@ -34,7 +34,7 @@ const getBestMoveByRow = () => {
   gameBoardMatrix.forEach((row) => {
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       row,
-      currentTurn
+      currentTurnSign
     );
     if (!bestMoveCellId) return;
 
@@ -53,7 +53,7 @@ const getBestMoveByColumn = () => {
 
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       column,
-      currentTurn
+      currentTurnSign
     );
     if (bestMoveCellId) {
       if (isWinningMove) bestMovesByColumn.winningMoves.push(bestMoveCellId);
@@ -72,7 +72,7 @@ const getBestMoveBySlant = () => {
   slants?.forEach((slant) => {
     const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
       slant,
-      currentTurn
+      currentTurnSign
     );
     if (!bestMoveCellId) return;
 
@@ -135,6 +135,6 @@ const playBotMove = () => {
 };
 
 executeBotMoveIfItsTurn = () => {
-  const isTurnOfBot = currentTurn === 'o';
+  const isTurnOfBot = isCurrentBotTurn();
   if (isTurnOfBot) playBotMove();
 };
