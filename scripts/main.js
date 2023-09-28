@@ -18,6 +18,7 @@ function selectBoardCell(position) {
   // Undefined gameCondition means the game continues.
   if (!gameCondition) continueGame();
   else finishGame(gameCondition);
+  console.log(getBotBestMove());
 }
 
 window.onload = () => initializeGameBoardCells();
