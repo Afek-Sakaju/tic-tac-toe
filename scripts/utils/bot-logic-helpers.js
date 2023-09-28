@@ -1,62 +1,82 @@
-const getLossPreventingCellsByRow = (oppositeTurn) => {
-  const lossPreventingCellsByRow = [];
-
-  gameBoardMatrix.forEach((row) => {
-    const countOppositeSignInRow = row.reduce((count, { sign }) => {
-      return sign === oppositeTurn ? count + 1 : count;
-    }, 0);
-
-    const isRowAlmostLost = countOppositeSignInRow === row.length - 1;
-    if (isRowAlmostLost) {
-      const lossPreventingCellId = row?.find(({ sign }) => !sign)?.id;
-      if (lossPreventingCellId) {
-        lossPreventingCellsByRow.push(lossPreventingCellId);
-      }
-    }
-  });
-
-  return lossPreventingCellsByRow;
+const getEmptyCellIdFromArray = (arr) => {
+  const emptyCellId = arr?.find(({ sign }) => !sign)?.id;
+  return emptyCellId;
 };
 
-const getLossPreventingCellsByCol = (oppositeTurn) => {
-  const lossPreventingCellsByCol = [];
+// An "almost uniform" array is one in which all cells have the same sign except for one.
+const getAlmostUniformSignsStatus = (arr) => {
+  const primarySign = arr?.find(({ sign }) => sign);
+  if (!primarySign) return;
+
+  const sameSignCount = arr?.reduce((count, { sign }) => {
+    return sign === primarySign ? count + 1 : count;
+  }, 0);
+
+  const isAlmostUniformArr = sameSignCount === arr.length - 1;
+  // eslint-disable-next-line consistent-return
+  return { isAlmostUniformArr, primarySign };
+};
+
+const getBestMoveInArray = (arr, oppositeTurn) => {
+  const { isAlmostUniformArr, primarySign } = getAlmostUniformSignsStatus(arr);
+  if (!isAlmostUniformArr) return;
+
+  const bestMoveCellId = getEmptyCellIdFromArray(arr);
+  const isWinningMove = primarySign === oppositeTurn;
+  // eslint-disable-next-line consistent-return
+  return { bestMoveCellId, isWinningMove };
+};
+
+const getBestMoveByRow = (oppositeTurn) => {
+  const bestMovesByRow = { lossPreventingMoves: [], winningMoves: [] };
+
+  gameBoardMatrix.forEach((row) => {
+    const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
+      row,
+      oppositeTurn
+    );
+    if (!bestMoveCellId) return;
+
+    if (isWinningMove) bestMovesByRow.winningMoves.push(bestMoveCellId);
+    else bestMovesByRow.lossPreventingMoves.push(bestMoveCellId);
+  });
+
+  return bestMovesByRow;
+};
+
+const getBestMoveByColumn = (oppositeTurn) => {
+  const bestMovesByColumn = { lossPreventingMoves: [], winningMoves: [] };
 
   for (let j = 0; j < gameBoardMatrix[0].length; j++) {
     const column = gameBoardMatrix.map((row) => row[j]);
 
-    const countOppositeSignInColumn = column.reduce((count, { sign }) => {
-      return sign === oppositeTurn ? count + 1 : count;
-    }, 0);
-
-    const isColumnAlmostLost = countOppositeSignInColumn === column.length - 1;
-    if (isColumnAlmostLost) {
-      const lossPreventingCellId = column?.find(({ sign }) => !sign)?.id;
-      if (lossPreventingCellId) {
-        lossPreventingCellsByCol.push(lossPreventingCellId);
-      }
+    const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
+      column,
+      oppositeTurn
+    );
+    if (bestMoveCellId) {
+      if (isWinningMove) bestMovesByColumn.winningMoves.push(bestMoveCellId);
+      else bestMovesByColumn.lossPreventingMoves.push(bestMoveCellId);
     }
   }
 
-  return lossPreventingCellsByCol;
+  return bestMovesByColumn;
 };
 
-const getLossPreventingCellsBySlant = (oppositeTurn) => {
-  const lossPreventingCellsBySlant = [];
-  const { slant1, slant2 } = getMatrixSlants(gameBoardMatrix);
+const getBestMoveBySlant = (oppositeTurn) => {
+  const bestMovesBySlant = { lossPreventingMoves: [], winningMoves: [] };
+  const slantsInMatrixResult = getMatrixSlants(gameBoardMatrix);
+  const slants = Object.values(slantsInMatrixResult);
 
-  const slants = [slant1, slant2];
-  slants.forEach((slant) => {
-    const countOppositeSignInSlant = slant.reduce((count, { sign }) => {
-      return sign === oppositeTurn ? count + 1 : count;
-    }, 0);
+  slants?.forEach((slant) => {
+    const { bestMoveCellId, isWinningMove } = getBestMoveInArray(
+      slant,
+      oppositeTurn
+    );
+    if (!bestMoveCellId) return;
 
-    const isSlantAlmostLost = countOppositeSignInSlant === slant.length - 1;
-    if (isSlantAlmostLost) {
-      const lossPreventingCellId = slant?.find(({ sign }) => !sign)?.id;
-      if (lossPreventingCellId) {
-        lossPreventingCellsBySlant.push(lossPreventingCellId);
-      }
-    }
+    if (isWinningMove) bestMovesBySlant.winningMoves.push(bestMoveCellId);
+    else bestMovesBySlant.lossPreventingMoves.push(bestMoveCellId);
   });
 
   return lossPreventingCellsBySlant;
@@ -64,18 +84,13 @@ const getLossPreventingCellsBySlant = (oppositeTurn) => {
 
 const getLossPreventingMoves = () => {
   const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
-  const lossPreventingCellsByRow = getLossPreventingCellsByRow(oppositeTurn);
-  const lossPreventingCellsByCol = getLossPreventingCellsByCol(oppositeTurn);
-  const lossPreventingCellsBySlant =
-    getLossPreventingCellsBySlant(oppositeTurn);
+  const bestMovesByRow = getBestMoveByRow(oppositeTurn);
+  const bestMovesByColumn = getBestMoveByColumn(oppositeTurn);
+  const bestMovesBySlant = getBestMoveBySlant(oppositeTurn);
 
-  const lossPreventingCellsIds = [
-    ...lossPreventingCellsByRow,
-    ...lossPreventingCellsByCol,
-    ...lossPreventingCellsBySlant,
-  ];
+  const bestMoves = [bestMovesByRow, bestMovesByColumn, bestMovesBySlant];
 
-  return lossPreventingCellsIds;
+  return bestMoves;
 };
 
 function getBotBestMove() {
