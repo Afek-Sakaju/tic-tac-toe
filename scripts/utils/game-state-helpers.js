@@ -34,5 +34,5 @@ function continueGame() {
   swapTurn();
   updateBoardCellsOnChange();
   updateCurrentTurnStatus();
-  executeBotMoveIfItsTurn();
+  executeBotLogicIfItsTurn();
 }
