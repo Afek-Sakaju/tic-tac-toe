@@ -10,7 +10,7 @@ function getInitializedBoardCell(num) {
     if (!isDisabled) selectBoardCell(num - 1);
   });
 
-  return { cellElement, sign: null };
+  return { cellElement, sign: null, id: num };
 }
 
 function getInitializedGameBoardMatrix() {
