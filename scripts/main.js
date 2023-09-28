@@ -5,6 +5,7 @@ function startGame() {
   resetBoardCells();
   modifyElementsOnGameStart();
   updateCurrentTurnStatus();
+  executeBotMoveIfItsTurn();
 }
 
 function restartGame() {
