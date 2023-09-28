@@ -3,10 +3,6 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
-const getOppositeTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
-
-const isCurrentBotTurn = () => currentTurnSign === botTurnSign;
-
 function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {

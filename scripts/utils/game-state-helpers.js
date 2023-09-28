@@ -1,3 +1,7 @@
+const getOppositeTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
+
+const isCurrentBotTurn = () => currentTurnSign === botTurnSign;
+
 const setSelectedCellStatus = (position) => {
   const boardCells = getAllBoardCells();
   boardCells[position].cellElement.classList.add('locked');
