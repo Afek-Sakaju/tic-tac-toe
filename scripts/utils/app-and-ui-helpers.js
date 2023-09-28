@@ -3,7 +3,9 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
-const getOppositeTurn = () => (currentTurn === 'o' ? 'x' : 'o');
+const getOppositeTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
+
+const isCurrentBotTurn = () => currentTurnSign === botTurnSign;
 
 function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
@@ -16,7 +18,7 @@ function getInitializedBoardCell(num) {
 }
 
 function updateCurrentTurnStatus() {
-  currentTurnStatusDisplay.innerText = `Next move: Player ${currentTurn.toUpperCase()}`;
+  currentTurnStatusDisplay.innerText = `Next Move: Player (${currentTurnSign.toUpperCase()})`;
 }
 
 function modifyElementsOnFinishedGame() {
@@ -35,7 +37,7 @@ function lockUnselectedBoardCells() {
   boardCells
     .filter(({ sign }) => sign === null)
     .forEach(({ cellElement }) => {
-      cellElement.classList.remove(currentTurn);
+      cellElement.classList.remove(currentTurnSign);
       cellElement.classList.add('locked');
       cellElement.setAttribute('disabled', true);
     });
@@ -44,7 +46,7 @@ function lockUnselectedBoardCells() {
 function updateBoardCellsOnChange() {
   const oppositeTurn = getOppositeTurn();
   const classes = {
-    add: currentTurn,
+    add: currentTurnSign,
     remove: oppositeTurn,
   };
 

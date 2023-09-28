@@ -2,7 +2,7 @@ const setSelectedCellStatus = (position) => {
   const boardCells = getAllBoardCells();
   boardCells[position].cellElement.classList.add('locked');
   boardCells[position].cellElement.setAttribute('disabled', true);
-  boardCells[position].sign = currentTurn;
+  boardCells[position].sign = currentTurnSign;
 };
 
 const getGameCondition = () => {
@@ -13,7 +13,7 @@ const getGameCondition = () => {
 };
 
 const swapTurn = () => {
-  currentTurn = getOppositeTurn();
+  currentTurnSign = getOppositeTurn();
 };
 
 function finishGame(gameCondition) {
@@ -25,7 +25,7 @@ function finishGame(gameCondition) {
 }
 
 function continueGame() {
-  const currentSelectionSound = `selection-sound-${currentTurn}`;
+  const currentSelectionSound = `selection-sound-${currentTurnSign}`;
   playSound(currentSelectionSound);
   swapTurn();
   updateBoardCellsOnChange();
