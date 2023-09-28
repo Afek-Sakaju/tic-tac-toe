@@ -20,28 +20,30 @@
     opacity: 0.4;
   }
 
-  &.x::before,
-  &.x::after {
-    content: '';
-    position: absolute;
-    width: 125px;
-    height: 24px;
-    margin: 0;
-    left: 50%;
-    top: 50%;
-    background-color: white;
-    border-radius: 7px;
+  &.locked,
+  &:hover {
+    &.x::before,
+    &.x::after {
+      content: '';
+      position: absolute;
+      width: 125px;
+      height: 24px;
+      margin: 0;
+      left: 50%;
+      top: 50%;
+      background-color: white;
+      border-radius: 7px;
+    }
+
+    &.x::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &.x::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
   }
 
-  &.x::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &.x::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
-  &.o::before {
+  &.locked.o::before {
     content: '';
     position: absolute;
     width: 82px;
@@ -57,14 +59,6 @@
   &:not(.locked) {
     @include button-hover-effects;
     opacity: 0.4;
-
-    &:not(:hover) {
-      &::before,
-      &::after {
-        border: unset;
-        background-color: unset;
-      }
-    }
   }
 }
 
