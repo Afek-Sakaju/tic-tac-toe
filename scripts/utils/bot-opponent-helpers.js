@@ -22,7 +22,7 @@ const getBestMoveInArray = (arr, oppositeTurn) => {
   if (!isAlmostUniformArr) return {};
 
   const bestMoveCellId = getEmptyCellIdFromArray(arr);
-  const isWinningMove = primarySign === oppositeTurn;
+  const isWinningMove = primarySign !== oppositeTurn;
   // eslint-disable-next-line consistent-return
   return { bestMoveCellId, isWinningMove };
 };
