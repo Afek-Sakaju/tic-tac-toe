@@ -5,8 +5,8 @@ const getEmptyCellIdFromArray = (arr) => {
 
 // An "almost uniform" array is one in which all cells have the same sign except for one.
 const getAlmostUniformSignsStatus = (arr) => {
-  const primarySign = arr?.find(({ sign }) => sign);
-  if (!primarySign) return;
+  const primarySign = arr?.find(({ sign }) => sign)?.sign;
+  if (!primarySign) return {};
 
   const sameSignCount = arr?.reduce((count, { sign }) => {
     return sign === primarySign ? count + 1 : count;
@@ -19,7 +19,7 @@ const getAlmostUniformSignsStatus = (arr) => {
 
 const getBestMoveInArray = (arr, oppositeTurn) => {
   const { isAlmostUniformArr, primarySign } = getAlmostUniformSignsStatus(arr);
-  if (!isAlmostUniformArr) return;
+  if (!isAlmostUniformArr) return {};
 
   const bestMoveCellId = getEmptyCellIdFromArray(arr);
   const isWinningMove = primarySign === oppositeTurn;
@@ -79,20 +79,52 @@ const getBestMoveBySlant = (oppositeTurn) => {
     else bestMovesBySlant.lossPreventingMoves.push(bestMoveCellId);
   });
 
-  return lossPreventingCellsBySlant;
+  return bestMovesBySlant;
 };
 
-const getLossPreventingMoves = () => {
+const pickRandomFromArray = (arr) => {
+  if (!arr.length) return null;
+
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+};
+
+const getRandomMove = () => {
+  const boardCells = gameBoardMatrix.flat();
+  const emptyBoardCells = boardCells.filter((cell) => !cell.sign);
+
+  const randomMoveCellId = pickRandomFromArray(emptyBoardCells)?.id;
+  return randomMoveCellId;
+};
+
+const getBotBestMove = () => {
   const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
   const bestMovesByRow = getBestMoveByRow(oppositeTurn);
   const bestMovesByColumn = getBestMoveByColumn(oppositeTurn);
   const bestMovesBySlant = getBestMoveBySlant(oppositeTurn);
 
-  const bestMoves = [bestMovesByRow, bestMovesByColumn, bestMovesBySlant];
+  const bestWinningMoves = [
+    ...bestMovesByRow.winningMoves,
+    ...bestMovesByColumn.winningMoves,
+    ...bestMovesBySlant.winningMoves,
+  ];
 
-  return bestMoves;
+  const bestLossPreventingMoves = [
+    ...bestMovesByRow.lossPreventingMoves,
+    ...bestMovesByColumn.lossPreventingMoves,
+    ...bestMovesBySlant.lossPreventingMoves,
+  ];
+
+  switch (true) {
+    case bestWinningMoves.length > 0:
+      bestMove = pickRandomFromArray(bestWinningMoves);
+      break;
+    case bestLossPreventingMoves.length > 0:
+      bestMove = pickRandomFromArray(bestLossPreventingMoves);
+      break;
+    default:
+      bestMove = getRandomMove();
+  }
+
+  return bestMove;
 };
-
-function getBotBestMove() {
-  return getLossPreventingMoves();
-}
