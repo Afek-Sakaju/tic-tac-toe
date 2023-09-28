@@ -7,7 +7,7 @@ function getInitializedBoardCell(num) {
   cellElement.addEventListener('click', () => {
     const isDisabled = cellElement.getAttribute('disabled');
     // Subtracting 1 because the matrix calculations are based on index.
-    if (!isDisabled) selectBoardCell(num - 1);
+    if (!isDisabled) selectBoardCell(num);
   });
 
   return { cellElement, sign: null, id: num };
@@ -15,9 +15,9 @@ function getInitializedBoardCell(num) {
 
 function getInitializedGameBoardMatrix() {
   const initialMatrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
   ];
 
   const gameBoardMatrix = initialMatrix.map((row, i) => {
