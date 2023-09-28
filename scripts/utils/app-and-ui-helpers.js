@@ -3,6 +3,8 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
+const getOppositeTurn = () => (currentTurn === 'o' ? 'x' : 'o');
+
 function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {
@@ -40,7 +42,7 @@ function lockUnselectedBoardCells() {
 }
 
 function updateBoardCellsOnChange() {
-  const oppositeTurn = currentTurn === 'o' ? 'x' : 'o';
+  const oppositeTurn = getOppositeTurn();
   const classes = {
     add: currentTurn,
     remove: oppositeTurn,

@@ -13,7 +13,7 @@ const getGameCondition = () => {
 };
 
 const swapTurn = () => {
-  currentTurn = currentTurn === 'o' ? 'x' : 'o';
+  currentTurn = getOppositeTurn();
 };
 
 function finishGame(gameCondition) {
