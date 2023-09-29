@@ -36,7 +36,7 @@ const getBestMoveByRow = () => {
       row,
       currentTurnSign
     );
-    if (!bestMoveCellId) return;
+    if (bestMoveCellId === undefined) return;
 
     if (isWinningMove) bestMovesByRow.winningMoves.push(bestMoveCellId);
     else bestMovesByRow.lossPreventingMoves.push(bestMoveCellId);
@@ -55,7 +55,7 @@ const getBestMoveByColumn = () => {
       column,
       currentTurnSign
     );
-    if (bestMoveCellId) {
+    if (bestMoveCellId !== undefined) {
       if (isWinningMove) bestMovesByColumn.winningMoves.push(bestMoveCellId);
       else bestMovesByColumn.lossPreventingMoves.push(bestMoveCellId);
     }
@@ -74,7 +74,7 @@ const getBestMoveBySlant = () => {
       slant,
       currentTurnSign
     );
-    if (!bestMoveCellId) return;
+    if (bestMoveCellId === undefined) return;
 
     if (isWinningMove) bestMovesBySlant.winningMoves.push(bestMoveCellId);
     else bestMovesBySlant.lossPreventingMoves.push(bestMoveCellId);
@@ -124,7 +124,6 @@ const getBotBestMove = () => {
     ...bestMovesByColumn.lossPreventingMoves,
     ...bestMovesBySlant.lossPreventingMoves,
   ];
-
   switch (true) {
     case bestWinningMoves.length > 0:
       bestMove = pickRandomFromArray(bestWinningMoves);
@@ -132,8 +131,11 @@ const getBotBestMove = () => {
     case bestLossPreventingMoves.length > 0:
       bestMove = pickRandomFromArray(bestLossPreventingMoves);
       break;
-    default:
-      bestMove = getRandomOptimalMove() || getRandomMove();
+    default: {
+      const randomOptimalMove = getRandomOptimalMove();
+      if (randomOptimalMove !== undefined) bestMove = randomOptimalMove;
+      else bestMove = getRandomMove();
+    }
   }
 
   return bestMove;
