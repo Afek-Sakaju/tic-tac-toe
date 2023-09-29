@@ -42,7 +42,7 @@
 .game-board-cell.winning-cell {
   animation: rotation infinite 1.4s ease-in-out;
 }
-.game-board-cell.cell-placeholder {
+.game-board-cell.placeholder-cell {
   background-image: url("../../assets/pictures/question-mark.png");
   background-repeat: no-repeat;
   background-position: center;
