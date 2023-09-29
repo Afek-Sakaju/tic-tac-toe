@@ -24,6 +24,25 @@ function getMatrixSlants(matrix) {
   return { slant1, slant2 };
 }
 
+function getCornerAndMiddleMatrixCells() {
+  const rows = gameBoardMatrix.length;
+  const columns = gameBoardMatrix[0].length;
+
+  const middleRowIndex = Math.floor(rows / 2);
+  const middleColIndex = Math.floor(columns / 2);
+
+  const cornerCells = [
+    gameBoardMatrix[0][0],
+    gameBoardMatrix[0][columns - 1],
+    gameBoardMatrix[rows - 1][0],
+    gameBoardMatrix[rows - 1][columns - 1],
+  ];
+
+  const middleCell = gameBoardMatrix[middleRowIndex][middleColIndex];
+
+  return [...cornerCells, middleCell];
+}
+
 function getMatrixWinningCellsByRow() {
   const winningRow = gameBoardMatrix.find((row) => {
     const { sign: primarySign } = row[0];

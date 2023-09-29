@@ -98,6 +98,16 @@ const getRandomMove = () => {
   return randomMoveCellId;
 };
 
+const getRandomOptimalMove = () => {
+  const optimalCells = getCornerAndMiddleMatrixCells();
+  const emptyOptimalBoardCells = optimalCells.filter((cell) => !cell.sign);
+
+  const randomOptimalMoveCellId = pickRandomFromArray(
+    emptyOptimalBoardCells
+  )?.id;
+  return randomOptimalMoveCellId;
+};
+
 const getBotBestMove = () => {
   const bestMovesByRow = getBestMoveByRow();
   const bestMovesByColumn = getBestMoveByColumn();
@@ -123,7 +133,7 @@ const getBotBestMove = () => {
       bestMove = pickRandomFromArray(bestLossPreventingMoves);
       break;
     default:
-      bestMove = getRandomMove();
+      bestMove = getRandomOptimalMove() || getRandomMove();
   }
 
   return bestMove;
