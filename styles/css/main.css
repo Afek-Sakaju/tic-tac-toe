@@ -32,11 +32,10 @@
   }
 }
 .main-heading {
-  text-align: center;
-  font-weight: bolder;
-  max-height: 85px;
-  font-size: 3.7em;
   margin: 0;
+  font-weight: bold;
+  font-size: 3.7em;
+  color: rgba(255, 255, 255, 0.05);
 }
 
 .current-turn-status-text {
