@@ -30,24 +30,27 @@
 }
 
 .game-board-cell {
-  cursor: pointer;
   position: relative;
-  border: 2px dotted rgba(255, 255, 255, 0.815);
-  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
   padding: 20px;
   margin: 16px;
   font-size: 30px;
   min-height: 110px;
   min-width: 120px;
   transition: all 0.35s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 7px rgba(255, 255, 255, 0.2);
   opacity: 0.4;
 }
-.game-board-cell:hover {
+.game-board-cell:not(.locked):hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.4);
   opacity: 0.8;
+  cursor: pointer;
 }
 .game-board-cell.locked {
-  cursor: default;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.4);
   opacity: 1;
+  cursor: default;
 }
 .game-board-cell .game-board-cell-content {
   display: flex;
@@ -89,7 +92,6 @@
 }
 .game-board-cell.placeholder-cell {
   opacity: 0.4;
-  cursor: default;
 }
 .game-board-cell.placeholder-cell .game-board-cell-content {
   background-image: url("../../assets/pictures/question-mark.png");
