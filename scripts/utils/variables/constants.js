@@ -4,6 +4,7 @@ const STYLE_CLASSES = Object.freeze({
   LOCKED_CELL: 'locked',
   PLACEHOLDER_CELL: 'placeholder-cell',
   BOARD_CELL: 'game-board-cell',
+  BOARD_CELL_CONTENT: 'game-board-cell-content',
 });
 
 const ELEMENTS_IDS = Object.freeze({
