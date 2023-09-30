@@ -97,40 +97,58 @@
 }
 
 .start-game-button {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Oswald", sans-serif;
   background-color: rgba(255, 255, 255, 0.895);
-  width: 9em;
-  height: 3em;
+  border-radius: 10px;
+  color: steelblue;
+  border: 2.7px solid steelblue;
+  background-image: linear-gradient(to bottom, steelblue 50%, white 50%);
+  background-size: 200% 200%;
+  background-position: 0 100%; /* Change the starting position to top */
+  transition: all 0.25s;
+  cursor: pointer;
+  max-height: 62px;
   font-size: 2em;
+  padding: 15px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.895);
-  border-radius: 20px;
-  color: black;
 }
 .start-game-button:hover {
-  opacity: 0.8;
+  background-position: 0 0;
+  color: white;
+  border-color: white;
 }
 
 .reset-game-board-button {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Oswald", sans-serif;
   background-color: rgba(255, 255, 255, 0.895);
+  border-radius: 10px;
+  color: steelblue;
+  border: 2.7px solid steelblue;
+  background-image: linear-gradient(to bottom, steelblue 50%, white 50%);
+  background-size: 200% 200%;
+  background-position: 0 100%; /* Change the starting position to top */
+  transition: all 0.25s;
+  cursor: pointer;
   position: absolute;
   left: 20px;
   bottom: 15px;
-  width: 157px;
-  height: 2.3em;
-  font-size: large;
-  border-radius: 20px;
+  max-height: 45px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .reset-game-board-button:hover {
-  opacity: 0.8;
+  background-position: 0 0;
+  color: white;
+  border-color: white;
 }
 
 .toggle-sound-mode-button {
