@@ -30,6 +30,7 @@
 }
 
 .game-board-cell {
+  cursor: pointer;
   position: relative;
   border: 2px dotted rgba(255, 255, 255, 0.815);
   border-radius: 20px;
@@ -38,18 +39,23 @@
   font-size: 30px;
   min-height: 110px;
   min-width: 120px;
-}
-.game-board-cell.winning-cell {
-  animation: rotation infinite 1.4s ease-in-out;
-}
-.game-board-cell.placeholder-cell {
-  background-image: url("../../assets/pictures/question-mark.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 105px;
+  transition: all 0.35s;
   opacity: 0.4;
 }
-.game-board-cell.locked.x::before, .game-board-cell.locked.x::after, .game-board-cell:hover.x::before, .game-board-cell:hover.x::after {
+.game-board-cell:hover {
+  opacity: 0.8;
+}
+.game-board-cell.locked {
+  opacity: 1;
+}
+.game-board-cell .game-board-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  min-width: 120px;
+}
+.game-board-cell.x.locked .game-board-cell-content::before, .game-board-cell.x.locked .game-board-cell-content::after, .game-board-cell.x:hover .game-board-cell-content::before, .game-board-cell.x:hover .game-board-cell-content::after {
   content: "";
   position: absolute;
   width: 125px;
@@ -59,14 +65,13 @@
   top: 50%;
   background-color: white;
   border-radius: 7px;
-}
-.game-board-cell.locked.x::before, .game-board-cell:hover.x::before {
+  transform: translate(-50%, -50%);
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.game-board-cell.locked.x::after, .game-board-cell:hover.x::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
+.game-board-cell.x.locked .game-board-cell-content::after, .game-board-cell.x:hover .game-board-cell-content::after {
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
-.game-board-cell.locked.o::before {
+.game-board-cell.o.locked .game-board-cell-content::before {
   content: "";
   position: absolute;
   width: 82px;
@@ -78,12 +83,17 @@
   border: 21px solid white;
   border-radius: 50%;
 }
-.game-board-cell:not(.locked) {
-  cursor: pointer;
+.game-board-cell.winning-cell .game-board-cell-content {
+  animation: rotation infinite 1.4s ease-in-out;
+}
+.game-board-cell.placeholder-cell {
   opacity: 0.4;
 }
-.game-board-cell:not(.locked):hover {
-  opacity: 0.8;
+.game-board-cell.placeholder-cell .game-board-cell-content {
+  background-image: url("../../assets/pictures/question-mark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 105px;
 }
 
 .start-game-button {

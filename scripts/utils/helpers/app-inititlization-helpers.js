@@ -1,15 +1,20 @@
 function getInitializedBoardCell(num) {
-  const cellElement = document.createElement('div');
-  cellElement.id = `board-cell-${num}`;
-  cellElement.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
-  cellElement.setAttribute('disabled', 'true');
+  const cellElementBox = document.createElement('div');
+  cellElementBox.id = `board-cell-${num}`;
+  cellElementBox.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
+  cellElementBox.setAttribute('disabled', 'true');
 
-  cellElement.addEventListener('click', () => {
-    const isDisabled = cellElement.getAttribute('disabled');
+  cellElementBox.addEventListener('click', () => {
+    const isDisabled = cellElementBox.getAttribute('disabled');
     if (!isDisabled) selectBoardCell(num);
   });
 
-  return { cellElement, sign: null, id: num };
+  const cellElement = document.createElement('div');
+  cellElement.className = 'game-board-cell-content';
+
+  cellElementBox.appendChild(cellElement);
+
+  return { cellElement: cellElementBox, sign: null, id: num };
 }
 
 function getInitializedGameBoardMatrix() {
