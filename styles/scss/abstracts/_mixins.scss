@@ -7,30 +7,27 @@
 }
 
 @mixin generic-button-styles {
+  // This line ensures that the font is applied to certain buttons.
+  font-family: 'Oswald', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  // This line ensures that the font is applied to certain buttons.
-  font-family: 'Oswald', sans-serif;
   background-color: rgba(white, 0.895);
 }
 
 @mixin interface-button-hover-effects {
   border-radius: 10px;
-  color: steelblue;
-  border: 2.7px solid steelblue;
+  color: white;
+  border: 2.5px solid white;
 
-  // Adjust the linear gradient to start from the top
-  background-image: linear-gradient(to bottom, steelblue 50%, white 50%);
-  background-size: 200% 200%;
-  background-position: 0 100%; /* Change the starting position to top */
+  background-color: #202132;
 
-  transition: all 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
   cursor: pointer;
 
   &:hover {
-    background-position: 0 0;
-    color: white;
-    border-color: white;
+    background-color: white;
+    color: #5a5ac1;
+    border-color: #6161c0;
   }
 }
