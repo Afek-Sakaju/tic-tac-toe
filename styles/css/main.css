@@ -46,6 +46,7 @@
   opacity: 0.8;
 }
 .game-board-cell.locked {
+  cursor: default;
   opacity: 1;
 }
 .game-board-cell .game-board-cell-content {
@@ -88,6 +89,7 @@
 }
 .game-board-cell.placeholder-cell {
   opacity: 0.4;
+  cursor: default;
 }
 .game-board-cell.placeholder-cell .game-board-cell-content {
   background-image: url("../../assets/pictures/question-mark.png");
