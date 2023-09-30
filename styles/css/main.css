@@ -140,8 +140,9 @@
   transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   max-height: 62px;
-  font-size: 2em;
+  margin-top: 80px;
   padding: 15px;
+  font-size: 2em;
   border-radius: 10px;
 }
 .start-game-button:hover {
@@ -195,7 +196,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  gap: 50px;
+  gap: 30px;
   height: 100%;
 }
 
