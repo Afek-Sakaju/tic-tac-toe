@@ -12,6 +12,7 @@
   opacity: 0.4;
 
   &.locked {
+    cursor: default;
     opacity: 1;
   }
 
@@ -72,6 +73,7 @@
 
   &.placeholder-cell {
     opacity: 0.4;
+    cursor: default;
 
     .game-board-cell-content {
       background-image: url('../../assets/pictures/question-mark.png');
