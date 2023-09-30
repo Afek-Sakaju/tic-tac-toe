@@ -11,6 +11,10 @@
   left: 30px;
   top: 15px;
   color: white;
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: bold;
+	
+  &.inactive-turn-status {
+    opacity: 0.5;
+  }
 }

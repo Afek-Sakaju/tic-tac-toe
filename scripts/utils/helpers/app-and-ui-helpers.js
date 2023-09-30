@@ -15,9 +15,13 @@ function getInitializedBoardCell(num) {
 
 function updateCurrentTurnStatus() {
   const isTurnOfBot = isCurrentTurnOfBot();
-  currentTurnStatusDisplay.innerText = `Next Move: \n ${currentTurnSign.toUpperCase()} - ${
-    isTurnOfBot ? 'Bot' : 'Player'
-  }`;
+  if (isTurnOfBot) {
+    currentTurnStatusDisplay.innerText = BOT_TURN_TEXT;
+    currentTurnStatusDisplay.classList.add('inactive-turn-status');
+  } else {
+    currentTurnStatusDisplay.innerText = PLAYER_TURN_TEXT;
+    currentTurnStatusDisplay.classList.remove('inactive-turn-status');
+  }
 }
 
 function modifyElementsOnFinishedGame() {
