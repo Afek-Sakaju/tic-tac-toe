@@ -105,12 +105,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.895);
-  border-radius: 10px;
   color: white;
-  border: 2.5px solid white;
   background-color: #202132;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  border-radius: 10px;
+  border: 2.5px solid white;
+  box-shadow: 0 3.2px 3.2px -3.2px white;
+  transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   max-height: 62px;
   font-size: 2em;
@@ -118,9 +118,9 @@
   border-radius: 10px;
 }
 .start-game-button:hover {
-  background-color: white;
-  color: #5a5ac1;
-  border-color: #6161c0;
+  transform: translateY(-0.25em) translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 8px 8px -6.4px white;
 }
 
 .reset-game-board-button {
@@ -128,12 +128,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.895);
-  border-radius: 10px;
   color: white;
-  border: 2.5px solid white;
   background-color: #202132;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  border-radius: 10px;
+  border: 2.5px solid white;
+  box-shadow: 0 3.2px 3.2px -3.2px white;
+  transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   position: absolute;
   left: 20px;
@@ -145,21 +145,22 @@
   font-weight: bold;
 }
 .reset-game-board-button:hover {
-  background-color: white;
-  color: #5a5ac1;
-  border-color: #6161c0;
+  transform: translateY(-0.25em) translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 8px 8px -6.4px white;
 }
 
 .toggle-sound-mode-button {
-  cursor: pointer;
   position: absolute;
-  right: 25px;
-  top: 15px;
-  height: 55px;
-  width: 50px;
+  right: 15px;
+  top: 13px;
+  height: 35px;
+  width: 30px;
+  opacity: 0.5;
+  cursor: pointer;
 }
 .toggle-sound-mode-button:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .main-content-container {

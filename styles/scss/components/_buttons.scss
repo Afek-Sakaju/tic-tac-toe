@@ -118,11 +118,15 @@
 }
 
 .toggle-sound-mode-button {
-  @include button-hover-effects;
-
   position: absolute;
-  right: 25px;
-  top: 15px;
-  height: 55px;
-  width: 50px;
+  right: 15px;
+  top: 13px;
+  height: 35px;
+  width: 30px;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
 }
