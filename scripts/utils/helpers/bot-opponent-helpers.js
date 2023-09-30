@@ -151,5 +151,5 @@ executeBotLogicIfItsTurn = () => {
   setTimeout(() => {
     selectBoardCell(bestBotMove);
     toggleBoardCellSelectionDisabled();
-  }, 500);
+  }, 900);
 };
