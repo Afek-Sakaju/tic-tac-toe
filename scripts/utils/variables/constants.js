@@ -17,5 +17,5 @@ const ELEMENTS_IDS = Object.freeze({
 const BOT_TURN_SIGN = 'o';
 const PLAYER_TURN_SIGN = 'x';
 
-const BOT_TURN_TEXT = `Next Move: \n ${BOT_TURN_SIGN.toUpperCase()} - Bot`;
-const PLAYER_TURN_TEXT = `Next Move: \n ${PLAYER_TURN_SIGN} - Player`;
+const BOT_TURN_TEXT = `Its The AI's Move ( ${BOT_TURN_SIGN.toUpperCase()} )`;
+const PLAYER_TURN_TEXT = `Its Your Move ( ${PLAYER_TURN_SIGN.toUpperCase()} )`;
