@@ -75,12 +75,6 @@
     }
   }
 
-  &.winning-cell {
-    .game-board-cell-content {
-      animation: rotation infinite 1.4s ease-in-out;
-    }
-  }
-
   &.placeholder-cell {
     opacity: 0.4;
 
@@ -89,6 +83,27 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 105px;
+    }
+  }
+
+  &.winning-cell {
+    .game-board-cell-content {
+      animation: scale-size-pulse infinite 1.3s ease-in-out;
+    }
+
+    &.o {
+      .game-board-cell-content::before {
+        animation: border-color-pulse infinite 1.3s ease-in-out;
+      }
+    }
+
+    &.x {
+      .game-board-cell-content {
+        &::before,
+        &::after {
+          animation: background-color-pulse infinite 1.3s ease-in-out;
+        }
+      }
     }
   }
 }

@@ -1,15 +1,34 @@
-@keyframes rotation {
+@keyframes scale-size-pulse {
   0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-35deg);
+    transform: scale(1);
   }
   50% {
-    transform: rotate(0deg);
+    transform: scale(1.1);
   }
-  75% {
-    transform: rotate(35deg);
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes border-color-pulse {
+  0% {
+    border-color: white;
+  }
+  50% {
+    border-color: #a7a9e8;
+  }
+  100% {
+    border-color: white;
+  }
+}
+@keyframes background-color-pulse {
+  0% {
+    background: white;
+  }
+  50% {
+    background: #a7a9e8;
+  }
+  100% {
+    background: white;
   }
 }
 .main-heading {
@@ -87,9 +106,6 @@
   border: 21px solid white;
   border-radius: 50%;
 }
-.game-board-cell.winning-cell .game-board-cell-content {
-  animation: rotation infinite 1.4s ease-in-out;
-}
 .game-board-cell.placeholder-cell {
   opacity: 0.4;
 }
@@ -98,6 +114,15 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 105px;
+}
+.game-board-cell.winning-cell .game-board-cell-content {
+  animation: scale-size-pulse infinite 1.3s ease-in-out;
+}
+.game-board-cell.winning-cell.o .game-board-cell-content::before {
+  animation: border-color-pulse infinite 1.3s ease-in-out;
+}
+.game-board-cell.winning-cell.x .game-board-cell-content::before, .game-board-cell.winning-cell.x .game-board-cell-content::after {
+  animation: background-color-pulse infinite 1.3s ease-in-out;
 }
 
 .start-game-button {
