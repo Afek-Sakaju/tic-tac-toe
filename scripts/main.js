@@ -4,7 +4,6 @@ function startGame(delaySeconds) {
     isGameFinished = false;
     swapTurn();
     resetBoardCells();
-    modifyElementsOnGameStart();
     executeBotLogicIfItsTurn();
   }, 1000 * delaySeconds);
 }

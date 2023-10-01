@@ -1,7 +1,5 @@
 .main-content-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex-align-center-col;
   justify-content: space-between;
   position: relative;
   gap: 30px;
@@ -18,10 +16,7 @@
 }
 
 .stats-main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include flex-align-center-col;
   gap: 40px;
   width: 80%;
 }
@@ -33,9 +28,7 @@
 }
 
 .stat-score-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-align-center-col;
   gap: 15px;
   flex: 1 1 auto;
   width: 100%;

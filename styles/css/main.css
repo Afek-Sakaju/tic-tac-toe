@@ -38,15 +38,6 @@
   color: rgba(255, 255, 255, 0.05);
 }
 
-.current-turn-status-text {
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.current-turn-status-text.inactive-turn-status {
-  opacity: 0.5;
-}
-
 .stat-label {
   font-size: 1.6em;
   font-weight: bold;
@@ -84,8 +75,8 @@
 }
 .game-board-cell .game-board-cell-content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 110px;
   min-width: 120px;
 }
@@ -137,22 +128,21 @@
 }
 
 .reset-game-board-button {
-  font-family: "Oswald", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 45px;
+  padding: 15px;
   color: white;
   background-color: #2f3047;
   border-radius: 10px;
   border: 2.5px solid white;
   box-shadow: 0 3.2px 3.2px -3.2px white;
-  transition: transform 0.25s, box-shadow 0.25s;
-  cursor: pointer;
-  max-height: 45px;
-  padding: 15px;
-  border-radius: 10px;
   font-size: 1.1em;
   font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
 }
 .reset-game-board-button:hover {
   transform: translateY(-0.25em) translateZ(0);
@@ -194,7 +184,6 @@
 
 .stats-main-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 40px;
@@ -209,8 +198,8 @@
 
 .stat-score-box {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 15px;
   flex: 1 1 auto;
   width: 100%;
@@ -221,13 +210,14 @@
   src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
 body {
-  font-family: "Oswald", sans-serif;
-  color: white;
-  background-color: #202132;
-  height: 98vh;
-  user-select: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+  height: 98vh;
+  color: white;
+  background-color: #202132;
+  user-select: none;
 }
 body .hidden {
   visibility: hidden;

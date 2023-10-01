@@ -1,23 +1,11 @@
-@mixin generic-button-styles {
-  // This line ensures that the font is applied to certain buttons.
-  font-family: 'Oswald', sans-serif;
+@mixin flex-justify-align-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: #2f3047;
-  border-radius: 10px;
-  border: 2.5px solid white;
-  box-shadow: 0 3.2px 3.2px -3.2px white;
 }
 
-@mixin interface-button-hover-effects {
-  transition: transform 0.25s, box-shadow 0.25s;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-0.25em) translateZ(0);
-    -webkit-font-smoothing: subpixel-antialiased;
-    box-shadow: 0 8px 8px -6.4px white;
-  }
+@mixin flex-align-center-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

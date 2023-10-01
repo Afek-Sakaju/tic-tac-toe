@@ -29,10 +29,6 @@ function updateScoresStats(gameCondition) {
   }
 }
 
-function modifyElementsOnFinishedGame() {}
-
-function modifyElementsOnGameStart() {}
-
 function lockUnselectedBoardCells() {
   const boardCells = getAllBoardCells();
   boardCells
