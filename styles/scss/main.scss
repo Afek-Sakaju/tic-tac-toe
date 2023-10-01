@@ -10,13 +10,12 @@
 }
 
 body {
+  @include flex-justify-align-center;
   font-family: 'Oswald', sans-serif;
+  height: 98vh;
   color: white;
   background-color: #202132;
-  height: 98vh;
   user-select: none;
-  display: flex;
-  justify-content: center;
 
   .hidden {
     visibility: hidden;

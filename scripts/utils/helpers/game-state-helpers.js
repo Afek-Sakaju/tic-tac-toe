@@ -28,7 +28,6 @@ function finishGame(gameCondition) {
   isGameFinished = true;
   if (gameCondition !== 'tie') highlightWinningBoardCells();
   updateScoresStats(gameCondition);
-  modifyElementsOnFinishedGame();
   lockUnselectedBoardCells();
 }
 
