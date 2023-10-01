@@ -1,4 +1,4 @@
-function startGame(enableDelay, delayDuration = 2) {
+function startGame(enableDelay, delayDuration) {
   const startGameLogic = () => {
     playSound('start');
     isGameFinished = false;
@@ -22,12 +22,13 @@ function selectBoardCell(position) {
   // Undefined gameCondition means the game continues.
   if (!gameCondition) continueGame();
   else {
+    const isTie = gameCondition === 'tie';
     finishGame(gameCondition);
-    startGame(true);
+    startGame(true, isTie ? 1 : 2);
   }
 }
 
 window.onload = () => {
   initializeGameBoardCells();
-  startGame(true);
+  startGame(true, 2);
 };
