@@ -20,4 +20,7 @@ function selectBoardCell(position) {
   else finishGame(gameCondition);
 }
 
-window.onload = () => initializeGameBoardCells();
+window.onload = () => {
+  initializeGameBoardCells();
+  setTimeout(() => startGame(), 1500);
+};

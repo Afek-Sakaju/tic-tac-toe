@@ -29,14 +29,9 @@ function updateScoresStats(gameCondition) {
   }
 }
 
-function modifyElementsOnFinishedGame() {
-  startGameButton.innerText = 'Play-Again';
-  startGameButton.classList.remove(STYLE_CLASSES.HIDDEN);
-}
+function modifyElementsOnFinishedGame() {}
 
-function modifyElementsOnGameStart() {
-  startGameButton.classList.add(STYLE_CLASSES.HIDDEN);
-}
+function modifyElementsOnGameStart() {}
 
 function lockUnselectedBoardCells() {
   const boardCells = getAllBoardCells();

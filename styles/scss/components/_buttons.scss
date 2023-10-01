@@ -108,17 +108,6 @@
   }
 }
 
-.start-game-button {
-  @include generic-button-styles;
-  @include interface-button-hover-effects;
-
-  max-height: 62px;
-  margin-top: 80px;
-  padding: 15px;
-  font-size: 2em;
-  border-radius: 10px;
-}
-
 .reset-game-board-button {
   @include generic-button-styles;
   @include interface-button-hover-effects;
