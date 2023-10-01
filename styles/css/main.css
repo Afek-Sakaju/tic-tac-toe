@@ -136,30 +136,6 @@
   animation: background-color-pulse infinite 1.3s ease-in-out;
 }
 
-.start-game-button {
-  font-family: "Oswald", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: #2f3047;
-  border-radius: 10px;
-  border: 2.5px solid white;
-  box-shadow: 0 3.2px 3.2px -3.2px white;
-  transition: transform 0.25s, box-shadow 0.25s;
-  cursor: pointer;
-  max-height: 62px;
-  margin-top: 80px;
-  padding: 15px;
-  font-size: 2em;
-  border-radius: 10px;
-}
-.start-game-button:hover {
-  transform: translateY(-0.25em) translateZ(0);
-  -webkit-font-smoothing: subpixel-antialiased;
-  box-shadow: 0 8px 8px -6.4px white;
-}
-
 .reset-game-board-button {
   font-family: "Oswald", sans-serif;
   display: flex;

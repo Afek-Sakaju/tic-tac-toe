@@ -1,4 +1,3 @@
-const startGameButton = document.getElementById(ELEMENTS_IDS.START_BUTTON);
 const toggleMuteButton = document.getElementById(ELEMENTS_IDS.SOUND_BUTTON);
 
 const playerScoreDisplay = document.getElementById(ELEMENTS_IDS.PLAYER_SCORE);
