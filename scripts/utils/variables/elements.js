@@ -7,7 +7,4 @@ const computerScoreDisplay = document.getElementById(
   ELEMENTS_IDS.COMPUTER_SCORE
 );
 
-const currentTurnStatusDisplay = document.getElementById(
-  ELEMENTS_IDS.TURN_STATUS
-);
 const gameBoardMatrix = getInitializedGameBoardMatrix();

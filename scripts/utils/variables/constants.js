@@ -10,7 +10,6 @@ const STYLE_CLASSES = Object.freeze({
 const ELEMENTS_IDS = Object.freeze({
   GAME_BOARD: 'game-board',
   START_BUTTON: 'start-btn',
-  TURN_STATUS: 'turn-status-info',
   SOUND_BUTTON: 'sound-btn',
   PLAYER_SCORE: 'player-score',
   TIE_SCORE: 'tie-score',
