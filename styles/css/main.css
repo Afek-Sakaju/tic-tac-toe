@@ -32,22 +32,22 @@
   }
 }
 .main-heading {
-  margin: 0;
   font-weight: bold;
+  margin: 0;
   font-size: 3.7em;
   color: rgba(255, 255, 255, 0.05);
 }
 
 .stat-label {
-  font-size: 1.6em;
   font-weight: bold;
   margin: 0;
+  font-size: 1.6em;
 }
 
 .stats-score {
-  font-size: 1.6em;
   font-weight: bold;
   margin: 0;
+  font-size: 1.6em;
 }
 
 .game-board-cell {

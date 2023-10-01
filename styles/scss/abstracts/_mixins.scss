@@ -9,3 +9,8 @@
   align-items: center;
   flex-direction: column;
 }
+
+@mixin font-bold-margin-0 {
+  font-weight: bold;
+  margin: 0;
+}
