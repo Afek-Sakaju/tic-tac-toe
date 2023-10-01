@@ -1,8 +1,7 @@
 .main-content-container {
   @include flex-align-center-col;
-  justify-content: space-between;
   position: relative;
-  gap: 30px;
+  gap: 22px;
   height: 100%;
   max-width: 605px;
 }
@@ -13,11 +12,12 @@
   padding: 5px;
   border: 3px solid rgba(white, 0.05);
   border-radius: 20px;
+  margin-top: 13px;
 }
 
 .stats-main-container {
   @include flex-align-center-col;
-  gap: 40px;
+  gap: 25px;
   width: 80%;
 }
 
