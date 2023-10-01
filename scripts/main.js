@@ -1,11 +1,14 @@
-function startGame(delayInSeconds = 2) {
-  setTimeout(() => {
+function startGame(enableDelay, delayDuration = 2) {
+  const startGameLogic = () => {
     playSound('start');
     isGameFinished = false;
     swapTurn();
     resetBoardCells();
     executeBotLogicIfItsTurn();
-  }, 1000 * delayInSeconds ?? 0);
+  };
+
+  if (enableDelay) setTimeout(() => startGameLogic(), 1000 * delayDuration);
+  else startGameLogic();
 }
 
 function restartGame() {
@@ -20,11 +23,11 @@ function selectBoardCell(position) {
   if (!gameCondition) continueGame();
   else {
     finishGame(gameCondition);
-    startGame();
+    startGame(true);
   }
 }
 
 window.onload = () => {
   initializeGameBoardCells();
-  startGame();
+  startGame(true);
 };
