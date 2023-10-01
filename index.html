@@ -28,22 +28,38 @@
     ></script>
     <script src="./scripts/main.js" defer></script>
     <div class="main-content-container">
-      <span id="turn-status-info" class="current-turn-status-text"></span>
-      <button class="reset-game-board-button" onclick="restartGame()">
-        Reset Board
-      </button>
       <h1 class="main-heading">Tic-Tac-Toe</h1>
       <div id="game-board" class="game-board-container"></div>
+      <div class="stats-main-container">
+        <div class="stats-scores-container">
+          <div class="stat-score-box">
+            <p class="stat-label">PLAYER</p>
+            <p class="stats-score">2</p>
+          </div>
+          <div class="stat-score-box">
+            <p class="stat-label">TIE</p>
+            <p class="stats-score">3</p>
+          </div>
+          <div class="stat-score-box">
+            <p class="stat-label">COMPUTER</p>
+            <p class="stats-score">0</p>
+          </div>
+        </div>
+        <button class="reset-game-board-button" onclick="restartGame()">
+          Reset Board
+        </button>
+      </div>
       <button id="start-btn" class="start-game-button" onclick="startGame()">
         Start-Playing
       </button>
-      <img
-        id="sound-btn"
-        class="toggle-sound-mode-button"
-        src="./assets/pictures/unmute.png"
-        alt="site's logo"
-        onclick="toggleMuteStatus()"
-      />
     </div>
+    <span id="turn-status-info" class="current-turn-status-text"></span>
+    <img
+      id="sound-btn"
+      class="toggle-sound-mode-button"
+      src="./assets/pictures/unmute.png"
+      alt="site's logo"
+      onclick="toggleMuteStatus()"
+    />
   </body>
 </html>

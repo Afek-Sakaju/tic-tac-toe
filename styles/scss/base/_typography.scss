@@ -6,9 +6,6 @@
 }
 
 .current-turn-status-text {
-  position: absolute;
-  left: 30px;
-  top: 15px;
   color: white;
   font-size: 1.2em;
   font-weight: bold;
@@ -16,4 +13,16 @@
   &.inactive-turn-status {
     opacity: 0.5;
   }
+}
+
+.stat-label {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stats-score {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0;
 }
