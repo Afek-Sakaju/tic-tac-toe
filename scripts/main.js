@@ -1,10 +1,12 @@
-function startGame() {
-  playSound('start');
-  isGameFinished = false;
-  swapTurn();
-  resetBoardCells();
-  modifyElementsOnGameStart();
-  executeBotLogicIfItsTurn();
+function startGame(delaySeconds) {
+  setTimeout(() => {
+    playSound('start');
+    isGameFinished = false;
+    swapTurn();
+    resetBoardCells();
+    modifyElementsOnGameStart();
+    executeBotLogicIfItsTurn();
+  }, 1000 * delaySeconds);
 }
 
 function restartGame() {
@@ -17,10 +19,13 @@ function selectBoardCell(position) {
   const gameCondition = getGameCondition();
   // Undefined gameCondition means the game continues.
   if (!gameCondition) continueGame();
-  else finishGame(gameCondition);
+  else {
+    finishGame(gameCondition);
+    startGame(1.6);
+  }
 }
 
 window.onload = () => {
   initializeGameBoardCells();
-  setTimeout(() => startGame(), 1500);
+  startGame(1.9);
 };
