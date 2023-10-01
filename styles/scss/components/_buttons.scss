@@ -86,12 +86,12 @@
 
   &.winning-cell {
     .game-board-cell-content {
-      animation: scale-size-pulse infinite 1.3s ease-in-out;
+      animation: scale-size-pulse infinite 0.65s ease-in-out;
     }
 
     &.o {
       .game-board-cell-content::before {
-        animation: border-color-pulse infinite 1.3s ease-in-out;
+        animation: border-color-pulse infinite 0.3s ease-in-out;
       }
     }
 
@@ -99,7 +99,7 @@
       .game-board-cell-content {
         &::before,
         &::after {
-          animation: background-color-pulse infinite 1.3s ease-in-out;
+          animation: background-color-pulse infinite 0.3s ease-in-out;
         }
       }
     }

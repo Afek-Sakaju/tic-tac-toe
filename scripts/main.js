@@ -1,11 +1,11 @@
-function startGame(delaySeconds) {
+function startGame(delayInSeconds = 2) {
   setTimeout(() => {
     playSound('start');
     isGameFinished = false;
     swapTurn();
     resetBoardCells();
     executeBotLogicIfItsTurn();
-  }, 1000 * delaySeconds);
+  }, 1000 * delayInSeconds ?? 0);
 }
 
 function restartGame() {
@@ -20,11 +20,11 @@ function selectBoardCell(position) {
   if (!gameCondition) continueGame();
   else {
     finishGame(gameCondition);
-    startGame(1.6);
+    startGame();
   }
 }
 
 window.onload = () => {
   initializeGameBoardCells();
-  startGame(1.9);
+  startGame();
 };
