@@ -12,6 +12,9 @@ const ELEMENTS_IDS = Object.freeze({
   START_BUTTON: 'start-btn',
   TURN_STATUS: 'turn-status-info',
   SOUND_BUTTON: 'sound-btn',
+  PLAYER_SCORE: 'player-score',
+  TIE_SCORE: 'tie-score',
+  COMPUTER_SCORE: 'computer-score',
 });
 
 const BOT_TURN_SIGN = 'o';
