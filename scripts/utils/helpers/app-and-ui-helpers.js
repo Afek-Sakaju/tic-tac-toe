@@ -24,6 +24,22 @@ function updateCurrentTurnStatus() {
   }
 }
 
+function updateScoresStats(gameCondition) {
+  switch (gameCondition) {
+    case 'victory': {
+      playerScoreDisplay.innerText = ++playerScore;
+      break;
+    }
+    case 'loss': {
+      computerScoreDisplay.innerText = ++computerScore;
+      break;
+    }
+    default: {
+      tieScoreDisplay.innerText = ++tieScore;
+    }
+  }
+}
+
 function modifyElementsOnFinishedGame() {
   startGameButton.innerText = 'Play-Again';
   startGameButton.classList.remove(STYLE_CLASSES.HIDDEN);

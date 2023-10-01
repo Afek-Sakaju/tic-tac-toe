@@ -12,7 +12,10 @@ const setSelectedCellStatus = (position) => {
 const getGameCondition = () => {
   const winningBoardCells = getWinningCells();
 
-  if (winningBoardCells) return 'victory';
+  if (winningBoardCells) {
+    const isLoss = winningBoardCells[0].sign === BOT_TURN_SIGN;
+    return isLoss ? 'loss' : 'victory';
+  }
   return isMatrixFull() ? 'tie' : undefined;
 };
 
@@ -23,7 +26,8 @@ const swapTurn = () => {
 function finishGame(gameCondition) {
   playSound(gameCondition);
   isGameFinished = true;
-  if (gameCondition === 'victory') highlightWinningBoardCells();
+  if (gameCondition !== 'tie') highlightWinningBoardCells();
+  updateScoresStats(gameCondition);
   modifyElementsOnFinishedGame();
   lockUnselectedBoardCells();
 }
