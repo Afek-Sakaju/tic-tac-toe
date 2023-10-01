@@ -37,6 +37,5 @@ function continueGame() {
   playSound(currentSelectionSound);
   swapTurn();
   updateBoardCellsOnChange();
-  updateCurrentTurnStatus();
   executeBotLogicIfItsTurn();
 }

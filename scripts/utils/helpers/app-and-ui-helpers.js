@@ -13,17 +13,6 @@ function getInitializedBoardCell(num) {
   return { cellElement, sign: null };
 }
 
-function updateCurrentTurnStatus() {
-  const isTurnOfBot = isCurrentTurnOfBot();
-  if (isTurnOfBot) {
-    currentTurnStatusDisplay.innerText = BOT_TURN_TEXT;
-    currentTurnStatusDisplay.classList.add('inactive-turn-status');
-  } else {
-    currentTurnStatusDisplay.innerText = PLAYER_TURN_TEXT;
-    currentTurnStatusDisplay.classList.remove('inactive-turn-status');
-  }
-}
-
 function updateScoresStats(gameCondition) {
   switch (gameCondition) {
     case 'victory': {
@@ -43,12 +32,10 @@ function updateScoresStats(gameCondition) {
 function modifyElementsOnFinishedGame() {
   startGameButton.innerText = 'Play-Again';
   startGameButton.classList.remove(STYLE_CLASSES.HIDDEN);
-  currentTurnStatusDisplay.classList.add(STYLE_CLASSES.HIDDEN);
 }
 
 function modifyElementsOnGameStart() {
   startGameButton.classList.add(STYLE_CLASSES.HIDDEN);
-  currentTurnStatusDisplay.classList.remove(STYLE_CLASSES.HIDDEN);
 }
 
 function lockUnselectedBoardCells() {

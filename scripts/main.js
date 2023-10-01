@@ -4,7 +4,6 @@ function startGame() {
   swapTurn();
   resetBoardCells();
   modifyElementsOnGameStart();
-  updateCurrentTurnStatus();
   executeBotLogicIfItsTurn();
 }
 
