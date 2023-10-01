@@ -11,8 +11,14 @@ function startGame(enableDelay, delayDuration) {
   else startGameLogic();
 }
 
-function restartGame() {
-  if (!isMatrixEmpty()) startGame();
+function resetStats() {
+  playerScore = 0;
+  computerScore = 0;
+  tieScore = 0;
+
+  playerScoreDisplay.innerText = playerScore;
+  computerScoreDisplay.innerText = computerScore;
+  tieScoreDisplay.innerText = tieScore;
 }
 
 function selectBoardCell(position) {
