@@ -5,7 +5,7 @@ const isCurrentTurnOfBot = () => currentTurnSign === BOT_TURN_SIGN;
 const setSelectedCellStatus = (position) => {
   const boardCells = getAllBoardCells();
   boardCells[position].cellElement.classList.add(STYLE_CLASSES.LOCKED_CELL);
-  boardCells[position].cellElement.setAttribute('disabled', true);
+  boardCells[position].cellElement.setAttribute(DISABLED_ATTR, true);
   boardCells[position].sign = currentTurnSign;
 };
 
