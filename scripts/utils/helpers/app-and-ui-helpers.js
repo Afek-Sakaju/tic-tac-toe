@@ -1,5 +1,5 @@
 const playSound = (sound) => {
-  if (isSoundMuted && sound !== SOUND_FILE_NAMES.UNMUTE) return;
+  if (isSoundMuted && sound !== SOUND_NAMES.UNMUTE) return;
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
@@ -100,9 +100,7 @@ const highlightWinningBoardCells = () => {
 };
 
 const toggleMuteStatus = () => {
-  const soundModeToSet = isSoundMuted
-    ? SOUND_FILE_NAMES.UNMUTE
-    : SOUND_FILE_NAMES.MUTE;
+  const soundModeToSet = isSoundMuted ? SOUND_NAMES.UNMUTE : SOUND_NAMES.MUTE;
 
   playSound(soundModeToSet);
   isSoundMuted = !isSoundMuted;
