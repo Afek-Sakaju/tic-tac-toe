@@ -25,9 +25,9 @@ const swapTurn = () => {
 
 function finishGame(gameCondition) {
   const isTie = gameCondition === GAME_CONDITIONS.TIE;
-  if (isTie) playSound(TIE_GAME_SOUND);
+  if (isTie) playSound(SOUND_FILE_NAMES.GAME_TIE);
   else {
-    playSound(WON_GAME_SOUND);
+    playSound(SOUND_FILE_NAMES.GAME_WON);
     highlightWinningBoardCells();
   }
 

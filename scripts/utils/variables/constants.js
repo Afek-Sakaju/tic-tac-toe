@@ -21,6 +21,14 @@ const GAME_CONDITIONS = Object.freeze({
   LOSS: 'loss',
 });
 
+const SOUND_FILE_NAMES = Object.freeze({
+  GAME_TIE: 'tie-game',
+  GAME_WON: 'won-game',
+  GAME_START: 'start',
+  UNMUTE: 'unmute',
+  MUTE: 'mute',
+});
+
 const DISABLED_ATTR = 'disabled';
 
 const O_SIGN = 'o';
@@ -31,6 +39,3 @@ const PLAYER_TURN_SIGN = X_SIGN;
 
 const BOT_TURN_TEXT = `Its The AI's Move ( ${BOT_TURN_SIGN.toUpperCase()} )`;
 const PLAYER_TURN_TEXT = `Its Your Move ( ${PLAYER_TURN_SIGN.toUpperCase()} )`;
-
-const WON_GAME_SOUND = 'won-game';
-const TIE_GAME_SOUND = 'tie-game';
