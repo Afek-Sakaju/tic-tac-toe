@@ -3,19 +3,7 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
-const getBoardCellId = (num) => `${ELEMENTS_IDS.BOARD_CELL}-${num}`;
-
-function getInitializedBoardCell(num) {
-  const boardCellId = getBoardCellId(num);
-  const cellElement = document.getElementById(boardCellId);
-
-  cellElement.addEventListener('click', () => {
-    const isDisabled = cellElement.getAttribute(DISABLED_ATTR);
-    if (!isDisabled) selectBoardCell(num);
-  });
-
-  return { cellElement, sign: null };
-}
+const getBoardCellBoxId = (num) => `${ELEMENTS_IDS.BOARD_CELL}-${num}`;
 
 function updateScoresStats(gameCondition) {
   switch (gameCondition) {
