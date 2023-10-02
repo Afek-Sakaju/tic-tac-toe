@@ -1,18 +1,19 @@
 const STYLE_CLASSES = Object.freeze({
-  WINNER_CELL: 'winning-cell',
+  BOARD_CELL_CONTENT: 'game-board-cell-content',
+  BOARD_CELL: 'game-board-cell',
   HIDDEN: 'hidden',
   LOCKED_CELL: 'locked',
   PLACEHOLDER_CELL: 'placeholder-cell',
-  BOARD_CELL: 'game-board-cell',
-  BOARD_CELL_CONTENT: 'game-board-cell-content',
+  WINNER_CELL: 'winning-cell',
 });
 
 const ELEMENTS_IDS = Object.freeze({
-  GAME_BOARD: 'game-board',
-  SOUND_BUTTON: 'sound-btn',
-  PLAYER_SCORE: 'player-score',
-  TIE_SCORE: 'tie-score',
+  BOARD_CELL: 'board-cell',
   COMPUTER_SCORE: 'computer-score',
+  GAME_BOARD: 'game-board',
+  PLAYER_SCORE: 'player-score',
+  SOUND_BUTTON: 'sound-btn',
+  TIE_SCORE: 'tie-score',
 });
 
 const GAME_CONDITIONS = Object.freeze({
