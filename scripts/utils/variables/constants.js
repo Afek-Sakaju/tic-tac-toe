@@ -21,7 +21,7 @@ const GAME_CONDITIONS = Object.freeze({
   LOSS: 'loss',
 });
 
-const SOUND_FILE_NAMES = Object.freeze({
+const SOUND_NAMES = Object.freeze({
   GAME_TIE: 'tie-game',
   GAME_WON: 'won-game',
   GAME_START: 'start',
