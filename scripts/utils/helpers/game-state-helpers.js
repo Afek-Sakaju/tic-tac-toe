@@ -24,9 +24,14 @@ const swapTurn = () => {
 };
 
 function finishGame(gameCondition) {
-  playSound(gameCondition);
+  const isTie = gameCondition === 'tie';
+  if (isTie) playSound('tie-game');
+  else {
+    playSound('won-game');
+    highlightWinningBoardCells();
+  }
+
   isGameFinished = true;
-  if (gameCondition !== 'tie') highlightWinningBoardCells();
   updateScoresStats(gameCondition);
   lockUnselectedBoardCells();
 }
