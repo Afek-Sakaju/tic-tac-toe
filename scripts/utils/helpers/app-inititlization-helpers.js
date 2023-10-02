@@ -1,21 +1,21 @@
 function getInitializedBoardCell(num) {
-  const cellElementBox = document.createElement('div');
-  const boardCellBoxId = getBoardCellBoxId(num);
-  cellElementBox.id = boardCellBoxId;
-  cellElementBox.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
-  cellElementBox.setAttribute(DISABLED_ATTR, 'true');
+  const cellElement = document.createElement('div');
+  const boardCellId = getBoardCellId(num);
+  cellElement.id = boardCellId;
+  cellElement.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
+  cellElement.setAttribute(DISABLED_ATTR, 'true');
 
-  cellElementBox.addEventListener('click', () => {
-    const isDisabled = cellElementBox.getAttribute(DISABLED_ATTR);
+  cellElement.addEventListener('click', () => {
+    const isDisabled = cellElement.getAttribute(DISABLED_ATTR);
     if (!isDisabled) selectBoardCell(num);
   });
 
-  const cellElement = document.createElement('div');
-  cellElement.className = STYLE_CLASSES.BOARD_CELL_CONTENT;
+  const cellElementContent = document.createElement('div');
+  cellElementContent.className = STYLE_CLASSES.BOARD_CELL_CONTENT;
 
-  cellElementBox.appendChild(cellElement);
+  cellElement.appendChild(cellElementContent);
 
-  return { cellElement: cellElementBox, sign: null, id: num };
+  return { cellElement, sign: null, id: num };
 }
 
 function getInitializedGameBoardMatrix() {
