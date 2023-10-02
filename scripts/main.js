@@ -1,6 +1,6 @@
-function startGame(enableDelay, delayDuration) {
+function startGame(enableDelay, delayDuration, shouldPlaySound = true) {
   const startGameLogic = () => {
-    playSound('start');
+    if (shouldPlaySound) playSound('start');
     isGameFinished = false;
     swapTurn();
     resetBoardCells();
@@ -36,5 +36,5 @@ function selectBoardCell(position) {
 
 window.onload = () => {
   initializeGameBoardCells();
-  startGame(true, 2);
+  startGame(true, 2, false);
 };
