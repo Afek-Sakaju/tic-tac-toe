@@ -15,11 +15,11 @@ function getInitializedBoardCell(num) {
 
 function updateScoresStats(gameCondition) {
   switch (gameCondition) {
-    case 'victory': {
+    case GAME_CONDITIONS.VICTORY: {
       playerScoreDisplay.innerText = ++playerScore;
       break;
     }
-    case 'loss': {
+    case GAME_CONDITIONS.LOSS: {
       computerScoreDisplay.innerText = ++computerScore;
       break;
     }

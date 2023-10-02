@@ -28,7 +28,7 @@ function selectBoardCell(position) {
   // Undefined gameCondition means the game continues.
   if (!gameCondition) continueGame();
   else {
-    const isTie = gameCondition === 'tie';
+    const isTie = gameCondition === GAME_CONDITIONS.TIE;
     finishGame(gameCondition);
     startGame(true, isTie ? 1 : 2);
   }
