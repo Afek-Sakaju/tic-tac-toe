@@ -1,6 +1,6 @@
 function startGame(enableDelay, delayDuration, shouldPlaySound = true) {
   const startGameLogic = () => {
-    if (shouldPlaySound) playSound('start');
+    if (shouldPlaySound) playSound(SOUND_FILE_NAMES.GAME_START);
     isGameFinished = false;
     swapTurn();
     resetBoardCells();
