@@ -21,6 +21,7 @@
 
 ### **A practical example that exemplifies how the game looks like**
 
+https://github.com/Afek-Sakaju/tic-tac-toe/assets/100536372/51f6f5b9-0bd2-47a3-a571-b04e9ef4e9c6
 
 ---
 
