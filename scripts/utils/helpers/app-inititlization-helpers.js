@@ -10,7 +10,7 @@ function getInitializedBoardCell(num) {
   });
 
   const cellElement = document.createElement('div');
-  cellElement.className = 'game-board-cell-content';
+  cellElement.className = STYLE_CLASSES.BOARD_CELL_CONTENT;
 
   cellElementBox.appendChild(cellElement);
 
