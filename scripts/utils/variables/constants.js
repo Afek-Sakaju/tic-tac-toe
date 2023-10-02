@@ -21,6 +21,8 @@ const GAME_CONDITIONS = Object.freeze({
   LOSS: 'loss',
 });
 
+const DISABLED_ATTR = 'disabled';
+
 const O_SIGN = 'o';
 const X_SIGN = 'x';
 

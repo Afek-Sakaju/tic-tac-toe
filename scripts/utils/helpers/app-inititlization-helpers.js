@@ -2,10 +2,10 @@ function getInitializedBoardCell(num) {
   const cellElementBox = document.createElement('div');
   cellElementBox.id = `board-cell-${num}`;
   cellElementBox.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
-  cellElementBox.setAttribute('disabled', 'true');
+  cellElementBox.setAttribute(DISABLED_ATTR, 'true');
 
   cellElementBox.addEventListener('click', () => {
-    const isDisabled = cellElementBox.getAttribute('disabled');
+    const isDisabled = cellElementBox.getAttribute(DISABLED_ATTR);
     if (!isDisabled) selectBoardCell(num);
   });
 
