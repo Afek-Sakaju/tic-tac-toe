@@ -3,8 +3,12 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
+const getBoardCellId = (num) => `${ELEMENTS_IDS.BOARD_CELL}-${num}`;
+
 function getInitializedBoardCell(num) {
-  const cellElement = document.getElementById(`board-cell-${num}`);
+  const boardCellId = getBoardCellId(num);
+  const cellElement = document.getElementById(boardCellId);
+
   cellElement.addEventListener('click', () => {
     const isDisabled = cellElement.getAttribute(DISABLED_ATTR);
     if (!isDisabled) selectBoardCell(num);
@@ -100,13 +104,10 @@ const highlightWinningBoardCells = () => {
 };
 
 const toggleMuteStatus = () => {
-  const soundModeToSet = isSoundMuted ? SOUND_NAMES.UNMUTE : SOUND_NAMES.MUTE;
+  const soundMode = isSoundMuted ? SOUND_NAMES.UNMUTE : SOUND_NAMES.MUTE;
 
-  playSound(soundModeToSet);
+  playSound(soundMode);
   isSoundMuted = !isSoundMuted;
   toggleMuteButton.removeAttribute('src');
-  toggleMuteButton.setAttribute(
-    'src',
-    `./assets/pictures/${soundModeToSet}.png`
-  );
+  toggleMuteButton.setAttribute('src', `./assets/pictures/${soundMode}.png`);
 };
