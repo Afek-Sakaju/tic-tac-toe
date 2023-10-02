@@ -5,13 +5,13 @@
 @import './components/containers';
 
 @font-face {
-  font-family: 'Oswald';
-  src: url(../../assets/fonts/Oswald-VariableFont_wght.ttf);
+  font-family: 'Raleway';
+  src: url(../../assets/fonts/Raleway.ttf);
 }
 
 body {
   @include flex-justify-align-center;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Raleway', sans-serif;
   height: 98vh;
   color: white;
   background-color: #202132;
