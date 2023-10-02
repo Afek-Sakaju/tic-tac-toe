@@ -10,7 +10,8 @@
   flex-direction: column;
 }
 
-@mixin font-bold-margin-0 {
-  font-weight: bold;
+@mixin bold-zero-margin-spacing {
   margin: 0;
+  letter-spacing: 2.5px;
+  font-weight: bold;
 }
