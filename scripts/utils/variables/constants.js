@@ -22,6 +22,8 @@ const GAME_CONDITIONS = Object.freeze({
 });
 
 const SOUND_NAMES = Object.freeze({
+  X_SELECT: 'selection-sound-x',
+  O_SELECT: 'selection-sound-o',
   GAME_TIE: 'tie-game',
   GAME_WON: 'won-game',
   GAME_START: 'start',
@@ -31,11 +33,11 @@ const SOUND_NAMES = Object.freeze({
 
 const DISABLED_ATTR = 'disabled';
 
-const O_SIGN = 'o';
-const X_SIGN = 'x';
+const O_SIGN = 'O';
+const X_SIGN = 'X';
 
 const BOT_TURN_SIGN = O_SIGN;
 const PLAYER_TURN_SIGN = X_SIGN;
 
-const BOT_TURN_TEXT = `Its The AI's Move ( ${BOT_TURN_SIGN.toUpperCase()} )`;
-const PLAYER_TURN_TEXT = `Its Your Move ( ${PLAYER_TURN_SIGN.toUpperCase()} )`;
+const BOT_TURN_TEXT = `Its The AI's Move ( ${BOT_TURN_SIGN} )`;
+const PLAYER_TURN_TEXT = `Its Your Move ( ${PLAYER_TURN_SIGN} )`;

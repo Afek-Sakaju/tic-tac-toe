@@ -80,7 +80,7 @@
   min-height: 110px;
   min-width: 120px;
 }
-.game-board-cell.x.locked .game-board-cell-content::before, .game-board-cell.x.locked .game-board-cell-content::after, .game-board-cell.x:hover .game-board-cell-content::before, .game-board-cell.x:hover .game-board-cell-content::after {
+.game-board-cell.X.locked .game-board-cell-content::before, .game-board-cell.X.locked .game-board-cell-content::after, .game-board-cell.X:hover .game-board-cell-content::before, .game-board-cell.X:hover .game-board-cell-content::after {
   content: "";
   position: absolute;
   width: 125px;
@@ -93,10 +93,10 @@
   transform: translate(-50%, -50%);
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.game-board-cell.x.locked .game-board-cell-content::after, .game-board-cell.x:hover .game-board-cell-content::after {
+.game-board-cell.X.locked .game-board-cell-content::after, .game-board-cell.X:hover .game-board-cell-content::after {
   transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
-.game-board-cell.o.locked .game-board-cell-content::before {
+.game-board-cell.O.locked .game-board-cell-content::before {
   content: "";
   position: absolute;
   width: 82px;
@@ -120,10 +120,10 @@
 .game-board-cell.winning-cell .game-board-cell-content {
   animation: scale-size-pulse infinite 0.65s ease-in-out;
 }
-.game-board-cell.winning-cell.o .game-board-cell-content::before {
+.game-board-cell.winning-cell.O .game-board-cell-content::before {
   animation: border-color-pulse infinite 0.3s ease-in-out;
 }
-.game-board-cell.winning-cell.x .game-board-cell-content::before, .game-board-cell.winning-cell.x .game-board-cell-content::after {
+.game-board-cell.winning-cell.X .game-board-cell-content::before, .game-board-cell.winning-cell.X .game-board-cell-content::after {
   animation: background-color-pulse infinite 0.3s ease-in-out;
 }
 

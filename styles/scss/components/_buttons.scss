@@ -32,7 +32,7 @@
     min-width: 120px;
   }
 
-  &.x {
+  &.X {
     &.locked,
     &:hover {
       .game-board-cell-content {
@@ -58,7 +58,7 @@
     }
   }
 
-  &.o.locked {
+  &.O.locked {
     .game-board-cell-content::before {
       content: '';
       position: absolute;
@@ -89,13 +89,13 @@
       animation: scale-size-pulse infinite 0.65s ease-in-out;
     }
 
-    &.o {
+    &.O {
       .game-board-cell-content::before {
         animation: border-color-pulse infinite 0.3s ease-in-out;
       }
     }
 
-    &.x {
+    &.X {
       .game-board-cell-content {
         &::before,
         &::after {
