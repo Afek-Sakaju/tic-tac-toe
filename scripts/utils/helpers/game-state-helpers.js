@@ -37,7 +37,8 @@ function finishGame(gameCondition) {
 }
 
 function continueGame() {
-  const currentSelectionSound = `selection-sound-${currentTurnSign}`;
+  const currentSelectionSound = SOUND_NAMES[`${currentTurnSign}_SELECT`];
+
   playSound(currentSelectionSound);
   swapTurn();
   updateBoardCellsOnChange();
