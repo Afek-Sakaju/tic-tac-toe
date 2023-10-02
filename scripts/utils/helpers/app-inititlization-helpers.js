@@ -1,6 +1,7 @@
 function getInitializedBoardCell(num) {
   const cellElementBox = document.createElement('div');
-  cellElementBox.id = `board-cell-${num}`;
+  const boardCellBoxId = getBoardCellBoxId(num);
+  cellElementBox.id = boardCellBoxId;
   cellElementBox.className = `${STYLE_CLASSES.BOARD_CELL} ${STYLE_CLASSES.PLACEHOLDER_CELL} ${STYLE_CLASSES.LOCKED_CELL}`;
   cellElementBox.setAttribute(DISABLED_ATTR, 'true');
 
