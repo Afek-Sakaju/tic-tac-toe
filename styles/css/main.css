@@ -32,21 +32,24 @@
   }
 }
 .main-heading {
-  font-weight: bold;
   margin: 0;
+  letter-spacing: 2.5px;
+  font-weight: bold;
   font-size: 3.7em;
   color: rgba(255, 255, 255, 0.05);
 }
 
 .stat-label {
-  font-weight: bold;
   margin: 0;
+  letter-spacing: 2.5px;
+  font-weight: bold;
   font-size: 1.6em;
 }
 
 .stats-score {
-  font-weight: bold;
   margin: 0;
+  letter-spacing: 2.5px;
+  font-weight: bold;
   font-size: 1.6em;
 }
 
@@ -138,6 +141,7 @@
   border-radius: 10px;
   border: 2.5px solid white;
   box-shadow: 0 3.2px 3.2px -3.2px white;
+  letter-spacing: 2px;
   font-size: 1.1em;
   font-weight: bold;
   font-family: "Raleway", sans-serif;
