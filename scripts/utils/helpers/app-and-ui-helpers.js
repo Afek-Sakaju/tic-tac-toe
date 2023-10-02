@@ -3,7 +3,7 @@ const playSound = (sound) => {
   new Audio(`./assets/sounds/${sound}.mp3`).play();
 };
 
-const getBoardCellBoxId = (num) => `${ELEMENTS_IDS.BOARD_CELL}-${num}`;
+const getBoardCellId = (num) => `${ELEMENTS_IDS.BOARD_CELL}-${num}`;
 
 function updateScoresStats(gameCondition) {
   switch (gameCondition) {
