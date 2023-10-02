@@ -21,8 +21,11 @@ const GAME_CONDITIONS = Object.freeze({
   LOSS: 'loss',
 });
 
-const BOT_TURN_SIGN = 'o';
-const PLAYER_TURN_SIGN = 'x';
+const O_SIGN = 'o';
+const X_SIGN = 'x';
+
+const BOT_TURN_SIGN = O_SIGN;
+const PLAYER_TURN_SIGN = X_SIGN;
 
 const BOT_TURN_TEXT = `Its The AI's Move ( ${BOT_TURN_SIGN.toUpperCase()} )`;
 const PLAYER_TURN_TEXT = `Its Your Move ( ${PLAYER_TURN_SIGN.toUpperCase()} )`;
