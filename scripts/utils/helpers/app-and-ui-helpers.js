@@ -6,7 +6,7 @@ const playSound = (sound) => {
 function getInitializedBoardCell(num) {
   const cellElement = document.getElementById(`board-cell-${num}`);
   cellElement.addEventListener('click', () => {
-    const isDisabled = cellElement.getAttribute('disabled');
+    const isDisabled = cellElement.getAttribute(DISABLED_ATTR);
     if (!isDisabled) selectBoardCell(num);
   });
 
@@ -36,7 +36,7 @@ function lockUnselectedBoardCells() {
     .forEach(({ cellElement }) => {
       cellElement.classList.remove(currentTurnSign);
       cellElement.classList.add(STYLE_CLASSES.LOCKED_CELL);
-      cellElement.setAttribute('disabled', true);
+      cellElement.setAttribute(DISABLED_ATTR, true);
     });
 }
 
@@ -72,10 +72,10 @@ function toggleBoardCellSelectionDisabled() {
     const isNotLocked = !cellElement.classList.contains(
       STYLE_CLASSES.LOCKED_CELL
     );
-    const isDisabled = cellElement.getAttribute('disabled');
+    const isDisabled = cellElement.getAttribute(DISABLED_ATTR);
 
-    if (isDisabled && isNotLocked) cellElement.removeAttribute('disabled');
-    else cellElement.setAttribute('disabled', true);
+    if (isDisabled && isNotLocked) cellElement.removeAttribute(DISABLED_ATTR);
+    else cellElement.setAttribute(DISABLED_ATTR, true);
   });
 }
 
@@ -87,7 +87,7 @@ function resetBoardCells() {
     // eslint-disable-next-line no-param-reassign
     boardCell.sign = null;
 
-    boardCell.cellElement.removeAttribute('disabled');
+    boardCell.cellElement.removeAttribute(DISABLED_ATTR);
   });
   updateBoardCellsOnChange();
 }
