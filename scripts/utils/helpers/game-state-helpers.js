@@ -14,9 +14,9 @@ const getGameCondition = () => {
 
   if (winningBoardCells) {
     const isLoss = winningBoardCells[0].sign === BOT_TURN_SIGN;
-    return isLoss ? 'loss' : 'victory';
+    return isLoss ? GAME_CONDITIONS.LOSS : GAME_CONDITIONS.VICTORY;
   }
-  return isMatrixFull() ? 'tie' : undefined;
+  return isMatrixFull() ? GAME_CONDITIONS.TIE : undefined;
 };
 
 const swapTurn = () => {
@@ -24,10 +24,10 @@ const swapTurn = () => {
 };
 
 function finishGame(gameCondition) {
-  const isTie = gameCondition === 'tie';
-  if (isTie) playSound('tie-game');
+  const isTie = gameCondition === GAME_CONDITIONS.TIE;
+  if (isTie) playSound(TIE_GAME_SOUND);
   else {
-    playSound('won-game');
+    playSound(WON_GAME_SOUND);
     highlightWinningBoardCells();
   }
 
