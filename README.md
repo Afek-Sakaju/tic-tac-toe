@@ -21,7 +21,6 @@
 
 ### **A practical example that exemplifies how the game looks like**
 
-![tic-tac-toe-GIF](./readme-resources/game-gif.gif)
 
 ---
 
@@ -34,6 +33,11 @@
 ### Additional technologies used as development tools include:
 
 - [x] _**ESLINT**_ : the project adheres to the _ESLint_ guidelines and follows the best practices recommended by _airbnb_.
+
+### In addition, the project incorporates the following features:
+
+- [x] _**Responsiveness**_: The application is intentionally designed to adapt to screens of various sizes by utilizing _media queries_ within its components. This ensures that the user interface adjusts seamlessly to different screen dimensions.
+- [x] _**Best-Practices in Structure and Naming**_: : The application adheres to _Best-Practices_ organization and structuring of the folders and files, improving maintainability and promoting a standardized development process. It also maintains superior naming conventions throughout all the files for code clarity and consistency.
 
 ## Author
 
