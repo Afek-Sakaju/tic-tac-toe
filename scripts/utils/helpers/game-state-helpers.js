@@ -1,4 +1,4 @@
-const getWaiterTurn = () => (currentTurnSign === 'o' ? 'x' : 'o');
+const getWaiterTurn = () => (currentTurnSign === O_SIGN ? X_SIGN : O_SIGN);
 
 const isCurrentTurnOfBot = () => currentTurnSign === BOT_TURN_SIGN;
 
