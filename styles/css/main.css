@@ -43,9 +43,34 @@
     letter-spacing: 2px;
   }
 }
+@media screen and (max-width: 480px) {
+  .main-heading {
+    letter-spacing: 1.5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main-heading {
+    letter-spacing: 1.25px;
+  }
+}
 @media screen and (max-width: 655px) {
   .main-heading {
     font-size: 3em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main-heading {
+    font-size: 2.4em;
+  }
+}
+@media screen and (max-width: 380px) {
+  .main-heading {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main-heading {
+    font-size: 1.7em;
   }
 }
 
@@ -60,9 +85,24 @@
     letter-spacing: 2px;
   }
 }
+@media screen and (max-width: 480px) {
+  .stat-label {
+    letter-spacing: 1.5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .stat-label {
+    letter-spacing: 1.25px;
+  }
+}
 @media screen and (max-width: 655px) {
   .stat-label {
     font-size: 1.05em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .stat-label {
+    font-size: 0.7em;
   }
 }
 
@@ -77,9 +117,24 @@
     letter-spacing: 2px;
   }
 }
+@media screen and (max-width: 480px) {
+  .stats-score {
+    letter-spacing: 1.5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .stats-score {
+    letter-spacing: 1.25px;
+  }
+}
 @media screen and (max-width: 655px) {
   .stats-score {
     font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .stats-score {
+    font-size: 0.9em;
   }
 }
 
@@ -101,11 +156,34 @@
 }
 @media screen and (max-width: 655px) {
   .game-board-cell {
-    padding: 15px;
-    margin: 13px;
+    padding: 14px;
+    margin: 10px;
     min-height: 80px;
     max-height: 80px;
     min-width: 90px;
+    border-radius: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .game-board-cell {
+    padding: 11px;
+    margin: 4px;
+    min-height: 48px;
+    max-height: 48px;
+    min-width: 53px;
+    max-width: 53px;
+    border-radius: 8px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .game-board-cell {
+    padding: 10px;
+    margin: 3px;
+    min-height: 46px;
+    max-height: 46px;
+    min-width: 51px;
+    max-width: 51px;
+    border-radius: 6.5px;
   }
 }
 .game-board-cell:not(.locked):hover {
@@ -145,6 +223,13 @@
     border-radius: 5px;
   }
 }
+@media screen and (max-width: 480px) {
+  .game-board-cell.X.locked .game-board-cell-content::before, .game-board-cell.X.locked .game-board-cell-content::after, .game-board-cell.X:hover .game-board-cell-content::before, .game-board-cell.X:hover .game-board-cell-content::after {
+    width: 57px;
+    height: 13px;
+    border-radius: 3px;
+  }
+}
 .game-board-cell.X.locked .game-board-cell-content::after, .game-board-cell.X:hover .game-board-cell-content::after {
   transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
@@ -167,6 +252,13 @@
     border: 17px solid white;
   }
 }
+@media screen and (max-width: 480px) {
+  .game-board-cell.O.locked .game-board-cell-content::before {
+    width: 33px;
+    height: 33px;
+    border: 11.5px solid white;
+  }
+}
 .game-board-cell.placeholder-cell {
   opacity: 0.4;
 }
@@ -179,6 +271,11 @@
 @media screen and (max-width: 655px) {
   .game-board-cell.placeholder-cell .game-board-cell-content {
     background-size: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .game-board-cell.placeholder-cell .game-board-cell-content {
+    background-size: 55px;
   }
 }
 .game-board-cell.winning-cell .game-board-cell-content {
@@ -214,6 +311,15 @@
     max-height: 40px;
     padding: 10px;
     font-size: 0.9em;
+    border: 2px solid white;
+  }
+}
+@media screen and (max-width: 480px) {
+  .reset-game-board-button {
+    max-height: 35px;
+    padding: 8px;
+    font-size: 0.6em;
+    border: 1px solid white;
   }
 }
 .reset-game-board-button:hover {
@@ -233,8 +339,20 @@
 }
 @media screen and (max-width: 655px) {
   .toggle-sound-mode-button {
-    height: 30px;
-    width: 25px;
+    height: 27px;
+    width: 22px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .toggle-sound-mode-button {
+    height: 20px;
+    width: 15px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .toggle-sound-mode-button {
+    height: 16px;
+    width: 13px;
   }
 }
 .toggle-sound-mode-button:hover {
@@ -249,10 +367,12 @@
   gap: 22px;
   height: 100%;
   max-width: 605px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 655px) {
   .main-content-container {
     max-width: 450px;
+    gap: 50px;
   }
 }
 
@@ -271,6 +391,11 @@
   flex-direction: column;
   gap: 25px;
   width: 80%;
+}
+@media screen and (max-width: 655px) {
+  .stats-main-container {
+    gap: 40px;
+  }
 }
 
 .stats-scores-container {

@@ -18,4 +18,12 @@
   @media screen and (max-width: 655px) {
     letter-spacing: 2px;
   }
+
+  @media screen and (max-width: 480px) {
+    letter-spacing: 1.5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    letter-spacing: 1.25px;
+  }
 }

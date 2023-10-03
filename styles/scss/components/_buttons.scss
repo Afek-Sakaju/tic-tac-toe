@@ -14,11 +14,32 @@
   opacity: 0.4;
 
   @media screen and (max-width: 655px) {
-    padding: 15px;
-    margin: 13px;
+    padding: 14px;
+    margin: 10px;
     min-height: 80px;
     max-height: 80px;
     min-width: 90px;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 11px;
+    margin: 4px;
+    min-height: 48px;
+    max-height: 48px;
+    min-width: 53px;
+    max-width: 53px;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 320px) {
+    padding: 10px;
+    margin: 3px;
+    min-height: 46px;
+    max-height: 46px;
+    min-width: 51px;
+    max-width: 51px;
+    border-radius: 6.5px;
   }
 
   &:not(.locked):hover {
@@ -64,6 +85,12 @@
             height: 19px;
             border-radius: 5px;
           }
+
+          @media screen and (max-width: 480px) {
+            width: 57px;
+            height: 13px;
+            border-radius: 3px;
+          }
         }
 
         &::after {
@@ -91,6 +118,12 @@
         height: 56px;
         border: 17px solid white;
       }
+
+      @media screen and (max-width: 480px) {
+        width: 33px;
+        height: 33px;
+        border: 11.5px solid white;
+      }
     }
   }
 
@@ -105,6 +138,10 @@
 
       @media screen and (max-width: 655px) {
         background-size: 80px;
+      }
+
+      @media screen and (max-width: 480px) {
+        background-size: 55px;
       }
     }
   }
@@ -153,6 +190,14 @@
     max-height: 40px;
     padding: 10px;
     font-size: 0.9em;
+    border: 2px solid white;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-height: 35px;
+    padding: 8px;
+    font-size: 0.6em;
+    border: 1px solid white;
   }
 
   &:hover {
@@ -172,8 +217,18 @@
   cursor: pointer;
 
   @media screen and (max-width: 655px) {
-    height: 30px;
-    width: 25px;
+    height: 27px;
+    width: 22px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 20px;
+    width: 15px;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 16px;
+    width: 13px;
   }
 
   &:hover {

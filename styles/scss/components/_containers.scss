@@ -4,9 +4,11 @@
   gap: 22px;
   height: 100%;
   max-width: 605px;
+  box-sizing: border-box;
 
   @media screen and (max-width: 655px) {
     max-width: 450px;
+    gap: 50px;
   }
 }
 
@@ -23,6 +25,10 @@
   @include flex-align-center-col;
   gap: 25px;
   width: 80%;
+
+  @media screen and (max-width: 655px) {
+    gap: 40px;
+  }
 }
 
 .stats-scores-container {
