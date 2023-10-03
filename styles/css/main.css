@@ -162,8 +162,8 @@
 }
 @media screen and (max-width: 655px) {
   .game-board-cell.O.locked .game-board-cell-content::before {
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
     border: 17px solid white;
   }
 }
