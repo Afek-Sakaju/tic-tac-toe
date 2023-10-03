@@ -2,14 +2,26 @@
   @include bold-zero-margin-spacing;
   font-size: 3.7em;
   color: rgba(255, 255, 255, 0.05);
+
+  @media screen and (max-width: 655px) {
+    font-size: 3em;
+  }
 }
 
 .stat-label {
   @include bold-zero-margin-spacing;
   font-size: 1.6em;
+
+  @media screen and (max-width: 655px) {
+    font-size: 1.05em;
+  }
 }
 
 .stats-score {
   @include bold-zero-margin-spacing;
   font-size: 1.75em;
+
+  @media screen and (max-width: 655px) {
+    font-size: 1.2em;
+  }
 }

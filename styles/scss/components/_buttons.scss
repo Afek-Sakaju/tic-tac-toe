@@ -1,4 +1,5 @@
 .game-board-cell {
+  @include flex-justify-align-center;
   position: relative;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 15px;
@@ -11,6 +12,14 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
     inset 0 0 7px rgba(255, 255, 255, 0.2);
   opacity: 0.4;
+
+  @media screen and (max-width: 655px) {
+    padding: 15px;
+    margin: 13px;
+    min-height: 80px;
+    max-height: 80px;
+    min-width: 90px;
+  }
 
   &:not(.locked):hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
@@ -49,6 +58,12 @@
           border-radius: 7px;
           transform: translate(-50%, -50%);
           transform: translate(-50%, -50%) rotate(45deg);
+
+          @media screen and (max-width: 655px) {
+            width: 95px;
+            height: 19px;
+            border-radius: 5px;
+          }
         }
 
         &::after {
@@ -70,6 +85,12 @@
       transform: translate(-50%, -50%);
       border: 21px solid white;
       border-radius: 50%;
+
+      @media screen and (max-width: 655px) {
+        width: 54px;
+        height: 54px;
+        border: 17px solid white;
+      }
     }
   }
 
@@ -81,6 +102,10 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 105px;
+
+      @media screen and (max-width: 655px) {
+        background-size: 80px;
+      }
     }
   }
 
@@ -124,6 +149,12 @@
   transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
 
+  @media screen and (max-width: 655px) {
+    max-height: 40px;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
   &:hover {
     transform: translateY(-0.25em) translateZ(0);
     -webkit-font-smoothing: subpixel-antialiased;
@@ -139,6 +170,11 @@
   width: 30px;
   opacity: 0.5;
   cursor: pointer;
+
+  @media screen and (max-width: 655px) {
+    height: 30px;
+    width: 25px;
+  }
 
   &:hover {
     opacity: 1;

@@ -4,6 +4,10 @@
   gap: 22px;
   height: 100%;
   max-width: 605px;
+
+  @media screen and (max-width: 655px) {
+    max-width: 450px;
+  }
 }
 
 .game-board-container {
