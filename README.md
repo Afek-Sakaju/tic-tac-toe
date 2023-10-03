@@ -44,6 +44,8 @@ https://github.com/Afek-Sakaju/tic-tac-toe/assets/100536372/9c1e7ee9-0be1-436b-a
 
 ### **A brief illustration showcasing how the game appears on various screens.**
 
+https://github.com/Afek-Sakaju/tic-tac-toe/assets/100536372/84bc4704-6010-4385-a9aa-c0947c55f4dc
+
 ---
 
 ## Author
