@@ -37,8 +37,14 @@ https://github.com/Afek-Sakaju/tic-tac-toe/assets/100536372/9c1e7ee9-0be1-436b-a
 
 ### In addition, the project incorporates the following features:
 
-- [x] _**Responsiveness**_: The application is intentionally designed to adapt to screens of various sizes by utilizing _media queries_ within its components. This ensures that the user interface adjusts seamlessly to different screen dimensions.
 - [x] _**Best-Practices in Structure and Naming**_: : The application adheres to _Best-Practices_ organization and structuring of the folders and files, improving maintainability and promoting a standardized development process. It also maintains superior naming conventions throughout all the files for code clarity and consistency.
+- [x] _**Responsiveness**_: The application is intentionally designed to adapt to screens of various sizes by utilizing _media queries_ within its components. This ensures that the user interface adjusts seamlessly to different screen dimensions.
+
+---
+
+### **A brief illustration showcasing how the game appears on various screens.**
+
+---
 
 ## Author
 
