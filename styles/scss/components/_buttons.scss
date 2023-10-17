@@ -1,13 +1,13 @@
 .game-board-cell {
   @include flex-justify-align-center;
   position: relative;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 15px;
+  min-height: 110px;
+  min-width: 120px;
   padding: 20px;
   margin: 16px;
   font-size: 30px;
-  min-height: 110px;
-  min-width: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
   transition: all 0.35s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
     inset 0 0 7px rgba(255, 255, 255, 0.2);
