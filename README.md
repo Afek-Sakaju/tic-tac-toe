@@ -2,7 +2,7 @@
 
 <img src="./readme-resources/tic-tac-toe.png" width=100px height=100px align="right">
 
-### This project is a tic-tac-toe app that combines JavaScript, HTML, and SCSS to deliver a delightful user experience with a simple yet pleasant design.
+### This tic-tac-toe app crafted with JavaScript, HTML, and SCSS, offers a delightful experience, it boasts a simple yet pleasing design, with the integration of a built-in bot. Players can now relish challenging the computer, creating a strategic and engaging solo gaming experience. This fusion of technology and thoughtful design elements ensures a harmonious and memorable journey for users across all skill levels.
 
 ---
 
